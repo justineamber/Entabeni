@@ -1,13 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap"
 
 const CustomNavbar = ({ pageInfo }) => {
   console.log(pageInfo)
   return (
     <>
-      <Navbar variant="dark" expand="lg" id="site-navbar">
+      <Navbar bg="light" expand="lg" id="site-navbar">
         {/* <Container> */}
         <Link to="/" className="link-no-style">
           <Navbar.Brand as="span">Gatsby React Bootstrap</Navbar.Brand>
@@ -30,7 +29,7 @@ const CustomNavbar = ({ pageInfo }) => {
                   className="mr-2"
                 />
               </Form.Group>
-              <Button>Fake Button</Button>
+              <Button>BOOK NOW</Button>
             </Form>
           </Nav>
         </Navbar.Collapse>
@@ -40,4 +39,4 @@ const CustomNavbar = ({ pageInfo }) => {
   )
 }
 
-export default CustomNavbar
+// export default CustomNavbar

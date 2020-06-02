@@ -2,10 +2,10 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <header
     style={{
-      background: `#20232a`,
+      background: "#fafafa",
     }}
   >
     <div
@@ -22,9 +22,7 @@ const Header = ({ siteTitle }) => (
             color: `white`,
             textDecoration: `none`,
           }}
-        >
-          {siteTitle}
-        </Link>
+        ></Link>
       </h1>
     </div>
   </header>

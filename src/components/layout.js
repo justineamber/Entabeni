@@ -7,11 +7,11 @@
 
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-
 import { Container, Row, Col } from "react-bootstrap"
+import layoutStyles from "./layout.module.css"
 
 import Header from "./header"
-import Navbar from "./navBar"
+import NavbarV2 from "./navBarV2"
 
 const Layout = ({ children, pageInfo }) => (
   <StaticQuery
@@ -28,14 +28,12 @@ const Layout = ({ children, pageInfo }) => (
       <>
         <Container fluid className="px-0 main">
           <Row noGutters className="justify-content-center">
-            <Col>
-              <Header siteTitle={data.site.siteMetadata.title} />
-            </Col>
+            <Col>{<Header siteTitle={data.site.siteMetadata.title} />}</Col>
           </Row>
-          <Navbar pageInfo={pageInfo} />
+          <NavbarV2 pageInfo={pageInfo} />
           <Row noGutters>
             <Col>
-              <Container className="mt-5">
+              <Container className={layoutStyles.bannerContainer}>
                 <main>{children}</main>
               </Container>
             </Col>
@@ -46,9 +44,9 @@ const Layout = ({ children, pageInfo }) => (
             <Col className="footer-col">
               <footer>
                 <span>
-                  © {new Date().getFullYear()}, Built with
-                  {` `}
-                  <a href="https://www.gatsbyjs.org">Gatsby</a>
+                  © {new Date().getFullYear()}, Built by Justine Hill
+                  <br />
+                  <a href="#">Plett Beach House</a>
                 </span>
               </footer>
             </Col>

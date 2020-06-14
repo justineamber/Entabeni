@@ -1,0 +1,96 @@
+a[href^="tel:"] {
+  color: #787878;
+  text-decoration: none;
+}
+
+a[href^="tel:"]:before {
+  margin-right: 0.5em;
+}
+
+.containerFluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.carousalImg {
+  object-fit: cover;
+  height: 600px;
+  width: 100%;
+}
+
+.h2Style {
+  color: #222831;
+}
+
+.SvgAddress {
+  color: #787878;
+  text-decoration: none;
+}
+
+.SvgAddress:before {
+  margin-right: 0.5em;
+}
+
+.tableAddressContainer {
+  margin-bottom: 0;
+}
+
+.paragraphContainer {
+  padding: 1rem;
+}
+.imgHeadingContainer {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  color: #fff;
+}
+
+.centeredTextOverImg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.headingContainer {
+  text-align: center;
+}
+
+body {
+  text-align: center;
+}
+
+.mapSectionContainer {
+  margin-bottom: 2rem;
+}
+
+/*opacity img*/
+
+.imgOpacityHover {
+  position: relative;
+}
+
+.imgOpacityHover img {
+  width: 100%;
+  vertical-align: top;
+}
+
+.imgOpacityHover:after {
+  content: "\A";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(49, 49, 49, 0.6);
+  opacity: 0;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+}
+
+.imgOpacityHover:hover:after {
+  opacity: 1;
+}
+
+.wrapper {
+}

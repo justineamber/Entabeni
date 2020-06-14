@@ -1,0 +1,11 @@
+.navMenuSVG > svg {
+  position: relative;
+  opacity: 0;
+  display: block;
+  margin: auto;
+}
+
+.navMenuSVG:hover > svg {
+  opacity: 1;
+  transition: 1s;
+}

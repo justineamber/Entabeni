@@ -8,10 +8,7 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
-import layoutStyles from "./layout.module.css"
-
-import Header from "./header"
-import NavbarV2 from "./navBarV2"
+import Navbar from "./navBar"
 
 const Layout = ({ children, pageInfo }) => (
   <StaticQuery
@@ -27,13 +24,11 @@ const Layout = ({ children, pageInfo }) => (
     render={data => (
       <>
         <Container fluid className="px-0 main">
-          <Row noGutters className="justify-content-center">
-            <Col>{<Header siteTitle={data.site.siteMetadata.title} />}</Col>
-          </Row>
-          <NavbarV2 pageInfo={pageInfo} />
+          <Row noGutters className="justify-content-center"></Row>
+          <Navbar pageInfo={pageInfo} />
           <Row noGutters>
             <Col>
-              <Container className={layoutStyles.bannerContainer}>
+              <Container fluid className="px-0">
                 <main>{children}</main>
               </Container>
             </Col>
@@ -44,9 +39,7 @@ const Layout = ({ children, pageInfo }) => (
             <Col className="footer-col">
               <footer>
                 <span>
-                  © {new Date().getFullYear()}, Built by Justine Hill
-                  <br />
-                  <a href="#">Plett Beach House</a>
+                  <a href="/home">Plett Beach House</a>
                 </span>
               </footer>
             </Col>

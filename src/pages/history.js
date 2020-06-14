@@ -1,16 +1,31 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import styles from "./localAttractions-css-modules.module.css"
+import Image from "react-bootstrap/Image"
+import { GiSeahorse } from "react-icons/gi"
 
-const SecondPage = () => (
-  <Layout pageInfo={{ pageName: "page-2" }}>
-    <SEO title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+const History = () => (
+  <Layout pageInfo={{ pageName: "History" }}>
+    <SEO title="History" />
+    <div className={styles.imgHeadingContainer}>
+      <Image fluid src={`/exteriorhome.jpg`} alt="Plett Beach House exterior" />
+
+      <div className={styles.centeredTextOverImg}>
+        <GiSeahorse />
+        <h1 className={styles.LocalAttractionsH1}>Our Story</h1>
+      </div>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.
+    </p>
   </Layout>
 )
 
-export default SecondPage
+export default History

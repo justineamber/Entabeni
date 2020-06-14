@@ -1,0 +1,149 @@
+body {
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: #787878;
+  background: #fff;
+}
+
+*::before {
+  box-sizing: border-box;
+}
+*::after {
+  box-sizing: border-box;
+}
+
+.attractionsContainer {
+  margin: 1rem;
+}
+
+.attractionImg {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+.attractionImg:hover {
+  transform: scale(1.05);
+}
+
+.category {
+  font-size: 1rem;
+  color: #787878;
+}
+.centeredTextOverImg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gallery {
+  padding: 0 0 4rem 0;
+}
+
+.headingContainer {
+  text-align: center;
+}
+.highlight {
+  color: #035aa6;
+  font-size: 1.25rem;
+}
+
+.LocalAttractionsH1 {
+  text-align: center;
+  padding: 2rem;
+}
+
+.imgContainer {
+  width: 100%;
+  height: 500px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.imgContainer:hover .imgContentHover {
+  display: block;
+}
+
+.imgContent {
+  display: none;
+}
+
+.imgContent {
+  display: block;
+  padding: 1rem 0;
+}
+
+.imgContentHover {
+  position: absolute;
+  z-index: 1;
+  white-space: nowrap;
+  display: none;
+  padding: 1rem;
+  background: #fff;
+  font-weight: 400;
+  margin-top: -20rem;
+  margin-left: -2rem;
+}
+.imgHeadingContainer {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.title {
+  color: #2e2e2e;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+@supports (display: grid) {
+  .gallery .grid {
+    grid-gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .attractionImg:hover {
+    transform: none;
+  }
+
+  .imgContainer {
+    height: 100%;
+  }
+  .imgContainer:hover .imgContentHover {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .cell {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .cell {
+    width: calc (100%/3);
+  }
+}
+.cell {
+  margin: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .cell {
+    width: calc(50% - 2rem);
+  }
+}
+@media screen and (min-width: 1000px) {
+  .cell {
+    width: calc(33.3333% - 2rem);
+  }
+}

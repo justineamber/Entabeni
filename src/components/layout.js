@@ -9,6 +9,7 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
 import Navbar from "./navBar"
+import NewsletterForm from "./NewsletterForm"
 
 const Layout = ({ children, pageInfo }) => (
   <StaticQuery
@@ -30,16 +31,21 @@ const Layout = ({ children, pageInfo }) => (
             <Col>
               <Container fluid className="px-0">
                 <main>{children}</main>
+                <NewsletterForm />
               </Container>
             </Col>
           </Row>
         </Container>
+
         <Container fluid className="px-0">
           <Row noGutters>
             <Col className="footer-col">
               <footer>
                 <span>
-                  <a href="/home">Plett Beach House</a>
+                  <a href="/home"> Careers |</a>
+                  <a href="/home"> Terms & Conditions |</a>
+                  <a href="/home"> Media |</a>
+                  <a href="/home"> Brochures </a>
                 </span>
               </footer>
             </Col>

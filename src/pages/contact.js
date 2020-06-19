@@ -3,25 +3,34 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { GiSeahorse } from "react-icons/gi"
 import useSubmitForm from "../components/customHook"
-import Image from "react-bootstrap/Image"
-import styles from "./contact-css-modules.module.css"
+import styles from "./home-css-modules.module.css"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
-export default function ContactPage() {
+const ContactPage = () => {
   const { inputs, handleInputChange, handleSubmit } = useSubmitForm()
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "pack4vacay.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 800, maxHeight: 400, quality: 80) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
   return (
     <Layout pageInfo={{ pageName: "contact" }}>
       <SEO title="Contact page" />
-
       <div className={styles.imgHeadingContainer}>
-        <Image
-          fluid
-          src={`/pack4vacay.jpg`}
-          alt="Contact page image"
-          className={styles.imgWrapper}
+        <Img
+          fluid={data.file.childImageSharp.fluid}
+          alt="Passport, hat and bag on bed"
         />
         <div className={styles.centeredTextOverImg}>
           <GiSeahorse />
-          <h1 className={styles.LocalAttractionsH1}>Contact us</h1>
+          <h1 className={styles.PlettBeachHouseH1}>Contact us</h1>
         </div>
       </div>
 
@@ -75,3 +84,5 @@ export default function ContactPage() {
     </Layout>
   )
 }
+
+export default ContactPage

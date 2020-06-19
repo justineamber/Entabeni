@@ -1,28 +1,40 @@
 import React from "react"
-import styles from "./localAttractions-css-modules.module.css"
-import Image from "react-bootstrap/Image"
+import styles from "./home-css-modules.module.css"
 import { GiSeahorse } from "react-icons/gi"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
-function Gallery() {
+const Gallery = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "bunsonbeach.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 800, maxHeight: 400, quality: 80) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
   return (
     <Layout pageInfo={{ pageName: "Gallery" }}>
       <SEO title="Gallery" />
 
       <div className={styles.imgHeadingContainer}>
-        <Image
-          fluid
-          src={`/bunsonbeach.jpg`}
+        <Img
+          fluid={data.file.childImageSharp.fluid}
           alt="woman standing in the waves"
         />
+
         <div className={styles.centeredTextOverImg}>
           <GiSeahorse />
-          <h1 className={styles.LocalAttractionsH1}>Gallery</h1>
+          <h1 className={styles.PlettBeachHouseH1}>Gallery</h1>
         </div>
       </div>
 
-      <div className={styles.attractionsContainer}>
+      <div className={styles.paragraphContainer}>
         <h2 className={styles.highlight}>Explore more</h2>
         <p>Gallery of Plett Beach House</p>
       </div>

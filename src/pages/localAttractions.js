@@ -1,11 +1,23 @@
 import React from "react"
-import styles from "./localAttractions-css-modules.module.css"
-import Image from "react-bootstrap/Image"
+import styles from "./home-css-modules.module.css"
 import { GiSeahorse } from "react-icons/gi"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
-function LocalAttractions() {
+const LocalAttractions = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "vacaymood.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 800, maxHeight: 400, quality: 80) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
   const imgContent = document.querySelectorAll(`.imgContentHover`)
 
   function showImgContent(e) {
@@ -22,18 +34,17 @@ function LocalAttractions() {
       <SEO title="Local Attractions" />
 
       <div className={styles.imgHeadingContainer}>
-        <Image
-          fluid
-          src={`/vacaymood.jpg`}
-          alt="woman wearing hat by the pool"
+        <Img
+          fluid={data.file.childImageSharp.fluid}
+          alt="woman sitting by the pool"
         />
         <div className={styles.centeredTextOverImg}>
           <GiSeahorse />
-          <h1 className={styles.LocalAttractionsH1}>Local Attractions</h1>
+          <h1 className={styles.PlettBeachHouseH1}>Local Attractions</h1>
         </div>
       </div>
 
-      <div className={styles.attractionsContainer}>
+      <div className={styles.paragraphContainer}>
         <h2 className={styles.highlight}>Discover more</h2>
         <p>
           Plettenberg Bay offers many luxurious choices for you to enjoy that

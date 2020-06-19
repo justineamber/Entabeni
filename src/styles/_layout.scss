@@ -7,6 +7,10 @@ div.full-height {
   min-height: 100vh;
 }
 
+a {
+  color: #fff;
+}
+
 a.link-no-style {
   &:hover {
     text-decoration: none;

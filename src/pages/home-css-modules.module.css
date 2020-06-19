@@ -1,3 +1,18 @@
+body {
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: #787878;
+  background: #fff;
+}
+
+*::before {
+  box-sizing: border-box;
+}
+*::after {
+  box-sizing: border-box;
+}
+
 a[href^="tel:"] {
   color: #787878;
   text-decoration: none;
@@ -5,6 +20,29 @@ a[href^="tel:"] {
 
 a[href^="tel:"]:before {
   margin-right: 0.5em;
+}
+
+.attractionImg {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+.attractionImg:hover {
+  transform: scale(1.05);
+}
+
+.category {
+  font-size: 1rem;
+  color: #787878;
+}
+
+.centeredTextOverImg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .containerFluid {
@@ -18,8 +56,107 @@ a[href^="tel:"]:before {
   width: 100%;
 }
 
+/* Clearfix */
+.contactform:before,
+.contactform:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.contactform:after {
+  clear: both;
+}
+
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  margin-top: 0;
+}
+
+input,
+textarea {
+  border: 0;
+  outline: 0;
+  padding: 1em;
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+  margin-top: 1em;
+  box-shadow: (0 1px 1px (#07031a, 0.1));
+  resize: none;
+  background-color: #e9e8e8;
+}
+
+input,
+textarea:focus {
+  box-shadow: (0 0px 2px (#035aa6, 1));
+}
+
+.inputSubmit {
+  color: #fff;
+  background: #035aa6;
+  cursor: pointer;
+}
+
+.inputSubmit:hover {
+  box-shadow: (0 1px 1px 1px rgba(#aaa, 0.6));
+}
+
+textarea {
+  height: 126px;
+}
+
+.half {
+  float: left;
+  width: 48%;
+  margin-bottom: 1em;
+}
+
+.right {
+  width: 50%;
+}
+
+.left {
+  margin-right: 2%;
+}
+
 .h2Style {
   color: #222831;
+}
+
+.gallery {
+  padding: 0 0 4rem 0;
+}
+
+.imgContainer {
+  width: 100%;
+  height: 500px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.imgContainer:hover .imgContentHover {
+  display: block;
+}
+
+.imgContent {
+  display: none;
+}
+
+.imgContent {
+  display: block;
+  padding: 1rem 0;
+}
+
+.imgContentHover {
+  position: absolute;
+  z-index: 1;
+  white-space: nowrap;
+  display: none;
+  padding: 1rem;
+  background: #fff;
+  font-weight: 400;
+  margin-top: -20rem;
+  margin-left: -2rem;
 }
 
 .SvgAddress {
@@ -35,9 +172,27 @@ a[href^="tel:"]:before {
   margin-bottom: 0;
 }
 
+.paragraph {
+  padding: 1rem;
+  margin: 1rem;
+}
+
 .paragraphContainer {
   padding: 1rem;
+  margin: 1rem;
 }
+
+.PlettBeachHouseH1 {
+  text-align: center;
+  padding: 2rem;
+}
+
+.title {
+  color: #2e2e2e;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
 .imgHeadingContainer {
   position: relative;
   overflow: hidden;
@@ -45,23 +200,16 @@ a[href^="tel:"]:before {
   color: #fff;
 }
 
-.centeredTextOverImg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .headingContainer {
   text-align: center;
 }
-
-body {
-  text-align: center;
+.highlight {
+  color: #035aa6;
+  font-size: 1.25rem;
 }
 
 .mapSectionContainer {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 /*opacity img*/
@@ -92,5 +240,60 @@ body {
   opacity: 1;
 }
 
-.wrapper {
+@media screen and (max-width: 1024px) {
+  .attractionImg:hover {
+    transform: none;
+  }
+
+  .imgContainer {
+    height: 100%;
+  }
+  .imgContainer:hover .imgContentHover {
+    display: none;
+  }
+}
+
+@supports (display: grid) {
+  .gallery .grid {
+    grid-gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .cell {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .cell {
+    width: calc (100%/3);
+  }
+}
+.cell {
+  margin: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .cell {
+    width: calc(50% - 2rem);
+  }
+}
+@media screen and (min-width: 1000px) {
+  .cell {
+    width: calc(33.3333% - 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .half {
+    width: 100%;
+    float: none;
+    margin-bottom: 0;
+  }
 }

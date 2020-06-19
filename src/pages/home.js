@@ -8,9 +8,12 @@ import SEO from "../components/seo"
 import styles from "./home-css-modules.module.css"
 import MapComponent from "../components/MapComponent"
 import { GiSeahorse, GiSmartphone, GiPositionMarker } from "react-icons/gi"
+import CardGroup from "react-bootstrap/CardGroup"
 import Card from "react-bootstrap/Card"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
-function ControlledCarousel() {
+const ControlledCarousel = () => {
   const [index, setIndex] = useState()
 
   const handleSelect = selectedIndex => {
@@ -21,10 +24,9 @@ function ControlledCarousel() {
     <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
         <Image
-          fluid
+          alt="First slide"
           className={styles.carousalImg}
           src={`/robbergbeach.jpg`}
-          alt="First slide"
         />
         <Carousel.Caption>
           <h2>The best location in Plett</h2>
@@ -86,106 +88,171 @@ function ControlledCarousel() {
   )
 }
 
-const Home = () => (
-  <Layout pageInfo={{ pageName: "home" }}>
-    <SEO title="Home" keywords={[`gatsby`, `react`, `bootstrap`]} />
-    <ControlledCarousel />
-    <div className={styles.paragraphContainer}>
-      <GiSeahorse />
-      <h2 className={styles.h2Style}>Plett Beach House</h2>
-      <p>
-        Your adventure begins when you enter through the gates of our remarkable
-        holiday home. Discover our exquisite interiors, beautiful coastal town,
-        pristine beaches, friendly locals and wealth of activities in the garden
-        route.
-      </p>
-      <p>
-        Plett Beach House is due to reopen 2nd July. In the meantime, our team
-        will be working hard to ensure our hotel is ready to welcome you back
-        soon.
-      </p>
-    </div>
-    <Table responsive className={styles.tableAddressContainer}>
-      <thead>
-        <tr>
-          <th>
-            <a
-              className={styles.SvgAddress}
-              href="https://www.google.com/maps/place/Bay+Lodge/@-34.0590199,23.3744413,17z/data=!3m1!4b1!4m8!3m7!1s0x0:0x43d38d1d6ade11c6!5m2!4m1!1i2!8m2!3d-34.0590199!4d23.37663"
-            >
-              <GiPositionMarker />
-              Plettenberg Bay, South Africa
-            </a>{" "}
-          </th>
-        </tr>
-      </thead>
-      <thead>
-        <tr>
-          <td>
-            <span itemprop="telephone">
-              <a href="tel:+4796801110">
-                <GiSmartphone />
-                +47 968 01110
-              </a>
-            </span>
-          </td>
-        </tr>
-      </thead>
-    </Table>
+const Home = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "coupleonbeach.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 800, maxHeight: 400, quality: 80) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
 
-    <div className={styles.sectionContainer}>
-      <div className={styles.imgHeadingContainer}>
-        <div className={styles.imgOpacityHover}>
-          <Image fluid src={`/coupleonbeach.jpg`} alt="couple on beach" />
-        </div>
-        <div className={styles.centeredTextOverImg}>
-          <GiSeahorse />
-          <h2>Paradise Found</h2>
-          <Button variant="outline-light" href="/contact">
-            Book your stay
-          </Button>{" "}
-        </div>
-      </div>
+  return (
+    <Layout pageInfo={{ pageName: "home" }}>
+      <SEO title="Home" keywords={[`gatsby`, `react`, `bootstrap`]} />
+      <ControlledCarousel />
       <div className={styles.paragraphContainer}>
-        <h2 className={styles.h2Style}>Life. Well lived.</h2>
+        <GiSeahorse />
+        <h2 className={styles.h2Style}>Plett Beach House</h2>
         <p>
-          As our valued guests always expect and deserve the best, our
-          relentless pursuit for perfection never ends. We offer elegant luxury
-          in the heart of a breath-taking nature. Sleep well and look good while
-          doing it. Here 400-thread count sheets and rainfall showers come
-          standard. Because we know that you will remember the countless
-          beautiful memories when your holiday is over.
+          Your adventure begins when you enter through the gates of our
+          remarkable holiday home. Discover our exquisite interiors, beautiful
+          coastal town, pristine beaches, friendly locals and wealth of
+          activities in the garden route.
         </p>
-        <Button variant="outline-dark" href="/gallery">
-          Discover Plett Beach House
-        </Button>{" "}
+        <p>
+          Plett Beach House is due to reopen 2nd July. In the meantime, our team
+          will be working hard to ensure our hotel is ready to welcome you back
+          soon.
+        </p>
       </div>
-    </div>
+      <Table responsive className={styles.tableAddressContainer}>
+        <thead>
+          <tr>
+            <th>
+              <a
+                className={styles.SvgAddress}
+                href="https://www.google.com/maps/place/Bay+Lodge/@-34.0590199,23.3744413,17z/data=!3m1!4b1!4m8!3m7!1s0x0:0x43d38d1d6ade11c6!5m2!4m1!1i2!8m2!3d-34.0590199!4d23.37663"
+              >
+                <GiPositionMarker />
+                Plettenberg Bay, South Africa
+              </a>{" "}
+            </th>
+          </tr>
+        </thead>
+        <thead>
+          <tr>
+            <td>
+              <span itemprop="telephone">
+                <a href="tel:+4796801110">
+                  <GiSmartphone />
+                  +47 968 01110
+                </a>
+              </span>
+            </td>
+          </tr>
+        </thead>
+      </Table>
 
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" fluid src={`/amenities.jpg`} alt="amenities" />
-      <Card.Body>
-        <Card.Title>Amenities</Card.Title>
-        <Card.Text>
-         Fully stocked kitchen, 400 thread bed linen, rain showers, 5 bedroom and 5 bathrooms,
-        </Card.Text>
-        <Button variant="dark">View amenities</Button>
-      </Card.Body>
-    </Card>
-    <div className={styles.imgHeadingContainer}>
-      <div className={styles.wrapper}>
-        <div className={styles.imgOpacityHover}>
-          <Image fluid src={`/amenities.jpg`} alt="amenities" />
+      <div className={styles.sectionContainer}>
+        <div className={styles.imgHeadingContainer}>
+          <div className={styles.imgOpacityHover}>
+            <Img
+              fluid={data.file.childImageSharp.fluid}
+              alt="couple walking on beach"
+            />
+          </div>
+          <div className={styles.centeredTextOverImg}>
+            <GiSeahorse />
+            <h2>Paradise Found</h2>
+            <Button variant="outline-light" href="/contact">
+              Book your stay
+            </Button>{" "}
+          </div>
         </div>
-        <div className={styles.centeredTextOverImg}>
+        <div className={styles.paragraphContainer}>
           <GiSeahorse />
-          <h2>All the perks</h2>
-          <Button variant="outline-light" href="/amenities">
-            View amenities
-          </Button>{" "}
+          <h2 className={styles.h2Style}>Life. Well lived.</h2>
+          <p>
+            As our valued guests always expect and deserve the best, our
+            relentless pursuit for perfection never ends. We offer elegant
+            luxury in the heart of a breath-taking nature. Sleep well and look
+            good while doing it. Here 400-thread count sheets and rainfall
+            showers come standard. Because we know that you will remember the
+            countless beautiful memories when your holiday is over.
+          </p>
+          <Button variant="outline-dark" href="/gallery">
+            Discover Plett Beach House
+          </Button>
         </div>
       </div>
-      <div className={styles.paragraphContainer}></div>
+
+      <CardGroup>
+        <Card>
+          <Card.Img variant="top" src={`/amenities.jpg`} alt="kitchen" />
+          <Card.Body>
+            <Card.Title>Fully kitted out kitchen</Card.Title>
+            <Card.Text>
+              Modern finishes, clean lines and fully kitted out. You can focus
+              on cooking up a storm for your loved ones.
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">Designer kitchen</small>
+          </Card.Footer>
+        </Card>
+        <Card>
+          <Card.Img
+            variant="top"
+            src={`/bedroomonsuite.jpg`}
+            alt="onsuite bedroom"
+          />
+          <Card.Body>
+            <Card.Title>Luxury signiture</Card.Title>
+            <Card.Text>
+              Our 250 sq. ft. full bed guest rooms are beautifully decorated and
+              includes textured wood accents, ocean-hued carpeting,
+              vintage-inspired furniture, clean lines and sleek décor. Refresh
+              in the bathroom with white marble rain shower and illuminated
+              vanity mirrors, premium bath products and cozy bathrobe. Enjoy
+              complimentary WiFi, a 55-inch HDTV, clock radio with Bluetooth, as
+              well as ample outlets for charging any device. Three en suite
+              bedrooms.
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <small className="text-muted"> 5 bedrooms and 4 bathrooms</small>
+          </Card.Footer>
+        </Card>
+        <Card>
+          <Card.Img
+            variant="top"
+            src={`/seaviewhome.jpg`}
+            alt="seaview from Plett Beach House"
+          />
+          <Card.Body>
+            <Card.Title>Wake up to the best views of Plett</Card.Title>
+            <Card.Text>
+              Located in central Plettenberg Bay and walking distance to the
+              beach, shops and restaurants. The stunning Plett Beach House has
+              beautiful views of the Beacon Isle beach, Robberg Heads and the
+              Tsitsikamma mountain range.
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">Panaromic views</small>
+          </Card.Footer>
+        </Card>
+      </CardGroup>
+
+      <Card className="text-center">
+        <Card.Body>
+          <Card.Title>All the perks</Card.Title>
+          <Card.Text>
+            The perks of staying at the Plett Beach House extend far beyond our
+            luxurious rooms and interior. Staying at the Plett Beach House gives
+            you access to Plett's most sought-after activities and attractions.
+            Here’s what comes with your stay.
+          </Card.Text>
+          <Button variant="outline-dark" href="/amenities">
+            View amenities
+          </Button>
+        </Card.Body>
+      </Card>
       <div className={styles.imgHeadingContainer}>
         <div className={styles.imgOpacityHover}>
           <Image
@@ -202,14 +269,15 @@ const Home = () => (
             href="https://www.google.com/maps/@${34.06955925723115},${23.33735050000003},${8}z"
           >
             Explore the area
-          </Button>{" "}
+          </Button>
         </div>
       </div>
-    </div>
 
-    <div className={styles.mapSectionContainer}>
-      <MapComponent />
-    </div>
-  </Layout>
-)
+      <div className={styles.mapSectionContainer}>
+        <MapComponent />
+      </div>
+    </Layout>
+  )
+}
+
 export default Home

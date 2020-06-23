@@ -10,7 +10,7 @@ import MapComponent from "../components/MapComponent"
 import { GiSeahorse, GiSmartphone, GiPositionMarker } from "react-icons/gi"
 import CardGroup from "react-bootstrap/CardGroup"
 import Card from "react-bootstrap/Card"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const ControlledCarousel = () => {
@@ -20,10 +20,45 @@ const ControlledCarousel = () => {
     setIndex(selectedIndex)
   }
 
+  /*  const optimizedImages = graphql`
+    fragment optimizedImages on File {
+      childImageSharp {
+        fluid(maxWidth: 800, maxHeight: 400, quality: 80) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  `
+
+  const query = graphql`
+    query {
+      image1: file(relativePath: { eq: "images/robbergbeach.jpg" }) {
+        ...optimizedImages
+      }
+
+      image2: file(relativePath: { eq: "images/luxuryinterior.jpg" }) {
+        ...optimizedImages
+      }
+
+      image3: file(relativePath: { eq: "images/mainbedroom.jpg" }) {
+        ...optimizedImages
+      }
+
+      image4: file(relativePath: { eq: "images/familyonbeachtoddler.jpg" }) {
+        ...optimizedImages
+      }
+
+      image5: file(relativePath: { eq: "images/seaviewhome.jpg" }) {
+        ...optimizedImages
+      }
+    }
+  ` */
+
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
         <Image
+          fluid
           alt="First slide"
           className={styles.carousalImg}
           src={`/robbergbeach.jpg`}
@@ -88,8 +123,34 @@ const ControlledCarousel = () => {
   )
 }
 
-const Home = () => {
-  const data = useStaticQuery(graphql`
+export const imageQuery = graphql`
+  fragment plettImage on File {
+    childImageSharp {
+      fluid(maxWidth: 800, maxHeight: 400, quality: 80) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`
+
+export const query = graphql`
+  query HomePageQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    image1: file(relativePath: { eq: "coupleonbeach.jpg" }) {
+      ...plettImage
+    }
+  }
+`
+
+const Home = ({ data }) => {
+  function handleClick(e) {
+    e.preventDefault()
+  }
+  /* const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "coupleonbeach.jpg" }) {
         childImageSharp {
@@ -99,11 +160,14 @@ const Home = () => {
         }
       }
     }
-  `)
+  `) */
 
   return (
     <Layout pageInfo={{ pageName: "home" }}>
       <SEO title="Home" keywords={[`gatsby`, `react`, `bootstrap`]} />
+      {/* {data.allFile.edges.map(({ node }) => (
+        <Img fluid={node.childImageSharp.fluid} alt={node.base.split(".")[0]} />
+      ))} */}
       <ControlledCarousel />
       <div className={styles.paragraphContainer}>
         <GiSeahorse />
@@ -151,14 +215,14 @@ const Home = () => {
       <div className={styles.imgHeadingContainer}>
         <div className={styles.imgOpacityHover}>
           <Img
-            fluid={data.file.childImageSharp.fluid}
+            fluid={data.image1.childImageSharp.fluid}
             alt="couple walking on beach"
           />
         </div>
         <div className={styles.centeredTextOverImg}>
           <GiSeahorse />
           <h2>Paradise Found</h2>
-          <Button variant="outline-light" href="/contact">
+          <Button variant="outline-light" href="/contact" onClick={handleClick}>
             Book your stay
           </Button>
         </div>
@@ -174,7 +238,7 @@ const Home = () => {
           standard. Because we know that you will remember the countless
           beautiful memories when your holiday is over.
         </p>
-        <Button variant="outline-dark" href="/gallery">
+        <Button variant="outline-dark" href="/gallery" onClick={handleClick}>
           Discover Plett Beach House
         </Button>
       </div>
@@ -246,18 +310,23 @@ const Home = () => {
             you access to Plett's most sought-after activities and attractions.
             Here’s what comes with your stay.
           </Card.Text>
-          <Button variant="outline-dark" href="/amenities">
+          <Button
+            variant="outline-dark"
+            href="/amenities"
+            onClick={handleClick}
+          >
             View amenities
           </Button>
         </Card.Body>
       </Card>
       <div className={styles.imgHeadingContainer}>
         <div className={styles.imgOpacityHover}>
-          <Image
-            fluid
-            src={`/holidaymode.jpg`}
+          {/* <Img
+            fluid={data.file.childImageSharp.fluid}
+            //fluid
+            //src={`/holidaymode.jpg`}
             alt="Lady on beach looking at sunset"
-          />
+          /> */}
         </div>
         <div className={styles.centeredTextOverImg}>
           <GiSeahorse />
@@ -265,6 +334,7 @@ const Home = () => {
           <Button
             variant="outline-light"
             href="https://www.google.com/maps/@${34.06955925723115},${23.33735050000003},${8}z"
+            onClick={handleClick}
           >
             Explore the area
           </Button>

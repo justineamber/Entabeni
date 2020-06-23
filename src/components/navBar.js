@@ -5,6 +5,10 @@ import { GiSeahorse } from "react-icons/gi"
 import { Link } from "gatsby"
 
 const navBar = ({ pageInfo }) => {
+  function handleClick(e) {
+    e.preventDefault()
+    console.log("The button was clicked.")
+  }
   return (
     <Navbar
       bg="light"
@@ -73,6 +77,7 @@ const navBar = ({ pageInfo }) => {
           active
           bsPrefix={navBarStyles.bookingBtn}
           href="/contact"
+          onClick={handleClick}
         >
           BOOK NOW
         </Button>

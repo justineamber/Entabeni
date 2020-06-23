@@ -1,5 +1,5 @@
 import React from "react"
-import useSubmitForm from "./customHook"
+import useSubmitForm from "./submitForm"
 import newsletterStyles from "./newsletter.module.css"
 import {
   FaFacebook,

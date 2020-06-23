@@ -10,6 +10,10 @@ import Img from "gatsby-image"
 import Button from "react-bootstrap/Button"
 
 const Offers = () => {
+  function handleClick(e) {
+    e.preventDefault()
+    console.log("The button was clicked.")
+  }
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "lilo.jpg" }) {
@@ -24,6 +28,7 @@ const Offers = () => {
   return (
     <Layout pageInfo={{ pageName: "Offers" }}>
       <SEO title="Local Attractions" />
+
       <div className={styles.imgNavMargin}>
         <div className={styles.imgHeadingContainer}>
           <div className={styles.imgOpacityHover}>
@@ -54,7 +59,9 @@ const Offers = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Card.Text>
-            <Button variant="outline-dark">Book now</Button>
+            <Button variant="outline-dark" onClick={handleClick}>
+              Book now
+            </Button>
           </Card.Body>
           <Card.Footer>
             <small className="text-muted">Valid Nov - Dec 2020</small>
@@ -68,7 +75,9 @@ const Offers = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Card.Text>
-            <Button variant="outline-dark">Book now</Button>
+            <Button variant="outline-dark" onClick={handleClick}>
+              Book now
+            </Button>
           </Card.Body>
           <Card.Footer>
             <small className="text-muted">Valid Sep 2020</small>
@@ -86,7 +95,9 @@ const Offers = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Card.Text>
-            <Button variant="outline-dark">Book now</Button>
+            <Button variant="outline-dark" onClick={handleClick}>
+              Book now
+            </Button>
           </Card.Body>
           <Card.Footer>
             <small className="text-muted">Valid Oct - Jan 2021 </small>

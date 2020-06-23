@@ -1,30 +1,10 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { Container, Navbar, Nav, Button } from "react-bootstrap"
 import navBarStyles from "./navBar.module.css"
 import { GiSeahorse } from "react-icons/gi"
 import { Link } from "gatsby"
 
 const navBar = ({ pageInfo }) => {
-  const useScrollHandler = () => {
-    const [scroll, setScroll] = useState(1)
-
-    useEffect(() => {
-      const onScroll = () => {
-        const scrollCheck = window.scrollY < 10
-        if (scrollCheck !== scroll) {
-          setScroll(scrollCheck)
-        }
-      }
-
-      document.addEventListener("scroll", onScroll)
-
-      return () => {
-        document.removeEventListener("scroll", onScroll)
-      }
-    }, [scroll, setScroll])
-
-    return scroll
-  }
   return (
     <Navbar
       bg="light"
@@ -34,7 +14,7 @@ const navBar = ({ pageInfo }) => {
       expand="lg"
     >
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand bsPrefix={navBarStyles.navBrand} href="#home">
           <Link to="/home" activeClassName="active">
             <img
               width="100"
@@ -87,10 +67,15 @@ const navBar = ({ pageInfo }) => {
               </Link>
             </div>
           </Nav>
-          <Button variant="dark" type="button" active>
-            BOOK NOW
-          </Button>
         </Navbar.Collapse>
+        <Button
+          type="button"
+          active
+          bsPrefix={navBarStyles.bookingBtn}
+          href="/contact"
+        >
+          BOOK NOW
+        </Button>
       </Container>
     </Navbar>
   )

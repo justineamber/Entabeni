@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { GiSeahorse } from "react-icons/gi"
 import useSubmitForm from "../components/customHook"
-import styles from "./home-css-modules.module.css"
+import styles from "./pagesStyles-css-modules.module.css"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
@@ -23,17 +23,24 @@ const ContactPage = () => {
   return (
     <Layout pageInfo={{ pageName: "contact" }}>
       <SEO title="Contact page" />
-      <div className={styles.imgHeadingContainer}>
-        <Img
-          fluid={data.file.childImageSharp.fluid}
-          alt="Passport, hat and bag on bed"
-        />
-        <div className={styles.centeredTextOverImg}>
-          <GiSeahorse />
-          <h1 className={styles.PlettBeachHouseH1}>Contact us</h1>
+
+      <div className={styles.imgNavMargin}>
+        <div className={styles.imgHeadingContainer}>
+          <div className={styles.imgOpacityHover}>
+            <Img
+              fluid={data.file.childImageSharp.fluid}
+              alt="Passport, hat and bag on bed"
+            />
+          </div>
+          <div className={styles.centeredTextOverImg}>
+            <h1 className={styles.PlettBeachHouseH1}>Contact Us</h1>
+          </div>
         </div>
       </div>
-
+      <div className={styles.paragraphContainer}>
+        <GiSeahorse />
+        <h2 className={styles.highlight}>Get In Touch</h2>
+      </div>
       <form
         className={styles.contactform}
         onSubmit={handleSubmit}

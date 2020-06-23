@@ -5,7 +5,7 @@ import Image from "react-bootstrap/Image"
 import Table from "react-bootstrap/Table"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import styles from "./home-css-modules.module.css"
+import styles from "./pagesStyles-css-modules.module.css"
 import MapComponent from "../components/MapComponent"
 import { GiSeahorse, GiSmartphone, GiPositionMarker } from "react-icons/gi"
 import CardGroup from "react-bootstrap/CardGroup"
@@ -130,7 +130,7 @@ const Home = () => {
               >
                 <GiPositionMarker />
                 Plettenberg Bay, South Africa
-              </a>{" "}
+              </a>
             </th>
           </tr>
         </thead>
@@ -148,37 +148,35 @@ const Home = () => {
         </thead>
       </Table>
 
-      <div className={styles.sectionContainer}>
-        <div className={styles.imgHeadingContainer}>
-          <div className={styles.imgOpacityHover}>
-            <Img
-              fluid={data.file.childImageSharp.fluid}
-              alt="couple walking on beach"
-            />
-          </div>
-          <div className={styles.centeredTextOverImg}>
-            <GiSeahorse />
-            <h2>Paradise Found</h2>
-            <Button variant="outline-light" href="/contact">
-              Book your stay
-            </Button>{" "}
-          </div>
+      <div className={styles.imgHeadingContainer}>
+        <div className={styles.imgOpacityHover}>
+          <Img
+            fluid={data.file.childImageSharp.fluid}
+            alt="couple walking on beach"
+          />
         </div>
-        <div className={styles.paragraphContainer}>
+        <div className={styles.centeredTextOverImg}>
           <GiSeahorse />
-          <h2 className={styles.h2Style}>Life. Well lived.</h2>
-          <p>
-            As our valued guests always expect and deserve the best, our
-            relentless pursuit for perfection never ends. We offer elegant
-            luxury in the heart of a breath-taking nature. Sleep well and look
-            good while doing it. Here 400-thread count sheets and rainfall
-            showers come standard. Because we know that you will remember the
-            countless beautiful memories when your holiday is over.
-          </p>
-          <Button variant="outline-dark" href="/gallery">
-            Discover Plett Beach House
+          <h2>Paradise Found</h2>
+          <Button variant="outline-light" href="/contact">
+            Book your stay
           </Button>
         </div>
+      </div>
+      <div className={styles.paragraphContainer}>
+        <GiSeahorse />
+        <h2 className={styles.h2Style}>Life. Well lived.</h2>
+        <p>
+          As our valued guests always expect and deserve the best, our
+          relentless pursuit for perfection never ends. We offer elegant luxury
+          in the heart of a breath-taking nature. Sleep well and look good while
+          doing it. Here 400-thread count sheets and rainfall showers come
+          standard. Because we know that you will remember the countless
+          beautiful memories when your holiday is over.
+        </p>
+        <Button variant="outline-dark" href="/gallery">
+          Discover Plett Beach House
+        </Button>
       </div>
 
       <CardGroup>
@@ -263,7 +261,7 @@ const Home = () => {
         </div>
         <div className={styles.centeredTextOverImg}>
           <GiSeahorse />
-          <h2>Ideal spot in Plett</h2>
+          <h2>Ideal Spot in Plett</h2>
           <Button
             variant="outline-light"
             href="https://www.google.com/maps/@${34.06955925723115},${23.33735050000003},${8}z"

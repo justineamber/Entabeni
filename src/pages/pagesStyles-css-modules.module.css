@@ -164,17 +164,17 @@ textarea {
   text-decoration: none;
 }
 
+.SvgAddress:hover {
+  color: #787878;
+  text-decoration: none;
+}
+
 .SvgAddress:before {
   margin-right: 0.5em;
 }
 
 .tableAddressContainer {
   margin-bottom: 0;
-}
-
-.paragraph {
-  padding: 1rem;
-  margin: 1rem;
 }
 
 .paragraphContainer {
@@ -295,5 +295,11 @@ textarea {
     width: 100%;
     float: none;
     margin-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .imgNavMargin {
+    margin-top: 100px;
   }
 }

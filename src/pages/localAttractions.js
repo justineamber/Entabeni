@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "./home-css-modules.module.css"
+import styles from "./pagesStyles-css-modules.module.css"
 import { GiSeahorse } from "react-icons/gi"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -32,19 +32,21 @@ const LocalAttractions = () => {
   return (
     <Layout pageInfo={{ pageName: "Local Attractions" }}>
       <SEO title="Local Attractions" />
-
-      <div className={styles.imgHeadingContainer}>
-        <Img
-          fluid={data.file.childImageSharp.fluid}
-          alt="woman sitting by the pool"
-        />
-        <div className={styles.centeredTextOverImg}>
-          <GiSeahorse />
-          <h1 className={styles.PlettBeachHouseH1}>Local Attractions</h1>
+      <div className={styles.imgNavMargin}>
+        <div className={styles.imgHeadingContainer}>
+          <div className={styles.imgOpacityHover}>
+            <Img
+              fluid={data.file.childImageSharp.fluid}
+              alt="woman sitting by the pool"
+            />
+          </div>
+          <div className={styles.centeredTextOverImg}>
+            <h1 className={styles.PlettBeachHouseH1}>Local Attractions</h1>
+          </div>
         </div>
       </div>
-
       <div className={styles.paragraphContainer}>
+        <GiSeahorse />
         <h2 className={styles.highlight}>Discover more</h2>
         <p>
           Plettenberg Bay offers many luxurious choices for you to enjoy that

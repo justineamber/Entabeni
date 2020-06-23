@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "./home-css-modules.module.css"
+import styles from "./pagesStyles-css-modules.module.css"
 import { GiSeahorse } from "react-icons/gi"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -21,20 +21,21 @@ const Gallery = () => {
   return (
     <Layout pageInfo={{ pageName: "Gallery" }}>
       <SEO title="Gallery" />
-
-      <div className={styles.imgHeadingContainer}>
-        <Img
-          fluid={data.file.childImageSharp.fluid}
-          alt="woman standing in the waves"
-        />
-
-        <div className={styles.centeredTextOverImg}>
-          <GiSeahorse />
-          <h1 className={styles.PlettBeachHouseH1}>Gallery</h1>
+      <div className={styles.imgNavMargin}>
+        <div className={styles.imgHeadingContainer}>
+          <div className={styles.imgOpacityHover}>
+            <Img
+              fluid={data.file.childImageSharp.fluid}
+              alt="woman standing in the waves"
+            />
+          </div>
+          <div className={styles.centeredTextOverImg}>
+            <h1 className={styles.PlettBeachHouseH1}>Gallery</h1>
+          </div>
         </div>
       </div>
-
       <div className={styles.paragraphContainer}>
+        <GiSeahorse />
         <h2 className={styles.highlight}>Explore more</h2>
         <p>Gallery of Plett Beach House</p>
       </div>

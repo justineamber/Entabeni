@@ -11,7 +11,7 @@ const History = () => {
     query {
       file(relativePath: { eq: "exteriorhome.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 800, maxHeight: 400, quality: 80) {
+          fluid(maxWidth: 800, maxHeight: 500, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }

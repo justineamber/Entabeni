@@ -3,21 +3,80 @@ import styles from "./pagesStyles-css-modules.module.css"
 import { GiSeahorse } from "react-icons/gi"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
-const LocalAttractions = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "vacaymood.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800, maxHeight: 400, quality: 80) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+export const imageQuery = graphql`
+  fragment localAttractionsImages on File {
+    childImageSharp {
+      fluid(maxWidth: 800, maxHeight: 500, quality: 90) {
+        ...GatsbyImageSharpFluid
       }
     }
-  `)
+  }
+`
+
+export const query = graphql`
+  query LocalAttractionsPageQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    image1: file(relativePath: { eq: "vacaymood.jpg" }) {
+      ...localAttractionsImages
+    }
+
+    image2: file(relativePath: { eq: "golf.jpg" }) {
+      ...localAttractionsImages
+    }
+
+    image3: file(relativePath: { eq: "loriebird.jpg" }) {
+      ...localAttractionsImages
+    }
+
+    image4: file(relativePath: { eq: "polo.jpg" }) {
+      ...localAttractionsImages
+    }
+
+    image5: file(relativePath: { eq: "safari.jpg" }) {
+      ...localAttractionsImages
+    }
+
+    image6: file(relativePath: { eq: "waterski.jpg" }) {
+      ...localAttractionsImages
+    }
+
+    image7: file(relativePath: { eq: "monkeyland.jpg" }) {
+      ...localAttractionsImages
+    }
+
+    image8: file(relativePath: { eq: "spas.jpg" }) {
+      ...localAttractionsImages
+    }
+
+    image9: file(relativePath: { eq: "farmersmarket.jpg" }) {
+      ...localAttractionsImages
+    }
+
+    image10: file(relativePath: { eq: "oceansafari.jpg" }) {
+      ...localAttractionsImages
+    }
+
+    image11: file(relativePath: { eq: "kayak.jpg" }) {
+      ...localAttractionsImages
+    }
+
+    image12: file(relativePath: { eq: "wildwatersplett.jpg" }) {
+      ...localAttractionsImages
+    }
+
+    image13: file(relativePath: { eq: "robbergnaturereservepath.jpg" }) {
+      ...localAttractionsImages
+    }
+  }
+`
+const LocalAttractions = ({ data }) => {
   const imgContent = document.querySelectorAll(`.imgContentHover`)
 
   function showImgContent(e) {
@@ -36,7 +95,7 @@ const LocalAttractions = () => {
         <div className={styles.imgHeadingContainer}>
           <div className={styles.imgOpacityHover}>
             <Img
-              fluid={data.file.childImageSharp.fluid}
+              fluid={data.image1.childImageSharp.fluid}
               alt="woman sitting by the pool"
             />
           </div>
@@ -61,8 +120,8 @@ const LocalAttractions = () => {
           <div className={styles.grid}>
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`/golf.jpg`}
+                <Img
+                  fluid={data.image2.childImageSharp.fluid}
                   alt="Lady playing golf at Goose Valley Golf Club"
                   className={styles.attractionImg}
                 />
@@ -79,8 +138,8 @@ const LocalAttractions = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`/loriebird.jpg`}
+                <Img
+                  fluid={data.image3.childImageSharp.fluid}
                   alt="Lorie bird in Knysna forest"
                   className={styles.attractionImg}
                 />
@@ -97,8 +156,8 @@ const LocalAttractions = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`/polo.jpg`}
+                <Img
+                  fluid={data.image4.childImageSharp.fluid}
                   alt="Man on horse playing polo"
                   className={styles.attractionImg}
                 />
@@ -115,8 +174,8 @@ const LocalAttractions = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`/safari.jpg`}
+                <Img
+                  fluid={data.image5.childImageSharp.fluid}
                   alt="Safari with elephants"
                   className={styles.attractionImg}
                 />
@@ -133,8 +192,8 @@ const LocalAttractions = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`/waterski.jpg`}
+                <Img
+                  fluid={data.image6.childImageSharp.fluid}
                   alt="Man wake boarding on water"
                   className={styles.attractionImg}
                 />
@@ -151,8 +210,8 @@ const LocalAttractions = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`/monkeyland.jpg`}
+                <Img
+                  fluid={data.image7.childImageSharp.fluid}
                   alt="monkey in tree at Monkey Land"
                   className={styles.attractionImg}
                 />
@@ -169,8 +228,8 @@ const LocalAttractions = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`/spas.jpg`}
+                <Img
+                  fluid={data.image8.childImageSharp.fluid}
                   alt="lady at spa"
                   className={styles.attractionImg}
                 />
@@ -187,8 +246,8 @@ const LocalAttractions = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`/farmersmarket.jpg`}
+                <Img
+                  fluid={data.image9.childImageSharp.fluid}
                   alt="fruit annd vegetables in box at farmers market"
                   className={styles.attractionImg}
                 />
@@ -205,8 +264,8 @@ const LocalAttractions = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`/oceansafari.jpg`}
+                <Img
+                  fluid={data.image10.childImageSharp.fluid}
                   alt="two whales in the sea"
                   className={styles.attractionImg}
                 />
@@ -223,8 +282,8 @@ const LocalAttractions = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`/kayak.jpg`}
+                <Img
+                  fluid={data.image11.childImageSharp.fluid}
                   alt="Two people kayaking on water"
                   className={styles.attractionImg}
                 />
@@ -245,8 +304,8 @@ const LocalAttractions = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`/wildwatersplett.jpg`}
+                <Img
+                  fluid={data.image12.childImageSharp.fluid}
                   alt="water slide theme park"
                   className={styles.attractionImg}
                 />
@@ -263,8 +322,8 @@ const LocalAttractions = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`/robbergnaturereservepath.jpg`}
+                <Img
+                  fluid={data.image13.childImageSharp.fluid}
                   alt="robberg nature reserve"
                   className={styles.attractionImg}
                 />

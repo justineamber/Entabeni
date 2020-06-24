@@ -9,7 +9,7 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
 import Navbar from "./navBar"
-import NewsletterForm from "./NewsletterForm"
+import NewsletterForm from "./newsletterForm"
 
 const Layout = ({ children, pageInfo }) => (
   <StaticQuery

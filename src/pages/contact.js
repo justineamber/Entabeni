@@ -13,7 +13,7 @@ const ContactPage = () => {
     query {
       file(relativePath: { eq: "pack4vacay.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 800, maxHeight: 400, quality: 80) {
+          fluid(maxWidth: 800, maxHeight: 500, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -39,7 +39,7 @@ const ContactPage = () => {
       </div>
       <div className={styles.paragraphContainer}>
         <GiSeahorse />
-        <h2 className={styles.highlight}>Get In Touch</h2>
+        <h2 className={styles.highlight}>Get in Touch</h2>
       </div>
       <form
         className={styles.contactform}

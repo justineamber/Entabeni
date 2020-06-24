@@ -1,7 +1,5 @@
-import React, { useState } from "react"
+import React from "react"
 import Button from "react-bootstrap/Button"
-import Carousel from "react-bootstrap/Carousel"
-import Image from "react-bootstrap/Image"
 import Table from "react-bootstrap/Table"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -12,121 +10,12 @@ import CardGroup from "react-bootstrap/CardGroup"
 import Card from "react-bootstrap/Card"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-
-const ControlledCarousel = () => {
-  const [index, setIndex] = useState()
-
-  const handleSelect = selectedIndex => {
-    setIndex(selectedIndex)
-  }
-
-  /*  const optimizedImages = graphql`
-    fragment optimizedImages on File {
-      childImageSharp {
-        fluid(maxWidth: 800, maxHeight: 400, quality: 80) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  `
-
-  const query = graphql`
-    query {
-      image1: file(relativePath: { eq: "images/robbergbeach.jpg" }) {
-        ...optimizedImages
-      }
-
-      image2: file(relativePath: { eq: "images/luxuryinterior.jpg" }) {
-        ...optimizedImages
-      }
-
-      image3: file(relativePath: { eq: "images/mainbedroom.jpg" }) {
-        ...optimizedImages
-      }
-
-      image4: file(relativePath: { eq: "images/familyonbeachtoddler.jpg" }) {
-        ...optimizedImages
-      }
-
-      image5: file(relativePath: { eq: "images/seaviewhome.jpg" }) {
-        ...optimizedImages
-      }
-    }
-  ` */
-
-  return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
-      <Carousel.Item>
-        <Image
-          fluid
-          alt="First slide"
-          className={styles.carousalImg}
-          src={`/robbergbeach.jpg`}
-        />
-        <Carousel.Caption>
-          <h2>The best location in Plett</h2>
-          <h4>One block from the beach</h4>
-        </Carousel.Caption>
-      </Carousel.Item>
-
-      <Carousel.Item>
-        <Image
-          fluid
-          className={styles.carousalImg}
-          src={`/luxuryinterior.jpg`}
-          alt="Second slide"
-        />
-
-        <Carousel.Caption>
-          <h2>Luxury interior</h2>
-          <h4>The perks of staying at the Plett Beach House</h4>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <Image
-          fluid
-          className={styles.carousalImg}
-          src={`/mainbedroom.jpg`}
-          alt="Third slide"
-        />
-
-        <Carousel.Caption>
-          <h2>A sense of freedom</h2>
-          <h4>Perfect holiday home for your family and friends.</h4>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <Image
-          fluid
-          className={styles.carousalImg}
-          src={`/familyonbeachtoddler.jpg`}
-          alt="Fourth slide"
-        />
-        <Carousel.Caption>
-          <h2>One time group offer</h2>
-          <h4>Plan ahead & book today</h4>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <Image
-          fluid
-          className={styles.carousalImg}
-          src={`/seaviewhome.jpg`}
-          alt="Fifth slide"
-        />
-        <Carousel.Caption>
-          <h2>The best views in Plett</h2>
-          <h4>Views of all the beaches in Plett</h4>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
-  )
-}
+import ControlledCarousel from "../components/carousal"
 
 export const imageQuery = graphql`
-  fragment plettImage on File {
+  fragment optimizeHomeImgs on File {
     childImageSharp {
-      fluid(maxWidth: 800, maxHeight: 400, quality: 80) {
+      fluid(maxWidth: 800, maxHeight: 500, quality: 90) {
         ...GatsbyImageSharpFluid
       }
     }
@@ -141,7 +30,43 @@ export const query = graphql`
       }
     }
     image1: file(relativePath: { eq: "coupleonbeach.jpg" }) {
-      ...plettImage
+      ...optimizeHomeImgs
+    }
+
+    image2: file(relativePath: { eq: "holidaymode.jpg" }) {
+      ...optimizeHomeImgs
+    }
+
+    image3: file(relativePath: { eq: "amenities.jpg" }) {
+      ...optimizeHomeImgs
+    }
+
+    image4: file(relativePath: { eq: "bedroomonsuite.jpg" }) {
+      ...optimizeHomeImgs
+    }
+
+    image5: file(relativePath: { eq: "seaviewhome.jpg" }) {
+      ...optimizeHomeImgs
+    }
+
+    slide1: file(relativePath: { eq: "robbergbeach.jpg" }) {
+      ...optimizeHomeImgs
+    }
+
+    slide2: file(relativePath: { eq: "luxuryinterior.jpg" }) {
+      ...optimizeHomeImgs
+    }
+
+    slide3: file(relativePath: { eq: "mainbedroom.jpg" }) {
+      ...optimizeHomeImgs
+    }
+
+    slide4: file(relativePath: { eq: "familyonbeachtoddler.jpg" }) {
+      ...optimizeHomeImgs
+    }
+
+    slide5: file(relativePath: { eq: "seaviewhome.jpg" }) {
+      ...optimizeHomeImgs
     }
   }
 `
@@ -150,25 +75,17 @@ const Home = ({ data }) => {
   function handleClick(e) {
     e.preventDefault()
   }
-  /* const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "coupleonbeach.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800, maxHeight: 400, quality: 80) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `) */
 
   return (
     <Layout pageInfo={{ pageName: "home" }}>
       <SEO title="Home" keywords={[`gatsby`, `react`, `bootstrap`]} />
-      {/* {data.allFile.edges.map(({ node }) => (
-        <Img fluid={node.childImageSharp.fluid} alt={node.base.split(".")[0]} />
-      ))} */}
-      <ControlledCarousel />
+      <ControlledCarousel
+        slideImage1={data.slide1.childImageSharp.fluid}
+        slideImage2={data.slide2.childImageSharp.fluid}
+        slideImage3={data.slide3.childImageSharp.fluid}
+        slideImage4={data.slide4.childImageSharp.fluid}
+        slideImage5={data.slide5.childImageSharp.fluid}
+      />
       <div className={styles.paragraphContainer}>
         <GiSeahorse />
         <h2 className={styles.h2Style}>Plett Beach House</h2>
@@ -245,22 +162,26 @@ const Home = ({ data }) => {
 
       <CardGroup>
         <Card>
-          <Card.Img variant="top" src={`/amenities.jpg`} alt="kitchen" />
+          <Img
+            variant="top"
+            fluid={data.image3.childImageSharp.fluid}
+            alt="kitchen"
+          />
           <Card.Body>
-            <Card.Title>Fully kitted out kitchen</Card.Title>
+            <Card.Title>Modern home</Card.Title>
             <Card.Text>
-              Modern finishes, clean lines and fully kitted out. You can focus
-              on cooking up a storm for your loved ones.
+              Modern finishes and clean lines. This holiday home's interior is
+              elegant and simple.
             </Card.Text>
           </Card.Body>
           <Card.Footer>
-            <small className="text-muted">Designer kitchen</small>
+            <small className="text-muted">Elegant interior</small>
           </Card.Footer>
         </Card>
         <Card>
-          <Card.Img
+          <Img
+            fluid={data.image4.childImageSharp.fluid}
             variant="top"
-            src={`/bedroomonsuite.jpg`}
             alt="onsuite bedroom"
           />
           <Card.Body>
@@ -281,9 +202,9 @@ const Home = ({ data }) => {
           </Card.Footer>
         </Card>
         <Card>
-          <Card.Img
+          <Img
+            fluid={data.image5.childImageSharp.fluid}
             variant="top"
-            src={`/seaviewhome.jpg`}
             alt="seaview from Plett Beach House"
           />
           <Card.Body>
@@ -321,12 +242,10 @@ const Home = ({ data }) => {
       </Card>
       <div className={styles.imgHeadingContainer}>
         <div className={styles.imgOpacityHover}>
-          {/* <Img
-            fluid={data.file.childImageSharp.fluid}
-            //fluid
-            //src={`/holidaymode.jpg`}
+          <Img
+            fluid={data.image2.childImageSharp.fluid}
             alt="Lady on beach looking at sunset"
-          /> */}
+          />
         </div>
         <div className={styles.centeredTextOverImg}>
           <GiSeahorse />

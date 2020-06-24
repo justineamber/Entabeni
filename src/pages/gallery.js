@@ -3,58 +3,125 @@ import styles from "./pagesStyles-css-modules.module.css"
 import { GiSeahorse } from "react-icons/gi"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
-const Gallery = () => {
-  /* const data = useStaticQuery(graphql`
-    query imageQueryAndImageQuery {
-      allFile(
-        filter: {
-          extension: { regex: "/(jpg)/" }
-          relativeDirectory: { eq: "static" }
-        }
-      ) {
-        edges {
-          node {
-            base
-            childImageSharp {
-              fluid {
-                aspectRatio
-                base64
-                sizes
-                src
-                srcSet
-              }
-            }
-          }
-        }
+export const imageQuery = graphql`
+  fragment galleryImages on File {
+    childImageSharp {
+      fluid(maxWidth: 800, maxHeight: 500, quality: 90) {
+        ...GatsbyImageSharpFluid
       }
     }
-  `) */
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "bunsonbeach.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800, maxHeight: 400, quality: 80) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+  }
+`
+
+export const query = graphql`
+  query GalleryPageQuery {
+    site {
+      siteMetadata {
+        title
       }
     }
-  `)
+    image1: file(relativePath: { eq: "bunsonbeach.jpg" }) {
+      ...galleryImages
+    }
+
+    image2: file(relativePath: { eq: "cocktails.jpg" }) {
+      ...galleryImages
+    }
+
+    image3: file(relativePath: { eq: "beachstepsrobberg.jpg" }) {
+      ...galleryImages
+    }
+
+    image4: file(relativePath: { eq: "beaconislebeach.jpg" }) {
+      ...galleryImages
+    }
+
+    image5: file(relativePath: { eq: "bedroomonsuite.jpg" }) {
+      ...galleryImages
+    }
+
+    image6: file(relativePath: { eq: "exteriorhome.jpg" }) {
+      ...galleryImages
+    }
+
+    image7: file(relativePath: { eq: "toddleronbeach.jpg" }) {
+      ...galleryImages
+    }
+
+    image8: file(relativePath: { eq: "robbergnaturereserve.jpg" }) {
+      ...galleryImages
+    }
+
+    image9: file(relativePath: { eq: "footstepsrobberg.jpg" }) {
+      ...galleryImages
+    }
+
+    image10: file(relativePath: { eq: "icecream.jpg" }) {
+      ...galleryImages
+    }
+
+    image11: file(relativePath: { eq: "ladyonbeach.jpg" }) {
+      ...galleryImages
+    }
+
+    image12: file(relativePath: { eq: "mainbedroom.jpg" }) {
+      ...galleryImages
+    }
+
+    image13: file(relativePath: { eq: "summerdress.jpg" }) {
+      ...galleryImages
+    }
+
+    image14: file(relativePath: { eq: "luxuryinterior.jpg" }) {
+      ...galleryImages
+    }
+
+    image15: file(relativePath: { eq: "lilo.jpg" }) {
+      ...galleryImages
+    }
+
+    image16: file(relativePath: { eq: "amenities.jpg" }) {
+      ...galleryImages
+    }
+
+    image17: file(relativePath: { eq: "couplereadingonbeach.jpg" }) {
+      ...galleryImages
+    }
+
+    image18: file(relativePath: { eq: "livingroom.jpg" }) {
+      ...galleryImages
+    }
+
+    image19: file(relativePath: { eq: "surferboard.jpg" }) {
+      ...galleryImages
+    }
+
+    image20: file(relativePath: { eq: "poolsidehome.jpg" }) {
+      ...galleryImages
+    }
+
+    image21: file(relativePath: { eq: "luxurybathroom.jpg" }) {
+      ...galleryImages
+    }
+
+    image22: file(relativePath: { eq: "flamingo.jpg" }) {
+      ...galleryImages
+    }
+  }
+`
+const Gallery = ({ data }) => {
   return (
     <Layout pageInfo={{ pageName: "Gallery" }}>
       <SEO title="Gallery" />
-      {/* {data.allFile.edges.map(({ node }) => (
-        <Img fluid={node.childImageSharp.fluid} alt={node.base.split(".")[0]} />
-      ))} */}
+
       <div className={styles.imgNavMargin}>
         <div className={styles.imgHeadingContainer}>
           <div className={styles.imgOpacityHover}>
             <Img
-              //  src={`/bunsonbeach.jpg`}
-              fluid={data.file.childImageSharp.fluid}
+              fluid={data.image1.childImageSharp.fluid}
               alt="woman standing in the waves"
             />
           </div>
@@ -74,8 +141,8 @@ const Gallery = () => {
           <div className={styles.grid}>
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../cocktails.jpg`}
+                <Img
+                  fluid={data.image2.childImageSharp.fluid}
                   alt="cocktails by pool"
                   className={styles.attractionImg}
                 />
@@ -84,8 +151,8 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../beachstepsrobberg.jpg`}
+                <Img
+                  fluid={data.image3.childImageSharp.fluid}
                   alt=" wooden steps going to beach"
                   className={styles.attractionImg}
                 />
@@ -94,8 +161,8 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../beaconislebeach.jpg`}
+                <Img
+                  fluid={data.image4.childImageSharp.fluid}
                   alt="sunset at the beach"
                   className={styles.attractionImg}
                 />
@@ -104,8 +171,8 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../bedroomonsuite.jpg`}
+                <Img
+                  fluid={data.image5.childImageSharp.fluid}
                   alt="onsuite bedroom"
                   className={styles.attractionImg}
                 />
@@ -114,8 +181,8 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../exteriorhome.jpg`}
+                <Img
+                  fluid={data.image6.childImageSharp.fluid}
                   alt="exterior of Plett Beach House"
                   className={styles.attractionImg}
                 />
@@ -124,8 +191,8 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../toddleronbeach.jpg`}
+                <Img
+                  fluid={data.image7.childImageSharp.fluid}
                   alt="toddler on beach"
                   className={styles.attractionImg}
                 />
@@ -134,8 +201,8 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../robbergnaturereserve.jpg`}
+                <Img
+                  fluid={data.image8.childImageSharp.fluid}
                   alt="robberg nature reserve"
                   className={styles.attractionImg}
                 />
@@ -144,8 +211,8 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../footstepsrobberg.jpg`}
+                <Img
+                  fluid={data.image9.childImageSharp.fluid}
                   alt="footsteps on beach"
                   className={styles.attractionImg}
                 />
@@ -154,8 +221,8 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../icecream.jpg`}
+                <Img
+                  fluid={data.image10.childImageSharp.fluid}
                   alt="icecream on beach"
                   className={styles.attractionImg}
                 />
@@ -164,8 +231,8 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../ladyonbeach.jpg`}
+                <Img
+                  fluid={data.image11.childImageSharp.fluid}
                   alt="lady on beach"
                   className={styles.attractionImg}
                 />
@@ -174,8 +241,8 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../mainbedroom.jpg`}
+                <Img
+                  fluid={data.image12.childImageSharp.fluid}
                   alt="main bedroom"
                   className={styles.attractionImg}
                 />
@@ -184,9 +251,9 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../summerdress.jpg`}
-                  alt="lady on lilo in pool"
+                <Img
+                  fluid={data.image13.childImageSharp.fluid}
+                  alt="lady in summer dress"
                   className={styles.attractionImg}
                 />
               </figure>
@@ -194,8 +261,8 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../luxuryinterior.jpg`}
+                <Img
+                  fluid={data.image14.childImageSharp.fluid}
                   alt="luxury interior of home"
                   className={styles.attractionImg}
                 />
@@ -204,8 +271,8 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../lilo.jpg`}
+                <Img
+                  fluid={data.image15.childImageSharp.fluid}
                   alt="lady on lilo in pool"
                   className={styles.attractionImg}
                 />
@@ -214,8 +281,8 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../amenities.jpg`}
+                <Img
+                  fluid={data.image16.childImageSharp.fluid}
                   alt="kitchen"
                   className={styles.attractionImg}
                 />
@@ -224,8 +291,8 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../couplereadingonbeach.jpg`}
+                <Img
+                  fluid={data.image17.childImageSharp.fluid}
                   alt="couple reading on the beach"
                   className={styles.attractionImg}
                 />
@@ -234,8 +301,8 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../livingroom.jpg`}
+                <Img
+                  fluid={data.image18.childImageSharp.fluid}
                   alt="livingroom"
                   className={styles.attractionImg}
                 />
@@ -244,8 +311,8 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../surferboard.jpg`}
+                <Img
+                  fluid={data.image19.childImageSharp.fluid}
                   alt="surfboard on beach"
                   className={styles.attractionImg}
                 />
@@ -254,8 +321,8 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../poolsidehome.jpg`}
+                <Img
+                  fluid={data.image20.childImageSharp.fluid}
                   alt="view of pool and chairs at Plett Beach House"
                   className={styles.attractionImg}
                 />
@@ -264,8 +331,8 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../luxurybathroom.jpg`}
+                <Img
+                  fluid={data.image21.childImageSharp.fluid}
                   alt="luxury bathroom"
                   className={styles.attractionImg}
                 />
@@ -274,8 +341,8 @@ const Gallery = () => {
 
             <div className={styles.cell}>
               <figure className={styles.imgContainer}>
-                <img
-                  src={`../../flamingo.jpg`}
+                <Img
+                  fluid={data.image22.childImageSharp.fluid}
                   alt="blow up flamigo floater in pool"
                   className={styles.attractionImg}
                 />

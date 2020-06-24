@@ -50,12 +50,6 @@ a[href^="tel:"]:before {
   padding-right: 0;
 }
 
-.carousalImg {
-  object-fit: cover;
-  height: 600px;
-  width: 100%;
-}
-
 /* Clearfix */
 .contactform:before,
 .contactform:after {

@@ -5,26 +5,51 @@ import { GiSeahorse } from "react-icons/gi"
 import styles from "./pagesStyles-css-modules.module.css"
 import CardGroup from "react-bootstrap/CardGroup"
 import Card from "react-bootstrap/Card"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import Button from "react-bootstrap/Button"
 
-const Offers = () => {
+export const imageQuery = graphql`
+  fragment offersImages on File {
+    childImageSharp {
+      fluid(maxWidth: 800, maxHeight: 500, quality: 90) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`
+
+export const query = graphql`
+  query OffersPageQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    image1: file(relativePath: { eq: "lilo.jpg" }) {
+      ...offersImages
+    }
+
+    image2: file(relativePath: { eq: "ballinpool.jpg" }) {
+      ...offersImages
+    }
+
+    image3: file(relativePath: { eq: "cocktails.jpg" }) {
+      ...offersImages
+    }
+
+    image4: file(relativePath: { eq: "familyonbeach.jpg" }) {
+      ...offersImages
+    }
+  }
+`
+
+const Offers = ({ data }) => {
   function handleClick(e) {
     e.preventDefault()
     console.log("The button was clicked.")
   }
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "lilo.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800, maxHeight: 400, quality: 80) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+
   return (
     <Layout pageInfo={{ pageName: "Offers" }}>
       <SEO title="Local Attractions" />
@@ -33,7 +58,7 @@ const Offers = () => {
         <div className={styles.imgHeadingContainer}>
           <div className={styles.imgOpacityHover}>
             <Img
-              fluid={data.file.childImageSharp.fluid}
+              fluid={data.image1.childImageSharp.fluid}
               alt="woman in lilo in the pool"
             />
           </div>
@@ -52,7 +77,11 @@ const Offers = () => {
       </div>
       <CardGroup>
         <Card>
-          <Card.Img variant="top" src={`/ballinpool.jpg`} alt="ball in pool" />
+          <Img
+            variant="top"
+            fluid={data.image2.childImageSharp.fluid}
+            alt="ball in pool"
+          />
           <Card.Body>
             <Card.Title>Summer Special</Card.Title>
             <Card.Text>
@@ -68,7 +97,11 @@ const Offers = () => {
           </Card.Footer>
         </Card>
         <Card>
-          <Card.Img variant="top" src={`/cocktails.jpg`} alt="cockatisl" />
+          <Img
+            variant="top"
+            fluid={data.image3.childImageSharp.fluid}
+            alt="cocktails"
+          />
           <Card.Body>
             <Card.Title>Gourmet Breaks</Card.Title>
             <Card.Text>
@@ -84,9 +117,9 @@ const Offers = () => {
           </Card.Footer>
         </Card>
         <Card>
-          <Card.Img
+          <Img
             variant="top"
-            src={`/familyonbeach.jpg`}
+            fluid={data.image4.childImageSharp.fluid}
             alt="family playing on beach"
           />
           <Card.Body>

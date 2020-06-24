@@ -5,28 +5,55 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import CardGroup from "react-bootstrap/CardGroup"
 import Card from "react-bootstrap/Card"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
-const Amenities = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "luxurybedroom.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800, maxHeight: 400, quality: 80) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+export const imageQuery = graphql`
+  fragment amenitiesImages on File {
+    childImageSharp {
+      fluid(maxWidth: 800, maxHeight: 500, quality: 90) {
+        ...GatsbyImageSharpFluid
       }
     }
-  `)
+  }
+`
+
+export const query = graphql`
+  query AmenitiesPageQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    image1: file(relativePath: { eq: "luxurybedroom.jpg" }) {
+      ...amenitiesImages
+    }
+
+    image2: file(relativePath: { eq: "anotherviewofkitchen.jpg" }) {
+      ...amenitiesImages
+    }
+
+    image3: file(relativePath: { eq: "seaviewhome.jpg" }) {
+      ...amenitiesImages
+    }
+
+    image4: file(relativePath: { eq: "mainbedroom.jpg" }) {
+      ...amenitiesImages
+    }
+  }
+`
+
+const Amenities = ({ data }) => {
   return (
     <Layout pageInfo={{ pageName: "Amenities" }}>
       <SEO title="Amenities" />
       <div className={styles.imgNavMargin}>
         <div className={styles.imgHeadingContainer}>
           <div className={styles.imgOpacityHover}>
-            <Img fluid={data.file.childImageSharp.fluid} alt="luxury bedroom" />
+            <Img
+              fluid={data.image1.childImageSharp.fluid}
+              alt="luxury bedroom"
+            />
           </div>
           <div className={styles.centeredTextOverImg}>
             <h1 className={styles.PlettBeachHouseH1}>Amenities</h1>
@@ -44,9 +71,9 @@ const Amenities = () => {
       </div>
       <CardGroup>
         <Card>
-          <Card.Img
+          <Img
             variant="top"
-            src={`/anotherviewofkitchen.jpg`}
+            fluid={data.image2.childImageSharp.fluid}
             alt="luxury kitchen"
           />
           <Card.Body>
@@ -62,9 +89,9 @@ const Amenities = () => {
           </Card.Footer>
         </Card>
         <Card>
-          <Card.Img
+          <Img
             variant="top"
-            src={`/seaviewhome.jpg`}
+            fluid={data.image3.childImageSharp.fluid}
             alt="home with sea view"
           />
           <Card.Body>
@@ -81,9 +108,9 @@ const Amenities = () => {
           </Card.Footer>
         </Card>
         <Card>
-          <Card.Img
+          <Img
             variant="top"
-            src={`/mainbedroom.jpg`}
+            fluid={data.image4.childImageSharp.fluid}
             alt="luxury bedroom"
           />
           <Card.Body>

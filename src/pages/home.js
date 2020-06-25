@@ -11,11 +11,12 @@ import Card from "react-bootstrap/Card"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import ControlledCarousel from "../components/carousal"
+import { Link } from "gatsby"
 
 export const imageQuery = graphql`
   fragment optimizeHomeImgs on File {
     childImageSharp {
-      fluid(maxWidth: 800, maxHeight: 500, quality: 90) {
+      fluid(maxWidth: 800, maxHeight: 500, quality: 100) {
         ...GatsbyImageSharpFluid
       }
     }
@@ -78,7 +79,7 @@ const Home = ({ data }) => {
 
   return (
     <Layout pageInfo={{ pageName: "home" }}>
-      <SEO title="Home" keywords={[`gatsby`, `react`, `bootstrap`]} />
+      <SEO title="Home" keywords={[`Plett`, `Beach`, `House`]} />
       <ControlledCarousel
         slideImage1={data.slide1.childImageSharp.fluid}
         slideImage2={data.slide2.childImageSharp.fluid}
@@ -88,7 +89,7 @@ const Home = ({ data }) => {
       />
       <div className={styles.paragraphContainer}>
         <GiSeahorse />
-        <h2 className={styles.h2Style}>Plett Beach House</h2>
+        <h1 className={styles.headingStyle}>{data.site.siteMetadata.title}</h1>
         <p>
           Your adventure begins when you enter through the gates of our
           remarkable holiday home. Discover our exquisite interiors, beautiful
@@ -108,6 +109,8 @@ const Home = ({ data }) => {
               <a
                 className={styles.SvgAddress}
                 href="https://www.google.com/maps/place/Bay+Lodge/@-34.0590199,23.3744413,17z/data=!3m1!4b1!4m8!3m7!1s0x0:0x43d38d1d6ade11c6!5m2!4m1!1i2!8m2!3d-34.0590199!4d23.37663"
+                target="_blank"
+                rel="noreferrer"
               >
                 <GiPositionMarker />
                 Plettenberg Bay, South Africa
@@ -139,14 +142,16 @@ const Home = ({ data }) => {
         <div className={styles.centeredTextOverImg}>
           <GiSeahorse />
           <h2>Paradise Found</h2>
-          <Button variant="outline-light" href="/contact" onClick={handleClick}>
-            Book your stay
-          </Button>
+          <Link to="/contact" active>
+            <Button variant="outline-light" handleClick={handleClick}>
+              Book your stay
+            </Button>
+          </Link>
         </div>
       </div>
       <div className={styles.paragraphContainer}>
         <GiSeahorse />
-        <h2 className={styles.h2Style}>Life. Well lived.</h2>
+        <h2 className={styles.headingStyle}>Life. Well lived.</h2>
         <p>
           As our valued guests always expect and deserve the best, our
           relentless pursuit for perfection never ends. We offer elegant luxury
@@ -155,9 +160,11 @@ const Home = ({ data }) => {
           standard. Because we know that you will remember the countless
           beautiful memories when your holiday is over.
         </p>
-        <Button variant="outline-dark" href="/gallery" onClick={handleClick}>
-          Discover Plett Beach House
-        </Button>
+        <Link to="/gallery" active>
+          <Button variant="outline-dark" handleClick={handleClick}>
+            Discover Plett Beach House
+          </Button>
+        </Link>
       </div>
 
       <CardGroup>
@@ -231,13 +238,11 @@ const Home = ({ data }) => {
             you access to Plett's most sought-after activities and attractions.
             Here’s what comes with your stay.
           </Card.Text>
-          <Button
-            variant="outline-dark"
-            href="/amenities"
-            onClick={handleClick}
-          >
-            View amenities
-          </Button>
+          <Link to="/amenities" active>
+            <Button variant="outline-dark" handleClick={handleClick}>
+              View amenities
+            </Button>
+          </Link>
         </Card.Body>
       </Card>
       <div className={styles.imgHeadingContainer}>
@@ -250,13 +255,11 @@ const Home = ({ data }) => {
         <div className={styles.centeredTextOverImg}>
           <GiSeahorse />
           <h2>Ideal Spot in Plett</h2>
-          <Button
-            variant="outline-light"
-            href="https://www.google.com/maps/@${34.06955925723115},${23.33735050000003},${8}z"
-            onClick={handleClick}
-          >
-            Explore the area
-          </Button>
+          <Link to="/location" active>
+            <Button variant="outline-light" handleClick={handleClick}>
+              Explore the area
+            </Button>
+          </Link>
         </div>
       </div>
 

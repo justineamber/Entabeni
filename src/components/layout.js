@@ -11,6 +11,16 @@ import { Container, Row, Col } from "react-bootstrap"
 import Navbar from "./navBar"
 import NewsletterForm from "./newsletterForm"
 
+export const logoQuery = graphql`
+  fragment optimizeLogo on File {
+    childImageSharp {
+      fixed(width: 100, height: 100) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+`
+
 const Layout = ({ children, pageInfo }) => (
   <StaticQuery
     query={graphql`
@@ -20,18 +30,31 @@ const Layout = ({ children, pageInfo }) => (
             title
           }
         }
+        PBHlogo: file(relativePath: { eq: "logo.png" }) {
+          ...optimizeLogo
+        }
+
+        JHLogo: file(relativePath: { eq: "JHLogo.png" }) {
+          ...optimizeLogo
+        }
       }
     `}
     render={data => (
       <>
         <Container fluid className="px-0 main">
           <Row noGutters className="justify-content-center"></Row>
-          <Navbar pageInfo={pageInfo} />
+          <Navbar
+            pageInfo={pageInfo}
+            logoImg={data.PBHlogo.childImageSharp.fixed}
+          />
           <Row noGutters>
             <Col>
               <Container fluid className="px-0">
                 <main>{children}</main>
-                <NewsletterForm />
+                <NewsletterForm
+                  logoImg={data.PBHlogo.childImageSharp.fixed}
+                  JHLogo={data.JHLogo.childImageSharp.fixed}
+                />
               </Container>
             </Col>
           </Row>

@@ -10,9 +10,14 @@ import {
 import { GiSeahorse } from "react-icons/gi"
 import { Row, Col, Container, Button } from "react-bootstrap"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
 
-export default function NewsletterForm() {
+export default function NewsletterForm({ logoImg, JHLogo }) {
   const { inputs, handleInputChange, handleSubmit } = useSubmitForm()
+  function handleClick(e) {
+    e.preventDefault()
+    console.log("The button was clicked.")
+  }
   return (
     <div>
       <div className={newsletterStyles.footerContainer}>
@@ -87,17 +92,22 @@ export default function NewsletterForm() {
                 </li>
               </ul>
               <Link to="/contact" className="nav-link" active>
-                <Button variant="dark" active>
+                <Button
+                  variant="dark"
+                  active
+                  type="button"
+                  handleClick={handleClick}
+                >
                   Contact us
                 </Button>
               </Link>
             </Col>
             <Col xs={6} md={4}>
               <a href="/home">
-                <img
+                <Img
+                  fixed={logoImg}
                   width="100"
                   height="100"
-                  src={`/logo.png`}
                   alt="Plett Beach House logo"
                 />
               </a>
@@ -108,10 +118,10 @@ export default function NewsletterForm() {
               </span>
               <span className={newsletterStyles.text}>Plett Beach House</span>
               <br />
-              <img
+              <Img
+                fixed={JHLogo}
                 width="100"
                 height="100"
-                src={`/JHLogo.png`}
                 alt="Justine Hill logo"
               />{" "}
               <br />

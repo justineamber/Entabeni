@@ -9,7 +9,7 @@ import Img from "gatsby-image"
 export const imageQuery = graphql`
   fragment galleryImages on File {
     childImageSharp {
-      fluid(maxWidth: 800, maxHeight: 500, quality: 90) {
+      fluid(maxWidth: 800, maxHeight: 500, quality: 100) {
         ...GatsbyImageSharpFluid
       }
     }
@@ -115,7 +115,7 @@ export const query = graphql`
 const Gallery = ({ data }) => {
   return (
     <Layout pageInfo={{ pageName: "Gallery" }}>
-      <SEO title="Gallery" />
+      <SEO title="Gallery" keywords={[`Plett`, `Beach`, `House`, `Gallery`]} />
 
       <div className={styles.imgNavMargin}>
         <div className={styles.imgHeadingContainer}>

@@ -8,11 +8,12 @@ import Card from "react-bootstrap/Card"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import Button from "react-bootstrap/Button"
+import { Link } from "gatsby"
 
 export const imageQuery = graphql`
   fragment offersImages on File {
     childImageSharp {
-      fluid(maxWidth: 800, maxHeight: 500, quality: 90) {
+      fluid(maxWidth: 800, maxHeight: 500, quality: 100) {
         ...GatsbyImageSharpFluid
       }
     }
@@ -52,7 +53,10 @@ const Offers = ({ data }) => {
 
   return (
     <Layout pageInfo={{ pageName: "Offers" }}>
-      <SEO title="Local Attractions" />
+      <SEO
+        title="Local Attractions"
+        keywords={[`Plett`, `Beach`, `House`, `Special`, `Offers`]}
+      />
 
       <div className={styles.imgNavMargin}>
         <div className={styles.imgHeadingContainer}>
@@ -88,9 +92,11 @@ const Offers = ({ data }) => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Card.Text>
-            <Button variant="outline-dark" onClick={handleClick}>
-              Book now
-            </Button>
+            <Link to="/contact" active>
+              <Button variant="outline-dark" handleClick={handleClick}>
+                Book now
+              </Button>
+            </Link>
           </Card.Body>
           <Card.Footer>
             <small className="text-muted">Valid Nov - Dec 2020</small>
@@ -108,9 +114,11 @@ const Offers = ({ data }) => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Card.Text>
-            <Button variant="outline-dark" onClick={handleClick}>
-              Book now
-            </Button>
+            <Link to="/contact" active>
+              <Button variant="outline-dark" handleClick={handleClick}>
+                Book now
+              </Button>
+            </Link>
           </Card.Body>
           <Card.Footer>
             <small className="text-muted">Valid Sep 2020</small>
@@ -128,9 +136,11 @@ const Offers = ({ data }) => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Card.Text>
-            <Button variant="outline-dark" onClick={handleClick}>
-              Book now
-            </Button>
+            <Link to="/contact" active>
+              <Button variant="outline-dark" handleClick={handleClick}>
+                Book now
+              </Button>
+            </Link>
           </Card.Body>
           <Card.Footer>
             <small className="text-muted">Valid Oct - Jan 2021 </small>

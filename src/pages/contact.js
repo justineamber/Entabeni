@@ -13,7 +13,7 @@ const ContactPage = () => {
     query {
       file(relativePath: { eq: "pack4vacay.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 800, maxHeight: 500, quality: 90) {
+          fluid(maxWidth: 800, maxHeight: 500, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -22,7 +22,10 @@ const ContactPage = () => {
   `)
   return (
     <Layout pageInfo={{ pageName: "contact" }}>
-      <SEO title="Contact page" />
+      <SEO
+        title="Contact page"
+        keywords={[`Plett`, `Beach`, `House`, `Contact`]}
+      />
 
       <div className={styles.imgNavMargin}>
         <div className={styles.imgHeadingContainer}>

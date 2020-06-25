@@ -11,7 +11,7 @@ const History = () => {
     query {
       file(relativePath: { eq: "exteriorhome.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 800, maxHeight: 500, quality: 90) {
+          fluid(maxWidth: 800, maxHeight: 500, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -20,7 +20,7 @@ const History = () => {
   `)
   return (
     <Layout pageInfo={{ pageName: "History" }}>
-      <SEO title="History" />
+      <SEO title="History" keywords={[`Plett`, `Beach`, `House`, `History`]} />
 
       <div className={styles.imgNavMargin}>
         <div className={styles.imgHeadingContainer}>

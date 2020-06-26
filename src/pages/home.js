@@ -79,7 +79,29 @@ const Home = ({ data }) => {
 
   return (
     <Layout pageInfo={{ pageName: "home" }}>
-      <SEO title="Home" keywords={[`Plett`, `Beach`, `House`]} />
+      <SEO
+        title="Home"
+        keywords={[
+          `Plett`,
+          `Beach`,
+          `House`,
+          `luxury`,
+          `accomodation`,
+          `Plettenberg`,
+          `Bay`,
+          `holiday`,
+          `home`,
+          `Garden`,
+          `route`,
+          `family`,
+          `bedrooms`,
+          `rent`,
+          `sea`,
+          `views`,
+          `central`,
+          `location`,
+        ]}
+      />
       <ControlledCarousel
         slideImage1={data.slide1.childImageSharp.fluid}
         slideImage2={data.slide2.childImageSharp.fluid}
@@ -154,11 +176,13 @@ const Home = ({ data }) => {
         <h2 className={styles.headingStyle}>Life. Well lived.</h2>
         <p>
           As our valued guests always expect and deserve the best, our
-          relentless pursuit for perfection never ends. We offer elegant luxury
-          in the heart of a breath-taking nature. Sleep well and look good while
-          doing it. Here 400-thread count sheets and rainfall showers come
-          standard. Because we know that you will remember the countless
-          beautiful memories when your holiday is over.
+          relentless pursuit for perfection never ends at our luxury
+          accomodation. We offer elegant luxury in the heart of a breath-taking
+          nature. Sleep well and look good while doing it. Here 400-thread count
+          sheets and rainfall showers come standard. Because we know that you
+          will remember the countless beautiful memories when your holiday is
+          over. This is the perfect holiday accomodation for your family
+          holiday.
         </p>
         <Link to="/gallery" active>
           <Button variant="outline-dark" handleClick={handleClick}>
@@ -220,7 +244,8 @@ const Home = ({ data }) => {
               Located in central Plettenberg Bay and walking distance to the
               beach, shops and restaurants. The stunning Plett Beach House has
               beautiful views of the Beacon Isle beach, Robberg Heads and the
-              Tsitsikamma mountain range.
+              Tsitsikamma mountain range. The perfect holiday beach home to
+              rent.
             </Card.Text>
           </Card.Body>
           <Card.Footer>

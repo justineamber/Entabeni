@@ -77,17 +77,18 @@ export const query = graphql`
   }
 `
 const LocalAttractions = ({ data }) => {
-  const imgContent = document.querySelectorAll(`.imgContentHover`)
+  if (typeof document !== `undefined`) {
+    const imgContent = document.querySelectorAll(`.imgContentHover`)
 
-  function showImgContent(e) {
-    for (var i = 0; i < imgContent.length; i++) {
-      imgContent[i].style.left = e.pageX + "px"
-      imgContent[i].style.top = e.pageY + "px"
+    function showImgContent(e) {
+      for (var i = 0; i < imgContent.length; i++) {
+        imgContent[i].style.left = e.pageX + "px"
+        imgContent[i].style.top = e.pageY + "px"
+      }
     }
+
+    document.addEventListener(`mousemove`, showImgContent)
   }
-
-  document.addEventListener(`mousemove`, showImgContent)
-
   return (
     <Layout pageInfo={{ pageName: "Local Attractions" }}>
       <SEO

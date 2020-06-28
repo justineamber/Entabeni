@@ -1,8 +1,8 @@
 .navMenuSVG > svg {
-  position: relative;
-  opacity: 0;
   display: block;
   margin: auto;
+  position: relative;
+  opacity: 0;
 }
 
 .navMenuSVG:hover > svg {

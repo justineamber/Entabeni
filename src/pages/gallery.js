@@ -9,7 +9,7 @@ import Img from "gatsby-image"
 export const imageQuery = graphql`
   fragment galleryImages on File {
     childImageSharp {
-      fluid(maxWidth: 800, maxHeight: 500, quality: 100) {
+      fluid(maxWidth: 800, maxHeight: 350, quality: 100) {
         ...GatsbyImageSharpFluid
       }
     }
@@ -83,7 +83,7 @@ export const query = graphql`
       ...galleryImages
     }
 
-    image16: file(relativePath: { eq: "amenities.jpg" }) {
+    image16: file(relativePath: { eq: "anotherviewofkitchen.jpg" }) {
       ...galleryImages
     }
 
@@ -126,14 +126,10 @@ const Gallery = ({ data }) => {
             />
           </div>
           <div className={styles.centeredTextOverImg}>
+            <GiSeahorse />
             <h1 className={styles.PlettBeachHouseH1}>Gallery</h1>
           </div>
         </div>
-      </div>
-      <div className={styles.paragraphContainer}>
-        <GiSeahorse />
-        <h2 className={styles.highlight}>Explore more</h2>
-        <p>Gallery of Plett Beach House</p>
       </div>
 
       <section className={styles.gallery}>

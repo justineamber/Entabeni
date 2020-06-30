@@ -13,7 +13,7 @@ const ContactPage = () => {
     query {
       file(relativePath: { eq: "pack4vacay.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 800, maxHeight: 500, quality: 100) {
+          fluid(maxWidth: 800, maxHeight: 300, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -27,22 +27,9 @@ const ContactPage = () => {
         keywords={[`Plett`, `Beach`, `House`, `Contact`]}
       />
 
-      <div className={styles.imgNavMargin}>
-        <div className={styles.imgHeadingContainer}>
-          <div className={styles.imgOpacityHover}>
-            <Img
-              fluid={data.file.childImageSharp.fluid}
-              alt="Passport, hat and bag on bed"
-            />
-          </div>
-          <div className={styles.centeredTextOverImg}>
-            <h1 className={styles.PlettBeachHouseH1}>Contact Us</h1>
-          </div>
-        </div>
-      </div>
-      <div className={styles.paragraphContainer}>
+      <div className={styles.paragraphContainerNoImg}>
         <GiSeahorse />
-        <h2 className={styles.highlight}>Get in Touch</h2>
+        <h2 className={styles.headingStyle}>Get in touch</h2>
       </div>
       <form
         className={styles.contactform}
@@ -91,6 +78,13 @@ const ContactPage = () => {
         </div>
         <input type="submit" value="Submit" className={styles.inputSubmit} />
       </form>
+
+      <div className={styles.imgOpacityHover}>
+        <Img
+          fluid={data.file.childImageSharp.fluid}
+          alt="Passport, hat and bag on bed"
+        />
+      </div>
     </Layout>
   )
 }

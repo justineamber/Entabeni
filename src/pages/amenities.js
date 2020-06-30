@@ -11,7 +11,7 @@ import Img from "gatsby-image"
 export const imageQuery = graphql`
   fragment amenitiesImages on File {
     childImageSharp {
-      fluid(maxWidth: 800, maxHeight: 500, quality: 100) {
+      fluid(maxWidth: 800, maxHeight: 300, quality: 100) {
         ...GatsbyImageSharpFluid
       }
     }
@@ -50,23 +50,11 @@ const Amenities = ({ data }) => {
         title="Amenities"
         keywords={[`Plett`, `Beach`, `House`, `Amenities`]}
       />
-      <div className={styles.imgNavMargin}>
-        <div className={styles.imgHeadingContainer}>
-          <div className={styles.imgOpacityHover}>
-            <Img
-              fluid={data.image1.childImageSharp.fluid}
-              alt="luxury bedroom"
-            />
-          </div>
-          <div className={styles.centeredTextOverImg}>
-            <h1 className={styles.PlettBeachHouseH1}>Amenities</h1>
-          </div>
-        </div>
-      </div>
-      <div className={styles.paragraphContainer}>
+
+      <div className={styles.paragraphContainerNoImg}>
         <GiSeahorse />
-        <h2 className={styles.highlight}>All the perks</h2>
-        <p>
+        <h2 className={styles.headingStyle}>Amenities</h2>
+        <p className={styles.paragraphStyles}>
           Luxury interiors and beatiful views. Staying at the Plett Beach House
           gives you access to Plett's most sought-after activities and
           attractions. Here’s what comes with your stay.
@@ -125,6 +113,10 @@ const Amenities = ({ data }) => {
           </Card.Footer>
         </Card>
       </CardGroup>
+
+      <div className={styles.imgOpacityHover}>
+        <Img fluid={data.image1.childImageSharp.fluid} alt="luxury bedroom" />
+      </div>
     </Layout>
   )
 }

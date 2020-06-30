@@ -38,7 +38,7 @@ export const query = graphql`
       ...optimizeHomeImgs
     }
 
-    image3: file(relativePath: { eq: "amenities.jpg" }) {
+    image3: file(relativePath: { eq: "anotherviewofkitchen.jpg" }) {
       ...optimizeHomeImgs
     }
 
@@ -46,7 +46,7 @@ export const query = graphql`
       ...optimizeHomeImgs
     }
 
-    image5: file(relativePath: { eq: "seaviewhome.jpg" }) {
+    image5: file(relativePath: { eq: "beachview.jpg" }) {
       ...optimizeHomeImgs
     }
 
@@ -54,7 +54,7 @@ export const query = graphql`
       ...optimizeHomeImgs
     }
 
-    slide2: file(relativePath: { eq: "luxuryinterior.jpg" }) {
+    slide2: file(relativePath: { eq: "livingroom.jpg" }) {
       ...optimizeHomeImgs
     }
 
@@ -66,7 +66,7 @@ export const query = graphql`
       ...optimizeHomeImgs
     }
 
-    slide5: file(relativePath: { eq: "seaviewhome.jpg" }) {
+    slide5: file(relativePath: { eq: "dolphins.jpg" }) {
       ...optimizeHomeImgs
     }
   }
@@ -112,13 +112,17 @@ const Home = ({ data }) => {
       <div className={styles.paragraphContainer}>
         <GiSeahorse />
         <h1 className={styles.headingStyle}>{data.site.siteMetadata.title}</h1>
-        <p>
-          Your adventure begins when you enter through the gates of our
-          remarkable holiday home. Discover our exquisite interiors, beautiful
-          coastal town, pristine beaches, friendly locals and wealth of
-          activities in the garden route.
+        <p className={styles.paragraphStyles}>
+          Swim in the Indian ocean, see the whales in the bay, take long beach
+          walks and dips in the sparkling pool when you base yourself at Plett
+          Beach House. Perfectly located to explore all that the Garden Route
+          has to offer, The Plett Beach House offers guests the chance to
+          totally unplug, reset and relax in a magnificent setting. Get in touch
+          to book your stay. Discover our exquisite interiors, beautiful coastal
+          town, pristine beaches, friendly locals and wealth of activities in
+          the garden route.
         </p>
-        <p>
+        <p className={styles.paragraphStyles}>
           Plett Beach House is due to reopen 2nd July. In the meantime, our team
           will be working hard to ensure our hotel is ready to welcome you back
           soon.
@@ -174,7 +178,7 @@ const Home = ({ data }) => {
       <div className={styles.paragraphContainer}>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>Life. Well lived.</h2>
-        <p>
+        <p className={styles.paragraphStyles}>
           As our valued guests always expect and deserve the best, our
           relentless pursuit for perfection never ends at our luxury
           accomodation. We offer elegant luxury in the heart of a breath-taking
@@ -256,8 +260,8 @@ const Home = ({ data }) => {
 
       <Card className="text-center">
         <Card.Body>
-          <Card.Title>All the perks</Card.Title>
-          <Card.Text>
+          <Card.Title bsPrefix={styles.headingStyle}>All the perks</Card.Title>
+          <Card.Text bsPrefix={styles.paragraphStyles}>
             The perks of staying at the Plett Beach House extend far beyond our
             luxurious rooms and interior. Staying at the Plett Beach House gives
             you access to Plett's most sought-after activities and attractions.

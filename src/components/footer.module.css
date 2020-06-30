@@ -1,0 +1,34 @@
+.footerContainer {
+  border-top: 0.0625rem solid #ccc;
+  padding: 1rem 0;
+}
+
+.headingStyle {
+  color: #222831;
+  font-size: 2rem;
+}
+
+li {
+  display: inline-block;
+  margin: 1rem;
+}
+
+li svg {
+  display: block;
+  margin: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.svg {
+  margin-right: 0.25rem;
+}
+
+.watermarkStyle {
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+}

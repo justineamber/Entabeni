@@ -79,7 +79,17 @@ const navBar = ({ pageInfo, logoImg }) => {
               handleClick={handleClick}
               variant="dark"
             >
-              BOOK NOW
+              Book now
+            </Button>
+          </Link>
+          <Link to="/interests" className="nav-link" active>
+            <Button
+              type="button"
+              active
+              handleClick={handleClick}
+              variant="primary"
+            >
+              Tailor your perfect holiday
             </Button>
           </Link>
         </Navbar.Collapse>

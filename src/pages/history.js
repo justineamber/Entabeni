@@ -11,7 +11,7 @@ const History = () => {
     query {
       file(relativePath: { eq: "exteriorhome.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 800, maxHeight: 500, quality: 100) {
+          fluid(maxWidth: 800, maxHeight: 300, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -37,8 +37,8 @@ const History = () => {
       </div>
       <div className={styles.paragraphContainer}>
         <GiSeahorse />
-        <h2 className={styles.highlight}>About us</h2>
-        <p>
+        <h2 className={styles.headingStyle}>About us</h2>
+        <p className={styles.paragraphStyles}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut

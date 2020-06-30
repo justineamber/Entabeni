@@ -13,7 +13,7 @@ import { Link } from "gatsby"
 export const imageQuery = graphql`
   fragment offersImages on File {
     childImageSharp {
-      fluid(maxWidth: 800, maxHeight: 500, quality: 100) {
+      fluid(maxWidth: 800, maxHeight: 300, quality: 100) {
         ...GatsbyImageSharpFluid
       }
     }
@@ -31,11 +31,11 @@ export const query = graphql`
       ...offersImages
     }
 
-    image2: file(relativePath: { eq: "ballinpool.jpg" }) {
+    image2: file(relativePath: { eq: "golfshot.jpg" }) {
       ...offersImages
     }
 
-    image3: file(relativePath: { eq: "cocktails.jpg" }) {
+    image3: file(relativePath: { eq: "fish+chips.jpg" }) {
       ...offersImages
     }
 
@@ -57,24 +57,10 @@ const Offers = ({ data }) => {
         title="Local Attractions"
         keywords={[`Plett`, `Beach`, `House`, `Special`, `Offers`]}
       />
-
-      <div className={styles.imgNavMargin}>
-        <div className={styles.imgHeadingContainer}>
-          <div className={styles.imgOpacityHover}>
-            <Img
-              fluid={data.image1.childImageSharp.fluid}
-              alt="woman in lilo in the pool"
-            />
-          </div>
-          <div className={styles.centeredTextOverImg}>
-            <h1 className={styles.PlettBeachHouseH1}>Exclusive Offers</h1>
-          </div>
-        </div>
-      </div>
-      <div className={styles.paragraphContainer}>
+      <div className={styles.paragraphContainerNoImg}>
         <GiSeahorse />
-        <h2 className={styles.highlight}>View our offers</h2>
-        <p>
+        <h2 className={styles.headingStyle}>View our offers</h2>
+        <p className={styles.paragraphStyles}>
           Browse our range of inspiring offers, seasonal specials and themed
           escapes.
         </p>
@@ -147,6 +133,13 @@ const Offers = ({ data }) => {
           </Card.Footer>
         </Card>
       </CardGroup>
+
+      <div className={styles.imgOpacityHover}>
+        <Img
+          fluid={data.image1.childImageSharp.fluid}
+          alt="woman in lilo in the pool"
+        />
+      </div>
     </Layout>
   )
 }

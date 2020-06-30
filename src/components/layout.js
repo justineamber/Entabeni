@@ -10,6 +10,8 @@ import { StaticQuery, graphql } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
 import Navbar from "./navBar"
 import NewsletterForm from "./newsletterForm"
+import Footer from "./footer"
+import layoutStyles from "./layout.module.css"
 
 export const logoQuery = graphql`
   fragment optimizeLogo on File {
@@ -51,7 +53,8 @@ const Layout = ({ children, pageInfo }) => (
             <Col>
               <Container fluid className="px-0">
                 <main>{children}</main>
-                <NewsletterForm
+                <NewsletterForm />
+                <Footer
                   logoImg={data.PBHlogo.childImageSharp.fixed}
                   JHLogo={data.JHLogo.childImageSharp.fixed}
                 />
@@ -65,10 +68,18 @@ const Layout = ({ children, pageInfo }) => (
             <Col className="footer-col">
               <footer>
                 <span>
-                  <a href="/home"> Careers |</a>
-                  <a href="/home"> Terms & Conditions |</a>
-                  <a href="/home"> Media |</a>
-                  <a href="/home"> Brochures </a>
+                  <a href="/home" className={layoutStyles.footerLinks}>
+                    Careers
+                  </a>
+                  <a href="/home" className={layoutStyles.footerLinks}>
+                    Terms & Conditions
+                  </a>
+                  <a href="/home" className={layoutStyles.footerLinks}>
+                    Media
+                  </a>
+                  <a href="/home" className={layoutStyles.footerLinks}>
+                    Brochures{" "}
+                  </a>
                 </span>
               </footer>
             </Col>

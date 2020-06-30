@@ -53,7 +53,7 @@ const Amenities = ({ data }) => {
 
       <div className={styles.paragraphContainerNoImg}>
         <GiSeahorse />
-        <h2 className={styles.headingStyle}>Amenities</h2>
+        <h2 className={styles.headingStyle}>All the perks</h2>
         <p className={styles.paragraphStyles}>
           Luxury interiors and beatiful views. Staying at the Plett Beach House
           gives you access to Plett's most sought-after activities and

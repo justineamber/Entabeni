@@ -26,6 +26,10 @@ a[href^="tel:"]:before {
   transform: scale(1.05);
 }
 
+.border {
+  border-top: 0.0625rem solid #ccc;
+}
+
 body {
   text-align: center;
   font-size: 1.125rem;
@@ -66,10 +70,6 @@ form {
   margin: 1.25rem auto;
   margin-top: 0;
   max-width: 37.5rem;
-}
-
-.gallery {
-  padding: 0 0 4rem 0;
 }
 
 .half {
@@ -160,6 +160,10 @@ form {
 
 .inputSubmit:hover {
   box-shadow: (0 0.0625rem 0.0625rem 0.0625rem rgba(#aaa, 0.6));
+}
+
+em {
+  font-style: italic;
 }
 
 input,

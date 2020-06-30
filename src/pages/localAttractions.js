@@ -124,7 +124,7 @@ const LocalAttractions = ({ data }) => {
         </Link>
       </div>
 
-      <section className={styles.gallery}>
+      <section>
         <div className={styles.container}>
           <div className={styles.grid}>
             <div className={styles.cell}>
@@ -136,9 +136,9 @@ const LocalAttractions = ({ data }) => {
                     className={styles.attractionImg}
                   />
                   <figcaption className={styles.imgContent}>
-                    <h2 className={styles.title}>Birds of Eden</h2>
+                    <h2 className={styles.title}>Designer Boutiques</h2>
                     <h3 className={styles.category}>
-                      World's largest free flight aviary and bird sanctuary
+                      Designer Boutiques & shopping
                     </h3>
                   </figcaption>
                   <span className={styles.imgContentHover}>
@@ -156,7 +156,7 @@ const LocalAttractions = ({ data }) => {
                 <figure className={styles.imgContainer}>
                   <Img
                     fluid={data.image2.childImageSharp.fluid}
-                    alt="Lady playing golf at Goose Valley Golf Club"
+                    alt="Man playing golf at Goose Valley Golf Club"
                     className={styles.attractionImg}
                   />
                   <figcaption className={styles.imgContent}>

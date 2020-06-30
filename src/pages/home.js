@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import styles from "./pagesStyles-css-modules.module.css"
 import MapComponent from "../components/MapComponent"
 import { GiSeahorse, GiSmartphone, GiPositionMarker } from "react-icons/gi"
+import { FaTripadvisor } from "react-icons/fa"
 import CardGroup from "react-bootstrap/CardGroup"
 import Card from "react-bootstrap/Card"
 import { graphql } from "gatsby"
@@ -46,11 +47,11 @@ export const query = graphql`
       ...optimizeHomeImgs
     }
 
-    image5: file(relativePath: { eq: "beachview.jpg" }) {
+    image5: file(relativePath: { eq: "plettsunset.jpg" }) {
       ...optimizeHomeImgs
     }
 
-    slide1: file(relativePath: { eq: "robbergbeach.jpg" }) {
+    slide1: file(relativePath: { eq: "plettsunset.jpg" }) {
       ...optimizeHomeImgs
     }
 
@@ -116,7 +117,7 @@ const Home = ({ data }) => {
           Swim in the Indian ocean, see the whales in the bay, take long beach
           walks and dips in the sparkling pool when you base yourself at Plett
           Beach House. Perfectly located to explore all that the Garden Route
-          has to offer, The Plett Beach House offers guests the chance to
+          has to offer, the Plett Beach House offers guests the chance to
           totally unplug, reset and relax in a magnificent setting. Get in touch
           to book your stay. Discover our exquisite interiors, beautiful coastal
           town, pristine beaches, friendly locals and wealth of activities in
@@ -260,16 +261,23 @@ const Home = ({ data }) => {
 
       <Card className="text-center">
         <Card.Body>
-          <Card.Title bsPrefix={styles.headingStyle}>All the perks</Card.Title>
+          <FaTripadvisor />
+          <Card.Title bsPrefix={styles.headingStyle}>Guest Reviews</Card.Title>
           <Card.Text bsPrefix={styles.paragraphStyles}>
-            The perks of staying at the Plett Beach House extend far beyond our
-            luxurious rooms and interior. Staying at the Plett Beach House gives
-            you access to Plett's most sought-after activities and attractions.
-            Here’s what comes with your stay.
+            <h3>"Experience of a lifetime!"</h3> <br />
+            We had the experience of a lifetime and enjoyed every minute of it.
+            Plett is a very special place and a beautiful house in the best
+            location. Booking activites based on our interests through the
+            website was amazing! You furthermore got exclusive offers/discounts
+            booking the activities through the website. Very informative and it
+            made our stay very special. We will never forget our holiday in
+            Plett, South Africa and all the fun activities we did! Thank you so
+            much for such an unforgettable experience. <br />
+            Mr. & Mrs. J. Finnegan - <em>May 2019</em>
           </Card.Text>
-          <Link to="/amenities" active>
-            <Button variant="outline-dark" handleClick={handleClick}>
-              View amenities
+          <Link to="/guestReviews" active>
+            <Button variant="dark" handleClick={handleClick}>
+              See all reviews
             </Button>
           </Link>
         </Card.Body>

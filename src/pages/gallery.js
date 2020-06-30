@@ -1,6 +1,5 @@
 import React from "react"
 import styles from "./pagesStyles-css-modules.module.css"
-import { GiSeahorse } from "react-icons/gi"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
@@ -59,11 +58,11 @@ export const query = graphql`
       ...galleryImages
     }
 
-    image10: file(relativePath: { eq: "icecream.jpg" }) {
+    image10: file(relativePath: { eq: "poloplayers.jpg" }) {
       ...galleryImages
     }
 
-    image11: file(relativePath: { eq: "ladyonbeach.jpg" }) {
+    image11: file(relativePath: { eq: "waterski.jpg" }) {
       ...galleryImages
     }
 
@@ -75,11 +74,11 @@ export const query = graphql`
       ...galleryImages
     }
 
-    image14: file(relativePath: { eq: "luxuryinterior.jpg" }) {
+    image14: file(relativePath: { eq: "fish+chips.jpg" }) {
       ...galleryImages
     }
 
-    image15: file(relativePath: { eq: "lilo.jpg" }) {
+    image15: file(relativePath: { eq: "golfshot.jpg" }) {
       ...galleryImages
     }
 
@@ -107,7 +106,7 @@ export const query = graphql`
       ...galleryImages
     }
 
-    image22: file(relativePath: { eq: "flamingo.jpg" }) {
+    image22: file(relativePath: { eq: "safari.jpg" }) {
       ...galleryImages
     }
   }
@@ -126,13 +125,12 @@ const Gallery = ({ data }) => {
             />
           </div>
           <div className={styles.centeredTextOverImg}>
-            <GiSeahorse />
             <h1 className={styles.PlettBeachHouseH1}>Gallery</h1>
           </div>
         </div>
       </div>
 
-      <section className={styles.gallery}>
+      <section>
         <div className={styles.container}>
           <div className={styles.grid}>
             <div className={styles.cell}>
@@ -219,7 +217,7 @@ const Gallery = ({ data }) => {
               <figure className={styles.imgContainer}>
                 <Img
                   fluid={data.image10.childImageSharp.fluid}
-                  alt="icecream on beach"
+                  alt="2 people playing polo"
                   className={styles.attractionImg}
                 />
               </figure>
@@ -229,7 +227,7 @@ const Gallery = ({ data }) => {
               <figure className={styles.imgContainer}>
                 <Img
                   fluid={data.image11.childImageSharp.fluid}
-                  alt="lady on beach"
+                  alt="man waterskiing"
                   className={styles.attractionImg}
                 />
               </figure>
@@ -259,7 +257,7 @@ const Gallery = ({ data }) => {
               <figure className={styles.imgContainer}>
                 <Img
                   fluid={data.image14.childImageSharp.fluid}
-                  alt="luxury interior of home"
+                  alt="fish and chips"
                   className={styles.attractionImg}
                 />
               </figure>
@@ -269,7 +267,7 @@ const Gallery = ({ data }) => {
               <figure className={styles.imgContainer}>
                 <Img
                   fluid={data.image15.childImageSharp.fluid}
-                  alt="lady on lilo in pool"
+                  alt="man playing golf"
                   className={styles.attractionImg}
                 />
               </figure>
@@ -339,7 +337,7 @@ const Gallery = ({ data }) => {
               <figure className={styles.imgContainer}>
                 <Img
                   fluid={data.image22.childImageSharp.fluid}
-                  alt="blow up flamigo floater in pool"
+                  alt="elephants in safari game drive"
                   className={styles.attractionImg}
                 />
               </figure>

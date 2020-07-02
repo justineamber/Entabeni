@@ -55,7 +55,7 @@ const Amenities = ({ data }) => {
         <GiSeahorse />
         <h2 className={styles.headingStyle}>All the perks</h2>
         <p className={styles.paragraphStyles}>
-          Luxury interiors and beatiful views. Staying at the Plett Beach House
+          Luxury interiors and beatiful views. Staying at the Entabene Hill
           gives you access to Plett's most sought-after activities and
           attractions. Here’s what comes with your stay.
         </p>
@@ -88,9 +88,9 @@ const Amenities = ({ data }) => {
           <Card.Body>
             <Card.Title>Central location and the best sea views</Card.Title>
             <Card.Text>
-              Plett Beach House is in the ideal spot in Plett. From the house
-              you have beauitiful views of all the beaches in Plett & the house
-              is one block from the beach and close to restuarants and the town
+              Entabene Hill is in the ideal spot in Plett. From the house you
+              have beauitiful views of all the beaches in Plett & the house is
+              one block from the beach and close to restuarants and the town
               center.
             </Card.Text>
           </Card.Body>

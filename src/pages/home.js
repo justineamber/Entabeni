@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styles from "./pagesStyles-css-modules.module.css"
 import MapComponent from "../components/MapComponent"
-import { GiSeahorse, GiSmartphone, GiPositionMarker } from "react-icons/gi"
+import { GiSeahorse, GiPhone, GiPositionMarker } from "react-icons/gi"
 import { FaTripadvisor } from "react-icons/fa"
 import CardGroup from "react-bootstrap/CardGroup"
 import Card from "react-bootstrap/Card"
@@ -86,6 +86,8 @@ const Home = ({ data }) => {
           `Plett`,
           `Beach`,
           `House`,
+          `Entabene`,
+          `Hill`,
           `luxury`,
           `accomodation`,
           `Plettenberg`,
@@ -115,18 +117,18 @@ const Home = ({ data }) => {
         <h1 className={styles.headingStyle}>{data.site.siteMetadata.title}</h1>
         <p className={styles.paragraphStyles}>
           Swim in the Indian ocean, see the whales in the bay, take long beach
-          walks and dips in the sparkling pool when you base yourself at Plett
-          Beach House. Perfectly located to explore all that the Garden Route
-          has to offer, the Plett Beach House offers guests the chance to
+          walks and dips in the sparkling pool when you base yourself at
+          Entabene Beach House. Perfectly located to explore all that the Garden
+          Route has to offer, the Entabene Hill offers guests the chance to
           totally unplug, reset and relax in a magnificent setting. Get in touch
           to book your stay. Discover our exquisite interiors, beautiful coastal
           town, pristine beaches, friendly locals and wealth of activities in
           the garden route.
         </p>
         <p className={styles.paragraphStyles}>
-          Plett Beach House is due to reopen 2nd July. In the meantime, our team
-          will be working hard to ensure our hotel is ready to welcome you back
-          soon.
+          Entabene Beach House is due to reopen 2nd July. In the meantime, our
+          team will be working hard to ensure our hotel is ready to welcome you
+          back soon.
         </p>
       </div>
       <Table responsive className={styles.tableAddressContainer}>
@@ -150,7 +152,7 @@ const Home = ({ data }) => {
             <td>
               <span itemprop="telephone">
                 <a href="tel:+4796801110">
-                  <GiSmartphone />
+                  <GiPhone />
                   +47 968 01110
                 </a>
               </span>
@@ -191,7 +193,7 @@ const Home = ({ data }) => {
         </p>
         <Link to="/gallery" active>
           <Button variant="outline-dark" handleClick={handleClick}>
-            Discover Plett Beach House
+            Discover Entabene Hill
           </Button>
         </Link>
       </div>
@@ -241,13 +243,13 @@ const Home = ({ data }) => {
           <Img
             fluid={data.image5.childImageSharp.fluid}
             variant="top"
-            alt="seaview from Plett Beach House"
+            alt="seaview from Entabene Hill"
           />
           <Card.Body>
             <Card.Title>Wake up to the best views of Plett</Card.Title>
             <Card.Text>
               Located in central Plettenberg Bay and walking distance to the
-              beach, shops and restaurants. The stunning Plett Beach House has
+              beach, shops and restaurants. The stunning Entabene Hill has
               beautiful views of the Beacon Isle beach, Robberg Heads and the
               Tsitsikamma mountain range. The perfect holiday beach home to
               rent.

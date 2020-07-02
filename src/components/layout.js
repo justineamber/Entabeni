@@ -12,6 +12,7 @@ import Navbar from "./navBar"
 import NewsletterForm from "./newsletterForm"
 import Footer from "./footer"
 import layoutStyles from "./layout.module.css"
+//import FixedBookingBtn from "./fixedBookingBtn"
 
 export const logoQuery = graphql`
   fragment optimizeLogo on File {
@@ -32,7 +33,7 @@ const Layout = ({ children, pageInfo }) => (
             title
           }
         }
-        PBHlogo: file(relativePath: { eq: "logo.png" }) {
+        SiteLogo: file(relativePath: { eq: "EntabeneLogo.png" }) {
           ...optimizeLogo
         }
 
@@ -47,7 +48,7 @@ const Layout = ({ children, pageInfo }) => (
           <Row noGutters className="justify-content-center"></Row>
           <Navbar
             pageInfo={pageInfo}
-            logoImg={data.PBHlogo.childImageSharp.fixed}
+            logoImg={data.SiteLogo.childImageSharp.fixed}
           />
           <Row noGutters>
             <Col>
@@ -55,7 +56,7 @@ const Layout = ({ children, pageInfo }) => (
                 <main>{children}</main>
                 <NewsletterForm />
                 <Footer
-                  logoImg={data.PBHlogo.childImageSharp.fixed}
+                  logoImg={data.SiteLogo.childImageSharp.fixed}
                   JHLogo={data.JHLogo.childImageSharp.fixed}
                 />
               </Container>
@@ -72,7 +73,7 @@ const Layout = ({ children, pageInfo }) => (
                     Careers
                   </a>
                   <a href="/home" className={layoutStyles.footerLinks}>
-                    Terms & Conditions
+                    Terms &amp; Conditions
                   </a>
                   <a href="/home" className={layoutStyles.footerLinks}>
                     Media
@@ -82,6 +83,7 @@ const Layout = ({ children, pageInfo }) => (
                   </a>
                 </span>
               </footer>
+              {/* <FixedBookingBtn /> */}
             </Col>
           </Row>
         </Container>

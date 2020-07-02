@@ -39,7 +39,7 @@ const ControlledCarousel = ({
 
         <Carousel.Caption>
           <h2>Luxury interior</h2>
-          <h4>The perks of staying at the Plett Beach House</h4>
+          <h4>The perks of staying at the Entabene Hill</h4>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>

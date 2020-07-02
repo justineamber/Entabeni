@@ -64,12 +64,12 @@ export default function Footer({ logoImg, JHLogo }) {
                   fixed={logoImg}
                   width="100"
                   height="100"
-                  alt="Plett Beach House logo"
+                  alt="Entabene logo"
                 />
               </Link>
               <p className={footerStyles.watermarkStyle}>
                 <FaRegCopyright className={footerStyles.svg} />
-                2020 Plett Beach House. All Rights Reserved.
+                2020 Entabene. All Rights Reserved.
               </p>
             </Col>
 
@@ -82,9 +82,6 @@ export default function Footer({ logoImg, JHLogo }) {
                   alt="Justine Hill logo"
                 />
               </Link>
-              <p className={footerStyles.watermarkStyle}>
-                Website development by Justine Hill
-              </p>
             </Col>
           </Row>
         </Container>

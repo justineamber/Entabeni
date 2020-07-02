@@ -22,8 +22,8 @@ const Location = () => {
         <GiSeahorse />
         <h2 className={styles.headingStyle}>Stay in the heart of Plett</h2>
         <p className={styles.paragraphStyles}>
-          A block from the town center and Beacon Isle beach, Plett Beach House
-          puts Plettenberg Bay at your feet.
+          A block from the town center and Beacon Isle beach, Entabene Hill puts
+          Plettenberg Bay at your feet.
         </p>
         <Button
           variant="outline-dark"

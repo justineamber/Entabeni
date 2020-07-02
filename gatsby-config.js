@@ -1,8 +1,8 @@
 module.exports = {
   pathPrefix: "/gatsby-react-bootstrap-starter",
   siteMetadata: {
-    title: `Plett Beach House`,
-    description: `Plett Beach House built by Justine Hill using javascript, gatsby and react.`,
+    title: `Entabene Beach House`,
+    description: `Entabene Beach House built by Justine Hill using javascript, gatsby and react.`,
     author: `Justine Hill`,
   },
   plugins: [
@@ -26,7 +26,7 @@ module.exports = {
         background_color: `#20232a`,
         theme_color: `#20232a`,
         display: `minimal-ui`,
-        icon: "static/logo.png",
+        icon: "static/EntabeneFavicon.png",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -1,7 +1,7 @@
 import React from "react"
 import { Container, Navbar, NavDropdown, Nav, Button } from "react-bootstrap"
 import navBarStyles from "./navBar.module.css"
-import { GiSeahorse } from "react-icons/gi"
+import { GiSeahorse, GiPresent, GiPhone } from "react-icons/gi"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
@@ -19,15 +19,31 @@ const navBar = ({ pageInfo, logoImg }) => {
               fixed={logoImg}
               width="100"
               height="100"
-              alt="Plett Beach House logo"
+              alt="Site logo"
               className="d-inline-block align-top"
             />
           </Link>
         </Navbar.Brand>
+        <div className={navBarStyles.menuCenterMobile}>
+          <a href="/offers">
+            <GiPresent className={navBarStyles.svgGiftMobileViewWrapper} />
+          </a>
+          <a href="tel:+4796801110">
+            <GiPhone className={navBarStyles.svgPhoneMobileViewWrapper} />
+          </a>
+        </div>
+        <div className={navBarStyles.menuLeftMobile}>
+          <a className={navBarStyles.logoStyleMobile} href="/home">
+            Entabene
+          </a>
+        </div>
 
-        <Navbar.Toggle aria-controls="</div>responsive-navbar-nav" />
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto" activeKey={pageInfo && pageInfo.pageName}>
+          <Nav
+            className={navBarStyles.navStyles}
+            activeKey={pageInfo && pageInfo.pageName}
+          >
             <div className={navBarStyles.navMenuSVG}>
               <GiSeahorse />
               <NavDropdown title="History" id="collasible-nav-dropdown">

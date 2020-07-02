@@ -177,7 +177,7 @@ const Gallery = ({ data }) => {
               <figure className={styles.imgContainer}>
                 <Img
                   fluid={data.image6.childImageSharp.fluid}
-                  alt="exterior of Plett Beach House"
+                  alt="exterior of Entabene Hill"
                   className={styles.attractionImg}
                 />
               </figure>
@@ -317,7 +317,7 @@ const Gallery = ({ data }) => {
               <figure className={styles.imgContainer}>
                 <Img
                   fluid={data.image20.childImageSharp.fluid}
-                  alt="view of pool and chairs at Plett Beach House"
+                  alt="view of pool and chairs at Entabene Hill"
                   className={styles.attractionImg}
                 />
               </figure>

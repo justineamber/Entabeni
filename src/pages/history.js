@@ -27,7 +27,7 @@ const History = () => {
           <div className={styles.imgOpacityHover}>
             <Img
               fluid={data.file.childImageSharp.fluid}
-              alt="Exterior of Plett Beach House"
+              alt="Exterior of Entabene Hill"
             />
           </div>
           <div className={styles.centeredTextOverImg}>

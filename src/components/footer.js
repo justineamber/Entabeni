@@ -34,7 +34,7 @@ export default function Footer({ logoImg, JHLogo }) {
         </ul>
       </div>
       <div className={footerStyles.footerContainer}>
-        <Container>
+        <Container fluid>
           <Row className="justify-content-md-center">
             <Col xs={6} md={4}>
               <ul>
@@ -86,6 +86,29 @@ export default function Footer({ logoImg, JHLogo }) {
           </Row>
         </Container>
       </div>
+
+      <Container fluid className="px-0">
+        <Row noGutters>
+          <Col className="footer-col" bsPrefix={footerStyles.footer}>
+            <footer>
+              <span>
+                <a href="/home" className={footerStyles.footerLinks}>
+                  Careers
+                </a>
+                <a href="/home" className={footerStyles.footerLinks}>
+                  Terms &amp; Conditions
+                </a>
+                <a href="/home" className={footerStyles.footerLinks}>
+                  Media
+                </a>
+                <a href="/home" className={footerStyles.footerLinks}>
+                  Brochures{" "}
+                </a>
+              </span>
+            </footer>
+          </Col>
+        </Row>
+      </Container>
     </>
   )
 }

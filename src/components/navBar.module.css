@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Playball);
+@import url(https://fonts.googleapis.com/css?family=Old+Standard+TT);
 
 .navMenuSVG > svg {
   display: block;
@@ -55,7 +55,7 @@
     line-height: 1;
     text-decoration: none !important;
     font-weight: 900;
-    font-family: "Playball", serif;
+    font-family: "Old Standard TT", serif;
   }
 
   .logoStyleMobile:hover {

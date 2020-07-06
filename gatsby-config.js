@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: "/gatsby-react-bootstrap-starter",
   siteMetadata: {
-    title: `Entabene Beach House`,
+    title: `Entabene`,
     description: `Entabene Beach House built by Justine Hill using javascript, gatsby and react.`,
     author: `Justine Hill`,
   },

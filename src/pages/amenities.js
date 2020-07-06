@@ -75,9 +75,6 @@ const Amenities = ({ data }) => {
               The only things you have to bring are your bags.
             </Card.Text>
           </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Modern kitchen & interior</small>
-          </Card.Footer>
         </Card>
         <Card>
           <Img
@@ -94,9 +91,6 @@ const Amenities = ({ data }) => {
               center.
             </Card.Text>
           </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Panaromic views</small>
-          </Card.Footer>
         </Card>
         <Card>
           <Img
@@ -108,9 +102,6 @@ const Amenities = ({ data }) => {
             <Card.Title>Luxury bedrooms</Card.Title>
             <Card.Text>En suite large, luxury bedrooms</Card.Text>
           </Card.Body>
-          <Card.Footer>
-            <small className="text-muted"> 5 Bedrooms, 4 bathrooms</small>
-          </Card.Footer>
         </Card>
       </CardGroup>
 

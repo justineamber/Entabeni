@@ -112,14 +112,15 @@ const Home = ({ data }) => {
         slideImage4={data.slide4.childImageSharp.fluid}
         slideImage5={data.slide5.childImageSharp.fluid}
       />
+
       <div className={styles.paragraphContainer}>
         <GiSeahorse />
         <h1 className={styles.headingStyle}>{data.site.siteMetadata.title}</h1>
         <p className={styles.paragraphStyles}>
           Swim in the Indian ocean, see the whales in the bay, take long beach
-          walks and dips in the sparkling pool when you base yourself at
-          Entabene Beach House. Perfectly located to explore all that the Garden
-          Route has to offer, the Entabene Hill offers guests the chance to
+          walks and take in the beautiful panaromic views when you base yourself
+          at Entabene Beach House. Perfectly located to explore all that the
+          Garden Route has to offer, Entabene offers guests the chance to
           totally unplug, reset and relax in a magnificent setting. Get in touch
           to book your stay. Discover our exquisite interiors, beautiful coastal
           town, pristine beaches, friendly locals and wealth of activities in
@@ -131,10 +132,10 @@ const Home = ({ data }) => {
           back soon.
         </p>
       </div>
-      <Table responsive className={styles.tableAddressContainer}>
-        <thead>
+      <Table responsive="sm" className={styles.tableAddressContainer}>
+        <tbody>
           <tr>
-            <th>
+            <td>
               <a
                 className={styles.SvgAddress}
                 href="https://www.google.com/maps/place/Bay+Lodge/@-34.0590199,23.3744413,17z/data=!3m1!4b1!4m8!3m7!1s0x0:0x43d38d1d6ade11c6!5m2!4m1!1i2!8m2!3d-34.0590199!4d23.37663"
@@ -144,23 +145,20 @@ const Home = ({ data }) => {
                 <GiPositionMarker />
                 Plettenberg Bay, South Africa
               </a>
-            </th>
-          </tr>
-        </thead>
-        <thead>
-          <tr>
-            <td>
-              <span itemprop="telephone">
-                <a href="tel:+4796801110">
-                  <GiPhone />
-                  +47 968 01110
-                </a>
-              </span>
             </td>
           </tr>
-        </thead>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>
+              <a href="tel:+4796801110">
+                <GiPhone />
+                +47 968 01110
+              </a>
+            </td>
+          </tr>
+        </tbody>
       </Table>
-
       <div className={styles.imgHeadingContainer}>
         <div className={styles.imgOpacityHover}>
           <Img
@@ -193,13 +191,12 @@ const Home = ({ data }) => {
         </p>
         <Link to="/gallery" active>
           <Button variant="outline-dark" handleClick={handleClick}>
-            Discover Entabene Hill
+            Discover Entabene
           </Button>
         </Link>
       </div>
-
-      <CardGroup>
-        <Card>
+      <CardGroup className={styles.cardGroupStyles}>
+        <Card className={styles.cardStyles}>
           <Img
             variant="top"
             fluid={data.image3.childImageSharp.fluid}
@@ -212,9 +209,6 @@ const Home = ({ data }) => {
               elegant and simple.
             </Card.Text>
           </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Elegant interior</small>
-          </Card.Footer>
         </Card>
         <Card>
           <Img
@@ -235,9 +229,6 @@ const Home = ({ data }) => {
               bedrooms.
             </Card.Text>
           </Card.Body>
-          <Card.Footer>
-            <small className="text-muted"> 5 bedrooms and 4 bathrooms</small>
-          </Card.Footer>
         </Card>
         <Card>
           <Img
@@ -255,12 +246,8 @@ const Home = ({ data }) => {
               rent.
             </Card.Text>
           </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Panaromic views</small>
-          </Card.Footer>
         </Card>
       </CardGroup>
-
       <Card className="text-center">
         <Card.Body>
           <FaTripadvisor />
@@ -301,7 +288,6 @@ const Home = ({ data }) => {
           </Link>
         </div>
       </div>
-
       <div className={styles.mapSectionContainer}>
         <MapComponent />
       </div>

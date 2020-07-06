@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+ProLight);
+
 *::before {
   box-sizing: border-box;
 }
@@ -36,6 +38,11 @@ body {
   line-height: 1.5;
   color: #787878;
   background: #fff;
+  font-family: "SourceSansProLight";
+}
+
+.cardGroupStyles > .cardStyles {
+  margin-bottom: 0;
 }
 
 .category {
@@ -80,7 +87,12 @@ form {
 
 .headingStyle {
   color: #222831;
+  padding: 0;
+  letter-spacing: 0;
+  margin-top: 0;
   font-size: 2rem;
+  margin-bottom: 0.75rem;
+  font-family: "Old Standard TT", serif;
 }
 
 .headingContainer {
@@ -194,21 +206,26 @@ textarea:focus {
 }
 
 .paragraphStyles {
-  padding: 1rem;
+  font-weight: normal;
+  font-size: 1.125rem;
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  text-rendering: optimizeLegibility;
   text-align: center;
+  margin: 1rem;
 }
 
 .paragraphContainer {
-  margin: 1rem;
   padding: 1rem;
 }
 
 .paragraphContainerNoImg {
-  margin-top: 8.5rem;
+  margin-top: 4.25rem;
 }
 
 .paragraphContainerNoImgLP {
-  margin-top: 8.5rem;
+  margin-top: 4.25rem;
   margin-bottom: 2.5rem;
 }
 
@@ -304,7 +321,7 @@ textarea {
 
 @media (max-width: 48rem) {
   .imgNavMargin {
-    margin-top: 6.25rem;
+    margin-top: 3.5rem;
   }
 }
 

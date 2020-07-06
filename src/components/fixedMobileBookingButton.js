@@ -1,7 +1,8 @@
 import React from "react"
 import { Button } from "react-bootstrap"
+import fixedMobileBookingButtonStyles from "./fixedMobileBookingButton.module.css"
 
-const FixedBookingBtn = () => {
+const FixedMobileBookingButton = () => {
   function handleClick(e) {
     e.preventDefault()
     console.log("The button was clicked.")
@@ -9,16 +10,14 @@ const FixedBookingBtn = () => {
 
   return (
     <Button
+      bsPrefix={fixedMobileBookingButtonStyles.mobileButton}
       active
-      block
       handleClick={handleClick}
-      size="lg"
       type="button"
-      variant="dark"
     >
       Book now
     </Button>
   )
 }
 
-export default FixedBookingBtn
+export default FixedMobileBookingButton

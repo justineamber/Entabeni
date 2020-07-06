@@ -14,7 +14,7 @@ div.full-height {
 
 div.main {
   min-height: 100vh;
-  padding-bottom: 3.75rem;
+  padding-bottom: 3.25rem;
 }
 
 .footer-col {
@@ -39,5 +39,11 @@ div.main {
       align-self: center;
       text-align: center;
     }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  div.main {
+    padding-bottom: 0;
   }
 }

@@ -1,0 +1,31 @@
+.mobileButton {
+  color: #fff;
+  background-color: #171a1d;
+  border-color: #171a1d;
+  border-top: 1px solid;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  padding: 10px;
+  display: block;
+  font-weight: 400;
+  text-align: center;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+@media screen and (min-width: 1024px) {
+  .mobileButton {
+    display: none;
+    visibility: hidden;
+  }
+}

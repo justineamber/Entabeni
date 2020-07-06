@@ -11,8 +11,7 @@ import { Container, Row, Col } from "react-bootstrap"
 import Navbar from "./navBar"
 import NewsletterForm from "./newsletterForm"
 import Footer from "./footer"
-import layoutStyles from "./layout.module.css"
-//import FixedBookingBtn from "./fixedBookingBtn"
+import FixedMobileBookingButton from "./fixedMobileBookingButton"
 
 export const logoQuery = graphql`
   fragment optimizeLogo on File {
@@ -45,11 +44,12 @@ const Layout = ({ children, pageInfo }) => (
     render={data => (
       <>
         <Container fluid className="px-0 main">
-          <Row noGutters className="justify-content-center"></Row>
-          <Navbar
-            pageInfo={pageInfo}
-            logoImg={data.SiteLogo.childImageSharp.fixed}
-          />
+          <Row noGutters className="justify-content-center">
+            <Navbar
+              pageInfo={pageInfo}
+              logoImg={data.SiteLogo.childImageSharp.fixed}
+            />
+          </Row>
           <Row noGutters>
             <Col>
               <Container fluid className="px-0">
@@ -59,12 +59,13 @@ const Layout = ({ children, pageInfo }) => (
                   logoImg={data.SiteLogo.childImageSharp.fixed}
                   JHLogo={data.JHLogo.childImageSharp.fixed}
                 />
+                <FixedMobileBookingButton />
               </Container>
             </Col>
           </Row>
         </Container>
 
-        <Container fluid className="px-0">
+        {/* <Container fluid className="px-0">
           <Row noGutters>
             <Col className="footer-col">
               <footer>
@@ -83,10 +84,9 @@ const Layout = ({ children, pageInfo }) => (
                   </a>
                 </span>
               </footer>
-              {/* <FixedBookingBtn /> */}
             </Col>
           </Row>
-        </Container>
+        </Container> */}
       </>
     )}
   />

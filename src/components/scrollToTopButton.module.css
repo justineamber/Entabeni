@@ -1,0 +1,44 @@
+.scrollToTop {
+  position: fixed;
+  width: 100%;
+  bottom: 7.875rem;
+  align-items: center;
+  height: 1.25rem;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  animation: fadeIn 0.3s;
+  transition: opacity 0.4s;
+  opacity: 0.5;
+}
+
+.scrollToTop:hover {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .scrollToTop {
+    bottom: 4.5rem;
+  }
+}
+
+@media screen and (min-width: 90rem) {
+  .scrollToTop {
+    bottom: 3.5rem;
+  }
+}
+
+@media screen and (min-width: 160rem) {
+  .scrollToTop {
+    bottom: 3.25rem;
+  }
+}

@@ -12,6 +12,7 @@ import Navbar from "./navBar"
 import NewsletterForm from "./newsletterForm"
 import Footer from "./footer"
 import FixedMobileBookingButton from "./fixedMobileBookingButton"
+import ScrollToTopButton from "./scrollToTopButton"
 
 export const logoQuery = graphql`
   fragment optimizeLogo on File {
@@ -54,6 +55,7 @@ const Layout = ({ children, pageInfo }) => (
             <Col>
               <Container fluid className="px-0">
                 <main>{children}</main>
+                <ScrollToTopButton />
                 <NewsletterForm />
                 <Footer
                   logoImg={data.SiteLogo.childImageSharp.fixed}

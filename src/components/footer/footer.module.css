@@ -1,6 +1,7 @@
 .footerContainer {
   border-top: 0.0625rem solid #ccc;
   padding: 1rem 0;
+  margin-bottom: 3rem;
 }
 
 .headingStyle {

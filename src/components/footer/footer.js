@@ -57,7 +57,7 @@ export default function Footer({ logoImage, JustineHillLogo }) {
               </Link>
             </Col>
 
-            <Col lg={true}>
+            <Col xs={6} md={4}>
               <Link to="/home" className="nav-link" active>
                 <Img
                   className={footerStyles.logo}
@@ -73,7 +73,7 @@ export default function Footer({ logoImage, JustineHillLogo }) {
               </p>
             </Col>
 
-            <Col lg={true}>
+            <Col xs={6} md={4}>
               <Link to="/home" className="nav-link" active>
                 <Img
                   fixed={JustineHillLogo}
@@ -89,7 +89,7 @@ export default function Footer({ logoImage, JustineHillLogo }) {
 
       <Container fluid className="px-0">
         <Row noGutters>
-          <Col className="footer-col" bsPrefix={footerStyles.footer}>
+          <Col className="footer-col">
             <footer>
               <span>
                 <a href="/home" className={footerStyles.footerLinks}>

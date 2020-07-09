@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-react-bootstrap",
+  "name": "Entabene",
   "private": true,
-  "description": "A starter that includes and configures react-bootstrap and react-icons, along with SASS handling. ",
+  "description": "Entabene that includes and configures react-bootstrap and react-icons, along with SASS handling. ",
   "version": "0.1.0",
-  "author": "Billy Jacoby <billyjacoby@gmail.com>",
+  "author": "Justine Hill <justineamberhill@gmail.com>",
   "dependencies": {
     "@react-google-maps/api": "^1.9.7",
     "bootstrap": "^4.3.1",

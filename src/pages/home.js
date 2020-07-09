@@ -1,21 +1,21 @@
 import React from "react"
 import Button from "react-bootstrap/Button"
 import Table from "react-bootstrap/Table"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import styles from "./pagesStyles-css-modules.module.css"
-import MapComponent from "../components/MapComponent"
+import Layout from "../components/layout/layout"
+import SEO from "../components/seo/seo"
+import styles from "./pages-styles/pagestyles-css-modules.module.css"
+import MapComponent from "../components/map-component/map-component"
 import { GiSeahorse, GiPhone, GiPositionMarker } from "react-icons/gi"
 import { FaTripadvisor } from "react-icons/fa"
 import CardGroup from "react-bootstrap/CardGroup"
 import Card from "react-bootstrap/Card"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import ControlledCarousel from "../components/carousal"
+import ControlledCarousel from "../components/carousal/carousal"
 import { Link } from "gatsby"
 
 export const imageQuery = graphql`
-  fragment optimizeHomeImgs on File {
+  fragment optimizeHomeImages on File {
     childImageSharp {
       fluid(maxWidth: 800, maxHeight: 500, quality: 100) {
         ...GatsbyImageSharpFluid
@@ -32,43 +32,47 @@ export const query = graphql`
       }
     }
     image1: file(relativePath: { eq: "coupleonbeach.jpg" }) {
-      ...optimizeHomeImgs
+      ...optimizeHomeImages
     }
 
     image2: file(relativePath: { eq: "holidaymode.jpg" }) {
-      ...optimizeHomeImgs
+      ...optimizeHomeImages
     }
 
     image3: file(relativePath: { eq: "anotherviewofkitchen.jpg" }) {
-      ...optimizeHomeImgs
+      ...optimizeHomeImages
     }
 
     image4: file(relativePath: { eq: "bedroomonsuite.jpg" }) {
-      ...optimizeHomeImgs
+      ...optimizeHomeImages
     }
 
     image5: file(relativePath: { eq: "plettsunset.jpg" }) {
-      ...optimizeHomeImgs
+      ...optimizeHomeImages
     }
 
     slide1: file(relativePath: { eq: "plettsunset.jpg" }) {
-      ...optimizeHomeImgs
+      ...optimizeHomeImages
     }
 
     slide2: file(relativePath: { eq: "livingroom.jpg" }) {
-      ...optimizeHomeImgs
+      ...optimizeHomeImages
     }
 
     slide3: file(relativePath: { eq: "mainbedroom.jpg" }) {
-      ...optimizeHomeImgs
+      ...optimizeHomeImages
     }
 
     slide4: file(relativePath: { eq: "familyonbeachtoddler.jpg" }) {
-      ...optimizeHomeImgs
+      ...optimizeHomeImages
     }
 
     slide5: file(relativePath: { eq: "dolphins.jpg" }) {
-      ...optimizeHomeImgs
+      ...optimizeHomeImages
+    }
+
+    slide6: file(relativePath: { eq: "luxuryinterior.jpg" }) {
+      ...optimizeHomeImages
     }
   }
 `
@@ -79,7 +83,7 @@ const Home = ({ data }) => {
   }
 
   return (
-    <Layout pageInfo={{ pageName: "home" }}>
+    <Layout pageInfo={{ pageName: "Home" }}>
       <SEO
         title="Home"
         keywords={[
@@ -87,7 +91,6 @@ const Home = ({ data }) => {
           `Beach`,
           `House`,
           `Entabene`,
-          `Hill`,
           `luxury`,
           `accomodation`,
           `Plettenberg`,
@@ -111,6 +114,7 @@ const Home = ({ data }) => {
         slideImage3={data.slide3.childImageSharp.fluid}
         slideImage4={data.slide4.childImageSharp.fluid}
         slideImage5={data.slide5.childImageSharp.fluid}
+        slideImage6={data.slide6.childImageSharp.fluid}
       />
 
       <div className={styles.paragraphContainer}>
@@ -159,14 +163,14 @@ const Home = ({ data }) => {
           </tr>
         </tbody>
       </Table>
-      <div className={styles.imgHeadingContainer}>
-        <div className={styles.imgOpacityHover}>
+      <div className={styles.imageHeadingContainer}>
+        <div className={styles.imageOpacityHover}>
           <Img
             fluid={data.image1.childImageSharp.fluid}
             alt="couple walking on beach"
           />
         </div>
-        <div className={styles.centeredTextOverImg}>
+        <div className={styles.centeredTextOverImage}>
           <GiSeahorse />
           <h2>Paradise Found</h2>
           <Link to="/contact" active>
@@ -262,7 +266,7 @@ const Home = ({ data }) => {
             made our stay very special. We will never forget our holiday in
             Plett, South Africa and all the fun activities we did! Thank you so
             much for such an unforgettable experience. <br />
-            Mr. & Mrs. J. Finnegan - <em>May 2019</em>
+            Mr. &amp; Mrs. J. Finnegan - <em>May 2019</em>
           </Card.Text>
           <Link to="/guestReviews" active>
             <Button variant="dark" handleClick={handleClick}>
@@ -271,14 +275,14 @@ const Home = ({ data }) => {
           </Link>
         </Card.Body>
       </Card>
-      <div className={styles.imgHeadingContainer}>
-        <div className={styles.imgOpacityHover}>
+      <div className={styles.imageHeadingContainer}>
+        <div className={styles.imageOpacityHover}>
           <Img
             fluid={data.image2.childImageSharp.fluid}
             alt="Lady on beach looking at sunset"
           />
         </div>
-        <div className={styles.centeredTextOverImg}>
+        <div className={styles.centeredTextOverImage}>
           <GiSeahorse />
           <h2>Ideal Spot in Plett</h2>
           <Link to="/location" active>

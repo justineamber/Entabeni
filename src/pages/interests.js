@@ -1,7 +1,7 @@
 import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import styles from "./pagesStyles-css-modules.module.css"
+import Layout from "../components/layout/layout"
+import SEO from "../components/seo/seo"
+import styles from "./pages-styles/pagestyles-css-modules.module.css"
 import { GiSeahorse } from "react-icons/gi"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
@@ -37,7 +37,7 @@ const Interests = () => {
         ]}
       />
 
-      <div className={styles.paragraphContainerNoImg}>
+      <div className={styles.paragraphContainerNoImage}>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>Pick your interests</h2>
         <p className={styles.paragraphStyles}>
@@ -51,7 +51,7 @@ const Interests = () => {
             <Form.Check
               custom
               inline
-              label="Fashion & shopping"
+              label="Fashion 	&amp; shopping"
               type={type}
               id={`custom-inline-${type}-Shopping`}
             />
@@ -67,7 +67,7 @@ const Interests = () => {
             <Form.Check
               custom
               inline
-              label="Golf & putt-putt"
+              label="Golf &amp; putt-putt"
               type={type}
               id={`custom-inline-${type}-Golf`}
             />
@@ -91,7 +91,7 @@ const Interests = () => {
             <Form.Check
               custom
               inline
-              label="Safari's & animal sanctuaries"
+              label="Safari's &amp; animal sanctuaries"
               type={type}
               id={`custom-inline-${type}-Safari_Animals`}
             />
@@ -99,7 +99,7 @@ const Interests = () => {
             <Form.Check
               custom
               inline
-              label="Spa & relaxation"
+              label="Spa &amp; relaxation"
               type={type}
               id={`custom-inline-${type}-Spa_relaxation`}
             />

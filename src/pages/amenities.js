@@ -1,8 +1,8 @@
 import React from "react"
-import styles from "./pagesStyles-css-modules.module.css"
+import styles from "./pages-styles/pagestyles-css-modules.module.css"
 import { GiSeahorse } from "react-icons/gi"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layout/layout"
+import SEO from "../components/seo/seo"
 import CardGroup from "react-bootstrap/CardGroup"
 import Card from "react-bootstrap/Card"
 import { graphql } from "gatsby"
@@ -48,10 +48,10 @@ const Amenities = ({ data }) => {
     <Layout pageInfo={{ pageName: "Amenities" }}>
       <SEO
         title="Amenities"
-        keywords={[`Plett`, `Beach`, `House`, `Amenities`]}
+        keywords={[`Plett`, `Beach`, `House`, `Amenities`, `Entabene`]}
       />
 
-      <div className={styles.paragraphContainerNoImg}>
+      <div className={styles.paragraphContainerNoImage}>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>All the perks</h2>
         <p className={styles.paragraphStyles}>
@@ -86,8 +86,8 @@ const Amenities = ({ data }) => {
             <Card.Title>Central location and the best sea views</Card.Title>
             <Card.Text>
               Entabene Hill is in the ideal spot in Plett. From the house you
-              have beauitiful views of all the beaches in Plett & the house is
-              one block from the beach and close to restuarants and the town
+              have beauitiful views of all the beaches in Plett &amp; the house
+              is one block from the beach and close to restuarants and the town
               center.
             </Card.Text>
           </Card.Body>
@@ -105,7 +105,7 @@ const Amenities = ({ data }) => {
         </Card>
       </CardGroup>
 
-      <div className={styles.imgOpacityHover}>
+      <div className={styles.imageOpacityHover}>
         <Img fluid={data.image1.childImageSharp.fluid} alt="luxury bedroom" />
       </div>
     </Layout>

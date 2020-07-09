@@ -1,14 +1,14 @@
 import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layout/layout"
+import SEO from "../components/seo/seo"
 import { GiSeahorse } from "react-icons/gi"
-import useSubmitForm from "../components/submitForm"
-import styles from "./pagesStyles-css-modules.module.css"
+import SubmitForm from "../components/submit-form/submit-form"
+import styles from "./pages-styles/pagestyles-css-modules.module.css"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const ContactPage = () => {
-  const { inputs, handleInputChange, handleSubmit } = useSubmitForm()
+  const { inputs, handleInputChange, handleSubmit } = SubmitForm()
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "pack4vacay.jpg" }) {
@@ -21,18 +21,18 @@ const ContactPage = () => {
     }
   `)
   return (
-    <Layout pageInfo={{ pageName: "contact" }}>
+    <Layout pageInfo={{ pageName: "Contact" }}>
       <SEO
         title="Contact page"
         keywords={[`Plett`, `Beach`, `House`, `Contact`]}
       />
 
-      <div className={styles.paragraphContainerNoImg}>
+      <div className={styles.paragraphContainerNoImage}>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>Get in touch</h2>
       </div>
       <form
-        className={styles.contactform}
+        className={styles.contactForm}
         onSubmit={handleSubmit}
         method="post"
         action="https://getform.io/{your-unique-getform-endpoint}"
@@ -79,7 +79,7 @@ const ContactPage = () => {
         <input type="submit" value="Submit" className={styles.inputSubmit} />
       </form>
 
-      <div className={styles.imgOpacityHover}>
+      <div className={styles.imageOpacityHover}>
         <Img
           fluid={data.file.childImageSharp.fluid}
           alt="Passport, hat and bag on bed"

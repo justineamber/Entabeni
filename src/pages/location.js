@@ -1,10 +1,10 @@
 import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import styles from "./pagesStyles-css-modules.module.css"
+import Layout from "../components/layout/layout"
+import SEO from "../components/seo/seo"
+import styles from "./pages-styles/pagestyles-css-modules.module.css"
 import { GiSeahorse } from "react-icons/gi"
 import Button from "react-bootstrap/Button"
-import MapComponent from "../components/MapComponent"
+import MapComponent from "../components/map-component/map-component"
 
 const Location = () => {
   function handleClick(e) {
@@ -15,10 +15,10 @@ const Location = () => {
     <Layout pageInfo={{ pageName: "Location" }}>
       <SEO
         title="Location"
-        keywords={[`Plett`, `Beach`, `House`, `Location`]}
+        keywords={[`Plett`, `Entabene`, `Beach`, `House`, `Location`]}
       />
 
-      <div className={styles.paragraphContainerNoImgLP}>
+      <div className={styles.paragraphContainerNoImageLocationPage}>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>Stay in the heart of Plett</h2>
         <p className={styles.paragraphStyles}>

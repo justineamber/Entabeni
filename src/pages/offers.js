@@ -1,8 +1,8 @@
 import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layout/layout"
+import SEO from "../components/seo/seo"
 import { GiSeahorse } from "react-icons/gi"
-import styles from "./pagesStyles-css-modules.module.css"
+import styles from "./pages-styles/pagestyles-css-modules.module.css"
 import CardGroup from "react-bootstrap/CardGroup"
 import Card from "react-bootstrap/Card"
 import { graphql } from "gatsby"
@@ -54,10 +54,10 @@ const Offers = ({ data }) => {
   return (
     <Layout pageInfo={{ pageName: "Offers" }}>
       <SEO
-        title="Local Attractions"
+        title="Offers"
         keywords={[`Plett`, `Beach`, `House`, `Special`, `Offers`]}
       />
-      <div className={styles.paragraphContainerNoImg}>
+      <div className={styles.paragraphContainerNoImage}>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>View our offers</h2>
         <p className={styles.paragraphStyles}>
@@ -134,7 +134,7 @@ const Offers = ({ data }) => {
         </Card>
       </CardGroup>
 
-      <div className={styles.imgOpacityHover}>
+      <div className={styles.imageOpacityHover}>
         <Img
           fluid={data.image1.childImageSharp.fluid}
           alt="woman in lilo in the pool"

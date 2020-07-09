@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Old+Standard+TT);
+
+.navMenuSVG > svg {
+  display: block;
+  margin: auto;
+  position: relative;
+  opacity: 0;
+}
+
+.navMenuSVG:hover > svg {
+  opacity: 1;
+  transition: 1s;
+}
+
+@media screen and (max-width: 320px) {
+  .navBrand {
+    display: none;
+    visibility: hidden;
+  }
+  .menuLeftMobile {
+    display: flex;
+    width: 33.33333%;
+    justify-content: center;
+  }
+  .logoStyleMobile {
+    font-size: 16px;
+    color: #222831;
+    line-height: 1;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .menuCenterMobile {
+    display: inline-block;
+  }
+  .svgMobileViewWrapper {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navBrand {
+    display: none;
+    visibility: hidden;
+  }
+  .menuLeftMobile {
+    display: flex;
+    width: 33.33333%;
+    justify-content: center;
+  }
+  .logoStyleMobile {
+    font-size: 1.5rem;
+    color: #222831;
+    line-height: 1;
+    text-decoration: none !important;
+    font-weight: 900;
+    font-family: "Old Standard TT", serif;
+  }
+
+  .logoStyleMobile:hover {
+    text-decoration: none !important;
+  }
+
+  .menuCenterMobile {
+    display: inline-block;
+  }
+  .svgGiftMobileViewWrapper {
+    margin-left: 0;
+    margin-right: 1.5rem;
+    height: 24px;
+    width: 24px;
+    color: #787878;
+  }
+
+  .svgPhoneMobileViewWrapper {
+    height: 24px;
+    width: 24px;
+    color: #787878;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .svgGiftMobileViewWrapper {
+    display: none;
+    visibility: hidden;
+  }
+
+  .svgPhoneMobileViewWrapper {
+    display: none;
+    visibility: hidden;
+  }
+  .logoStyleMobile {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .navStyles {
+    box-sizing: border-box;
+    flex-direction: row;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: #787878;
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import styles from "./pagesStyles-css-modules.module.css"
+import Layout from "../components/layout/layout"
+import SEO from "../components/seo/seo"
+import styles from "./pages-styles/pagestyles-css-modules.module.css"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { GiSeahorse } from "react-icons/gi"
@@ -22,15 +22,15 @@ const History = () => {
     <Layout pageInfo={{ pageName: "History" }}>
       <SEO title="History" keywords={[`Plett`, `Beach`, `House`, `History`]} />
 
-      <div className={styles.imgNavMargin}>
-        <div className={styles.imgHeadingContainer}>
-          <div className={styles.imgOpacityHover}>
+      <div className={styles.imageNavMargin}>
+        <div className={styles.imageHeadingContainer}>
+          <div className={styles.imageOpacityHover}>
             <Img
               fluid={data.file.childImageSharp.fluid}
               alt="Exterior of Entabene Hill"
             />
           </div>
-          <div className={styles.centeredTextOverImg}>
+          <div className={styles.centeredTextOverImage}>
             <h1 className={styles.PlettBeachHouseH1}>History</h1>
           </div>
         </div>

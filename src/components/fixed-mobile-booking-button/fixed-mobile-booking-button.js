@@ -12,7 +12,7 @@ const FixedMobileBookingButton = () => {
     <Button
       bsPrefix={fixedMobileBookingButtonStyles.mobileButton}
       active
-      handleClick={handleClick}
+      onClick={handleClick}
       type="button"
     >
       Book now

@@ -8,7 +8,7 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
-import Navbar from "../nav-bar/nav-bar"
+import NavBar from "../nav-bar/nav-bar"
 import NewsletterForm from "../newsletter-form/newsletter-form"
 import Footer from "../footer/footer"
 import FixedMobileBookingButton from "../fixed-mobile-booking-button/fixed-mobile-booking-button"
@@ -46,7 +46,7 @@ const Layout = ({ children, pageInfo }) => (
       <>
         <Container fluid className="px-0 main">
           <Row noGutters className="justify-content-center">
-            <Navbar
+            <NavBar
               pageInfo={pageInfo}
               logoImage={data.SiteLogo.childImageSharp.fixed}
             />

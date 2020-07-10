@@ -173,8 +173,8 @@ const Home = ({ data }) => {
         <div className={styles.centeredTextOverImage}>
           <GiSeahorse />
           <h2>Paradise Found</h2>
-          <Link to="/contact" active>
-            <Button variant="outline-light" handleClick={handleClick}>
+          <Link to="/contact">
+            <Button variant="outline-light" onClick={handleClick}>
               Book your stay
             </Button>
           </Link>
@@ -193,8 +193,8 @@ const Home = ({ data }) => {
           over. This is the perfect holiday accomodation for your family
           holiday.
         </p>
-        <Link to="/gallery" active>
-          <Button variant="outline-dark" handleClick={handleClick}>
+        <Link to="/gallery">
+          <Button variant="outline-dark" onClick={handleClick}>
             Discover Entabene
           </Button>
         </Link>
@@ -256,8 +256,10 @@ const Home = ({ data }) => {
         <Card.Body>
           <FaTripadvisor />
           <Card.Title bsPrefix={styles.headingStyle}>Guest Reviews</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">
+            "Experience of a lifetime!"
+          </Card.Subtitle>
           <Card.Text bsPrefix={styles.paragraphStyles}>
-            <h3>"Experience of a lifetime!"</h3> <br />
             We had the experience of a lifetime and enjoyed every minute of it.
             Plett is a very special place and a beautiful house in the best
             location. Booking activites based on our interests through the
@@ -268,8 +270,8 @@ const Home = ({ data }) => {
             much for such an unforgettable experience. <br />
             Mr. &amp; Mrs. J. Finnegan - <em>May 2019</em>
           </Card.Text>
-          <Link to="/guestReviews" active>
-            <Button variant="dark" handleClick={handleClick}>
+          <Link to="/guestReviews">
+            <Button variant="dark" onClick={handleClick}>
               See all reviews
             </Button>
           </Link>
@@ -285,8 +287,8 @@ const Home = ({ data }) => {
         <div className={styles.centeredTextOverImage}>
           <GiSeahorse />
           <h2>Ideal Spot in Plett</h2>
-          <Link to="/location" active>
-            <Button variant="outline-light" handleClick={handleClick}>
+          <Link to="/location">
+            <Button variant="outline-light" onClick={handleClick}>
               Explore the area
             </Button>
           </Link>

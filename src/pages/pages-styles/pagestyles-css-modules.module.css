@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+ProLight);
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@700&family=Source+Sans+Pro&display=swap");
 
 *::before {
   box-sizing: border-box;
@@ -38,7 +38,7 @@ body {
   line-height: 1.5;
   color: #787878;
   background: #fff;
-  font-family: "SourceSansProLight";
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .cardGroupStyles > .cardStyles {

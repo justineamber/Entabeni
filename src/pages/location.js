@@ -27,7 +27,7 @@ const Location = () => {
         </p>
         <Button
           variant="outline-dark"
-          handleClick={handleClick}
+          onClick={handleClick}
           href="https://www.google.com/maps/place/Bay+Lodge/@-34.0590199,23.3744413,17z/data=!3m1!4b1!4m8!3m7!1s0x0:0x43d38d1d6ade11c6!5m2!4m1!1i2!8m2!3d-34.0590199!4d23.37663"
           target="_blank"
           rel="noreferrer"

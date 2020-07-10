@@ -5,16 +5,15 @@ import { GiSeahorse, GiPresent, GiPhone } from "react-icons/gi"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
-const navBar = ({ pageInfo, logoImage }) => {
+const NavBar = ({ pageInfo, logoImage }) => {
   function handleClick(e) {
     e.preventDefault()
-    console.log("The button was clicked.")
   }
   return (
-    <Navbar bg="light" fixed="top" justify-content-between expand="lg">
+    <Navbar bg="light" fixed="top" expand="lg">
       <Container>
-        <Navbar.Brand bsPrefix={navBarStyles.navBrand} href="#home">
-          <Link to="/home" activeClassName="active">
+        <Navbar.Brand bsPrefix={navBarStyles.navBrand}>
+          <Link to="/home" className="active">
             <Img
               fixed={logoImage}
               width="100"
@@ -47,10 +46,10 @@ const navBar = ({ pageInfo, logoImage }) => {
             <div className={navBarStyles.navMenuSVG}>
               <GiSeahorse />
               <NavDropdown title="History" id="collasible-nav-dropdown">
-                <Link to="/history" className="nav-link" active>
+                <Link to="/history" className="nav-link">
                   <NavDropdown.Item href="#history">History</NavDropdown.Item>
                 </Link>
-                <Link to="/location" className="nav-link" active>
+                <Link to="/location" className="nav-link">
                   <NavDropdown.Item href="#location">Location</NavDropdown.Item>
                 </Link>
               </NavDropdown>
@@ -58,51 +57,46 @@ const navBar = ({ pageInfo, logoImage }) => {
 
             <div className={navBarStyles.navMenuSVG}>
               <GiSeahorse />
-              <Link to="/offers" className="nav-link" active>
+              <Link to="/offers" className="nav-link">
                 Offers
               </Link>
             </div>
             <div className={navBarStyles.navMenuSVG}>
               <GiSeahorse />
-              <Link to="/amenities" className="nav-link" active>
+              <Link to="/amenities" className="nav-link">
                 Amenities
               </Link>
             </div>
             <div className={navBarStyles.navMenuSVG}>
               <GiSeahorse />
-              <Link to="/local-attractions" className="nav-link" active>
+              <Link to="/local-attractions" className="nav-link">
                 Local Attractions
               </Link>
             </div>
             <div className={navBarStyles.navMenuSVG}>
               <GiSeahorse />
 
-              <Link to="/gallery" className="nav-link" active>
+              <Link to="/gallery" className="nav-link">
                 Gallery
               </Link>
             </div>
             <div className={navBarStyles.navMenuSVG}>
               <GiSeahorse />
-              <Link to="/contact" className="nav-link" active>
+              <Link to="/contact" className="nav-link">
                 Contact
               </Link>
             </div>
           </Nav>
-          <Link to="/contact" className="nav-link" active>
-            <Button
-              type="button"
-              active
-              handleClick={handleClick}
-              variant="dark"
-            >
+          <Link to="/contact" className="nav-link">
+            <Button type="button" active onClick={handleClick} variant="dark">
               Book now
             </Button>
           </Link>
-          <Link to="/interests" className="nav-link" active>
+          <Link to="/interests" className="nav-link">
             <Button
               type="button"
               active
-              handleClick={handleClick}
+              onClick={handleClick}
               variant="primary"
             >
               Tailor your perfect holiday
@@ -114,4 +108,4 @@ const navBar = ({ pageInfo, logoImage }) => {
   )
 }
 
-export default navBar
+export default NavBar

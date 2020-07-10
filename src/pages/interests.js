@@ -117,7 +117,7 @@ const Interests = () => {
           variant="primary"
           type="submit"
           className="mb-2"
-          handleClick={handleClick}
+          onClick={handleClick}
         >
           Submit
         </Button>

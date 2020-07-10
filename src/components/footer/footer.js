@@ -40,17 +40,17 @@ export default function Footer({ logoImage, JustineHillLogo }) {
               <ul>
                 <li>Beacon Isle Dr, Plettenberg Bay, 6600, South Africa</li>
                 <li>
-                  <span itemprop="telephone">
+                  <span itemProp="telephone">
                     <a href="tel:+4796801110">+47 968 01110</a>
                   </span>
                 </li>
               </ul>
-              <Link to="/contact" className="nav-link" active>
+              <Link to="/contact" className="nav-link">
                 <Button
                   variant="dark"
                   active
                   type="button"
-                  handleClick={handleClick}
+                  onClick={handleClick}
                 >
                   Contact us
                 </Button>
@@ -58,7 +58,7 @@ export default function Footer({ logoImage, JustineHillLogo }) {
             </Col>
 
             <Col xs={6} md={4}>
-              <Link to="/home" className="nav-link" active>
+              <Link to="/home" className="nav-link">
                 <Img
                   className={footerStyles.logo}
                   fixed={logoImage}
@@ -74,7 +74,7 @@ export default function Footer({ logoImage, JustineHillLogo }) {
             </Col>
 
             <Col xs={6} md={4}>
-              <Link to="/home" className="nav-link" active>
+              <Link to="/home" className="nav-link">
                 <Img
                   fixed={JustineHillLogo}
                   width="100"

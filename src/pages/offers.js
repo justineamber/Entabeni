@@ -78,8 +78,8 @@ const Offers = ({ data }) => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Card.Text>
-            <Link to="/contact" active>
-              <Button variant="outline-dark" handleClick={handleClick}>
+            <Link to="/contact">
+              <Button variant="outline-dark" onClick={handleClick}>
                 Book now
               </Button>
             </Link>
@@ -100,8 +100,8 @@ const Offers = ({ data }) => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Card.Text>
-            <Link to="/contact" active>
-              <Button variant="outline-dark" handleClick={handleClick}>
+            <Link to="/contact">
+              <Button variant="outline-dark" onClick={handleClick}>
                 Book now
               </Button>
             </Link>
@@ -122,8 +122,8 @@ const Offers = ({ data }) => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Card.Text>
-            <Link to="/contact" active>
-              <Button variant="outline-dark" handleClick={handleClick}>
+            <Link to="/contact">
+              <Button variant="outline-dark" onClick={handleClick}>
                 Book now
               </Button>
             </Link>

@@ -120,12 +120,7 @@ const LocalAttractions = ({ data }) => {
           Plettenberg Bay and the surrounding area.
         </p>
         <Link to="/interests" className="nav-link" active>
-          <Button
-            type="button"
-            active
-            handleClick={handleClick}
-            variant="primary"
-          >
+          <Button type="button" active onClick={handleClick} variant="primary">
             Create your dream holiday
           </Button>
         </Link>

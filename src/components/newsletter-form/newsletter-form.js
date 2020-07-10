@@ -16,27 +16,15 @@ export default function NewsletterForm() {
         <Form.Row className="justify-content-md-center">
           <Col lg={true}>
             <Form.Group controlId="formBasicName">
-              <Form.Label for="inlineFormInput" srOnly>
-                Name
-              </Form.Label>
-              <Form.Control
-                className="mb-2"
-                id="inlineFormInput"
-                placeholder="First Name"
-              />
+              <Form.Label srOnly>Name</Form.Label>
+              <Form.Control className="mb-2" placeholder="First Name" />
             </Form.Group>
           </Col>
 
           <Col lg={true}>
             <Form.Group controlId="formBasicEmail">
-              <Form.Label for="inlineFormInput" srOnly>
-                Email Address
-              </Form.Label>
-              <Form.Control
-                className="mb-2"
-                id="inlineFormInput"
-                placeholder="Email Address"
-              />
+              <Form.Label srOnly>Email Address</Form.Label>
+              <Form.Control className="mb-2" placeholder="Email Address" />
             </Form.Group>
           </Col>
 

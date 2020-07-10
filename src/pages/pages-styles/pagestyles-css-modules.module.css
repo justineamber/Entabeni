@@ -17,7 +17,7 @@ a[href^="tel:"]:before {
 }
 
 .attractionImage {
-  height: 31.25rem;
+  height: 20rem;
   object-fit: cover;
   transform: scale(1);
   transition: all 0.3s ease-in-out;
@@ -101,9 +101,10 @@ form {
 
 .imageContainer {
   cursor: pointer;
-  height: 31.25rem;
+  height: 20rem;
   overflow: hidden;
   width: 100%;
+  margin: 0;
 }
 .imageContainer:hover .imageContentHover {
   display: block;
@@ -122,11 +123,10 @@ form {
   background: #fff;
   display: none;
   font-weight: 400;
-  margin-left: -2rem;
-  margin-top: -20rem;
+  margin-top: -15rem;
   padding: 1rem;
   position: absolute;
-  white-space: nowrap;
+  white-space: normal;
   z-index: 1;
 }
 
@@ -320,7 +320,7 @@ textarea {
 }
 
 @media (max-width: 48rem) {
-  .imgageNavMargin {
+  .imageNavMargin {
     margin-top: 3.5rem;
   }
 }
@@ -338,5 +338,29 @@ textarea {
 
   .paragraphContainerNoImageLocationPage {
     margin-top: 8.25rem;
+  }
+}
+/*optimize gallery and local attractions page images for mobile*/
+@media screen and (max-width: 20rem) {
+  .attractionImage {
+    height: 5rem;
+  }
+}
+
+@media screen and (max-width: 23.4375rem) {
+  .attractionImage {
+    height: 6rem;
+  }
+}
+
+@media screen and (max-width: 26.5625rem) {
+  .attractionImage {
+    height: 7rem;
+  }
+}
+
+@media screen and (max-width: 64rem) {
+  .attractionImage {
+    height: 10rem;
   }
 }

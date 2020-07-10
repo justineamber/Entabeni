@@ -18,7 +18,7 @@ export default function Footer({ logoImage, JustineHillLogo }) {
   }
   return (
     <>
-      <div className={footerStyles.footerContainer}>
+      <div className={footerStyles.footerContainerSocialMedia}>
         <GiSeahorse />
         <h3 className={footerStyles.headingStyle}>Connect with us</h3>
         <ul>

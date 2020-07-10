@@ -4,6 +4,11 @@
   margin-bottom: 3rem;
 }
 
+.footerContainerSocialMedia {
+  border-top: 0.0625rem solid #ccc;
+  padding: 1rem 0;
+}
+
 .headingStyle {
   color: #222831;
   font-size: 2rem;

@@ -114,7 +114,10 @@ export const query = graphql`
 const Gallery = ({ data }) => {
   return (
     <Layout pageInfo={{ pageName: "Gallery" }}>
-      <SEO title="Gallery" keywords={[`Plett`, `Beach`, `House`, `Gallery`]} />
+      <SEO
+        title="Gallery"
+        keywords={[`Plett`, `Beach`, `House`, `Gallery`, `Entabene`]}
+      />
 
       <div className={styles.imageNavMargin}>
         <div className={styles.imageHeadingContainer}>

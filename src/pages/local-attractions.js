@@ -143,15 +143,20 @@ const LocalAttractions = ({ data }) => {
                     className={styles.attractionImage}
                   />
                   <figcaption className={styles.imageContent}>
-                    <h2 className={styles.title}>Designer Boutiques</h2>
+                    <h2 className={styles.title}>
+                      Designer boutiques and artisan shops
+                    </h2>
                     <h3 className={styles.category}>
-                      Designer Boutiques &amp; shopping
+                      A list of the best shopping stores.
                     </h3>
                   </figcaption>
+
                   <span className={styles.imageContentHover}>
-                    <h2 className={styles.title}>Designer Boutiques</h2>
+                    <h2 className={styles.title}>
+                      Designer boutiques and artisan shops
+                    </h2>
                     <h3 className={styles.category}>
-                      Designer Boutiques &amp; shopping
+                      A list of the best shopping stores.
                     </h3>
                   </span>
                 </figure>
@@ -173,7 +178,7 @@ const LocalAttractions = ({ data }) => {
                     </h3>
                   </figcaption>
                   <span className={styles.imageContentHover}>
-                    <h2 className={styles.title}>Goose Valley Golf Club</h2>
+                    <h2 className={styles.title}> Goose Valley Golf Club</h2>
                     <h3 className={styles.category}>
                       18-hole signature golf course designed by Gary Player
                     </h3>
@@ -215,11 +220,15 @@ const LocalAttractions = ({ data }) => {
                     className={styles.attractionImage}
                   />
                   <figcaption className={styles.imageContent}>
-                    <h2 className={styles.title}>Jiwu Spa</h2>
+                    <h2 className={styles.title}>
+                      Relax and unwind at the Jiwu Spa
+                    </h2>
                     <h3 className={styles.category}>Luxury spa and salon</h3>
                   </figcaption>
                   <span className={styles.imageContentHover}>
-                    <h2 className={styles.title}>Jiwu Spa</h2>
+                    <h2 className={styles.title}>
+                      Relax and unwind at the Jiwu Spa
+                    </h2>
                     <h3 className={styles.category}>Luxury spa and salon</h3>
                   </span>
                 </figure>
@@ -279,7 +288,7 @@ const LocalAttractions = ({ data }) => {
                 <figure className={styles.imageContainer}>
                   <Img
                     fluid={data.image6.childImageSharp.fluid}
-                    alt="Man wake boarding on water"
+                    alt="baby seal"
                     className={styles.attractionImage}
                   />
                   <figcaption className={styles.imageContent}>
@@ -357,15 +366,13 @@ const LocalAttractions = ({ data }) => {
                   <figcaption className={styles.imageContent}>
                     <h2 className={styles.title}>Robberg Nature Reserve</h2>
                     <h3 className={styles.category}>
-                      National monument, prehistoric rocks &amp; Stone Age
-                      artefacts
+                      National monument, prehistoric rocks, stone age artefacts
                     </h3>
                   </figcaption>
                   <span className={styles.imageContentHover}>
                     <h2 className={styles.title}>Robberg Nature Reserve</h2>
                     <h3 className={styles.category}>
-                      National monument, prehistoric rocks &amp; Stone Age
-                      artefacts
+                      National monument, prehistoric rocks, stone age artefacts
                     </h3>
                   </span>
                 </figure>

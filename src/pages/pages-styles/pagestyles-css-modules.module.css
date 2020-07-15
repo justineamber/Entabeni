@@ -8,7 +8,7 @@
 }
 
 a[href^="tel:"] {
-  color: #787878;
+  color: #222;
   text-decoration: none;
 }
 
@@ -36,9 +36,10 @@ body {
   text-align: center;
   font-size: 1.125rem;
   line-height: 1.5;
-  color: #787878;
+  color: #222;
   background: #fff;
   font-family: "Source Sans Pro", sans-serif;
+  font-display: swap;
 }
 
 .cardGroupStyles > .cardStyles {
@@ -46,7 +47,8 @@ body {
 }
 
 .category {
-  color: #787878;
+  color: #222;
+  background: #fff;
   font-size: 1rem;
 }
 
@@ -86,13 +88,13 @@ form {
 }
 
 .headingStyle {
-  color: #222831;
   padding: 0;
   letter-spacing: 0;
   margin-top: 0;
   font-size: 2rem;
   margin-bottom: 0.75rem;
   font-family: "Old Standard TT", serif;
+  font-display: swap;
 }
 
 .headingContainer {
@@ -239,12 +241,12 @@ textarea:focus {
 }
 
 .SvgAddress {
-  color: #787878;
+  color: #222;
   text-decoration: none;
 }
 
 .SvgAddress:hover {
-  color: #787878;
+  color: #222;
   text-decoration: none;
 }
 
@@ -261,7 +263,8 @@ textarea {
 }
 
 .title {
-  color: #2e2e2e;
+  color: #222;
+  background: #fff;
   font-size: 1.5rem;
   font-weight: 700;
 }

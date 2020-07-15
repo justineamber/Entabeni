@@ -108,19 +108,7 @@ const MapComponent = ({ array, isAdding, getLocation }) => {
             <InfoWindow
               position={selected.location}
               onCloseClick={() => setSelected({})}
-            >
-              <div className="infowindow">
-                <p>{selected.title}</p>
-                <img
-                  src={selected.image}
-                  className="small-image"
-                  alt="rental"
-                />
-                <p>price: {selected.price}</p>
-                <p>sqm2: {selected.sqm}</p>
-                <p>bedrooms: {selected.bedrooms}</p>
-              </div>
-            </InfoWindow>
+            ></InfoWindow>
           ) : null}
         </GoogleMap>
       </LoadScript>

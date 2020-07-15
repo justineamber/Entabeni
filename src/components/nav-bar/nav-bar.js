@@ -89,7 +89,7 @@ const NavBar = ({ pageInfo, logoImage }) => {
           </Nav>
           <Link to="/contact" className="nav-link">
             <Button type="button" active onClick={handleClick} variant="dark">
-              Book now
+              Book accomodation
             </Button>
           </Link>
           <Link to="/interests" className="nav-link">
@@ -99,7 +99,7 @@ const NavBar = ({ pageInfo, logoImage }) => {
               onClick={handleClick}
               variant="primary"
             >
-              Tailor your perfect holiday
+              Book things to do
             </Button>
           </Link>
         </Navbar.Collapse>

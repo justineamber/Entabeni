@@ -39,7 +39,7 @@ const Interests = () => {
 
       <div className={styles.paragraphContainerNoImage}>
         <GiSeahorse />
-        <h2 className={styles.headingStyle}>Pick your interests</h2>
+        <h2 className={styles.headingStyle}>Pick your experiences</h2>
         <p className={styles.paragraphStyles}>
           What kind of things interest you for your perfect holiday? <br />
           Select your interests below and get special offers through us.

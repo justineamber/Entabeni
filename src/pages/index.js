@@ -256,9 +256,7 @@ const Home = ({ data }) => {
         <Card.Body>
           <FaTripadvisor />
           <Card.Title bsPrefix={styles.headingStyle}>Guest Reviews</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">
-            "Experience of a lifetime!"
-          </Card.Subtitle>
+          <Card.Subtitle>"Experience of a lifetime!"</Card.Subtitle>
           <Card.Text bsPrefix={styles.paragraphStyles}>
             We had the experience of a lifetime and enjoyed every minute of it.
             Plett is a very special place and a beautiful house in the best

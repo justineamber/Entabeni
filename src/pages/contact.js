@@ -6,6 +6,7 @@ import SubmitForm from "../components/submit-form/submit-form"
 import styles from "./pages-styles/pagestyles-css-modules.module.css"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import BookingSystem from "../components/booking-system/booking-system"
 
 const ContactPage = () => {
   const { inputs, handleInputChange, handleSubmit } = SubmitForm()
@@ -26,7 +27,7 @@ const ContactPage = () => {
         title="Contact page"
         keywords={[`Plett`, `Beach`, `House`, `Contact`]}
       />
-
+      <BookingSystem />
       <div className={styles.paragraphContainerNoImage}>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>Get in touch</h2>

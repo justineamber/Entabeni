@@ -69,8 +69,8 @@ const NavBar = ({ pageInfo, logoImage }) => {
             </div>
             <div className={navBarStyles.navMenuSVG}>
               <GiSeahorse />
-              <Link to="/local-attractions" className="nav-link">
-                Local Attractions
+              <Link to="/activities" className="nav-link">
+                Activities
               </Link>
             </div>
             <div className={navBarStyles.navMenuSVG}>
@@ -89,7 +89,7 @@ const NavBar = ({ pageInfo, logoImage }) => {
           </Nav>
           <Link to="/contact" className="nav-link">
             <Button type="button" active onClick={handleClick} variant="dark">
-              Book accomodation
+              Book Accomodation
             </Button>
           </Link>
           <Link to="/interests" className="nav-link">
@@ -99,7 +99,7 @@ const NavBar = ({ pageInfo, logoImage }) => {
               onClick={handleClick}
               variant="primary"
             >
-              Book things to do
+              Book Activities
             </Button>
           </Link>
         </Navbar.Collapse>

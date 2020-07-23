@@ -5,8 +5,8 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import Button from "react-bootstrap/Button"
 import { Link } from "gatsby"
+import BookingSystem from "../components/booking-system/booking-system"
 
 export const imageQuery = graphql`
   fragment localAttractionsImages on File {
@@ -78,7 +78,7 @@ export const query = graphql`
     }
   }
 `
-const LocalAttractions = ({ data }) => {
+const Activities = ({ data }) => {
   if (typeof document !== `undefined`) {
     const imageContent = document.querySelectorAll(`.imageContentHover`)
 
@@ -92,9 +92,6 @@ const LocalAttractions = ({ data }) => {
     document.addEventListener(`mousemove`, showimageContent)
   }
 
-  function handleClick(e) {
-    e.preventDefault()
-  }
   return (
     <Layout pageInfo={{ pageName: "Local attractions" }}>
       <SEO
@@ -108,9 +105,10 @@ const LocalAttractions = ({ data }) => {
           `Attractions`,
         ]}
       />
+      <BookingSystem />
       <div className={styles.paragraphContainerNoImage}>
         <GiSeahorse />
-        <h2 className={styles.headingStyle}>Discover more</h2>
+        <h2 className={styles.headingStyle}>Things to do</h2>
         <p className={styles.paragraphStyles}>
           Plett offers many fun and luxurious choices for you to enjoy that will
           always make you smile. You can play polo in the morning, have lunch on
@@ -119,11 +117,10 @@ const LocalAttractions = ({ data }) => {
           below activities. There is always much more for you to discover at
           Plettenberg Bay and the surrounding area.
         </p>
-        <Link to="/interests" className="nav-link" active>
-          <Button type="button" active onClick={handleClick} variant="primary">
-            Create your dream holiday
-          </Button>
-        </Link>
+        <p className={styles.paragraphStyles}>
+          Please note: Advance bookings are highly recommended to avoid
+          disappointment.
+        </p>
       </div>
 
       <section>
@@ -424,8 +421,17 @@ const LocalAttractions = ({ data }) => {
           </div>
         </div>
       </section>
+      <p className={styles.paragraphStyles}>
+        Please note: all the above mentioned activities are provided and
+        organised by independent companies/contractors and booked at your own
+        risk. Safety information for garden and grounds - there are high walls
+        around the property. Children must be accompanied and supervised by a
+        responsible adult at all times. Safety information for ramblers - the
+        terrain is uneven, all guests must be suitably attired and activities
+        are undertaken at your own risk.
+      </p>
     </Layout>
   )
 }
 
-export default LocalAttractions
+export default Activities

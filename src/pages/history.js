@@ -21,7 +21,6 @@ const History = () => {
   return (
     <Layout pageInfo={{ pageName: "History" }}>
       <SEO title="History" keywords={[`Plett`, `Beach`, `House`, `History`]} />
-
       <div className={styles.imageNavMargin}>
         <div className={styles.imageHeadingContainer}>
           <div className={styles.imageOpacityHover}>

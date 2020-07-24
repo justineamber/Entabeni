@@ -112,3 +112,10 @@
     color: #222;
   }
 }
+
+@media screen and (min-width: 769px) {
+  .svgPhoneMobileViewWrapper {
+    display: none;
+    visibility: hidden;
+  }
+}

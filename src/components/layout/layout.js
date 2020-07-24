@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
@@ -13,6 +6,7 @@ import NewsletterForm from "../newsletter-form/newsletter-form"
 import Footer from "../footer/footer"
 import FixedMobileBookingButton from "../fixed-mobile-booking-button/fixed-mobile-booking-button"
 import ScrollToTopButton from "../scroll-to-top-button/scroll-to-top-button"
+import BookingSystem from "../booking-system/booking-system"
 
 export const logoQuery = graphql`
   fragment optimizeLogo on File {
@@ -51,10 +45,12 @@ const Layout = ({ children, pageInfo }) => (
               logoImage={data.SiteLogo.childImageSharp.fixed}
             />
           </Row>
+
           <Row noGutters>
             <Col>
               <Container fluid className="px-0">
                 <main>{children}</main>
+                <BookingSystem />
                 <ScrollToTopButton />
                 <NewsletterForm />
                 <Footer

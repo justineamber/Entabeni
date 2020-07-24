@@ -26,7 +26,6 @@ const ControlledCarousel = ({
           className={carousalStyles.carousalImage}
         />
       </Carousel.Item>
-
       <Carousel.Item>
         <Img
           fluid={slideImage2}
@@ -34,7 +33,6 @@ const ControlledCarousel = ({
           alt="Second slide"
         />
       </Carousel.Item>
-
       <Carousel.Item>
         <Img
           fluid={slideImage3}
@@ -42,7 +40,6 @@ const ControlledCarousel = ({
           alt="Third slide"
         />
       </Carousel.Item>
-
       <Carousel.Item>
         <Img
           fluid={slideImage4}
@@ -50,7 +47,6 @@ const ControlledCarousel = ({
           alt="Fourth slide"
         />
       </Carousel.Item>
-
       <Carousel.Item>
         <Img
           fluid={slideImage5}
@@ -58,7 +54,6 @@ const ControlledCarousel = ({
           alt="Fifth slide"
         />
       </Carousel.Item>
-
       <Carousel.Item>
         <Img
           fluid={slideImage6}

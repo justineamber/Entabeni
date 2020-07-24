@@ -1,31 +1,27 @@
-.bookingButtonStyles {
-  margin-top: 0.4375rem;
-}
-
 .calendarIcon {
   position: absolute;
-  right: 14px;
+  right: 1.5rem;
   top: 18px;
   z-index: 9999;
 }
 
-.colStyle {
-  padding-right: 0;
-  padding-left: 0;
+.inputGroupStyles {
+  margin-top: 0.5rem;
 }
 
-.form {
-  margin: auto;
-  max-width: 38.5rem;
-  margin-top: 0;
+.formStyles {
+  max-width: 0;
 }
 
-.formRow {
+.formRowStyles {
   display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .searchButtonStyles {
-  margin-top: 0.9375rem;
+  margin-top: 0.4375rem;
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -42,7 +38,30 @@
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+.wrapperStyles {
+  background-color: #f8f9fa !important;
+  position: absolute;
+  top: 443px;
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
 
-.searchButtonStyles:hover {
-  background-color: #f0f0f1;
+@media screen and (max-width: 1023px) {
+  .wrapperStyles {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .wrapperStyles {
+    top: 508px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .wrapperStyles {
+    top: 570px;
+  }
 }

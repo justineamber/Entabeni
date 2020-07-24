@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Navbar, NavDropdown, Nav, Button } from "react-bootstrap"
+import { Container, Navbar, NavDropdown, Nav } from "react-bootstrap"
 import navBarStyles from "./nav-bar.module.css"
 import { GiSeahorse, GiPresent, GiPhone } from "react-icons/gi"
 import { Link } from "gatsby"
@@ -87,7 +87,7 @@ const NavBar = ({ pageInfo, logoImage }) => {
               </Link>
             </div>
           </Nav>
-          <Link to="/contact" className="nav-link">
+          {/* <Link to="/contact" className="nav-link">
             <Button type="button" active onClick={handleClick} variant="dark">
               Book Accomodation
             </Button>
@@ -101,7 +101,7 @@ const NavBar = ({ pageInfo, logoImage }) => {
             >
               Book Activities
             </Button>
-          </Link>
+          </Link> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>

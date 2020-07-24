@@ -75,11 +75,11 @@ body {
   clear: both;
 }
 
-form {
+/* form {
   margin: 1.25rem auto;
   margin-top: 0;
   max-width: 37.5rem;
-}
+} */
 
 .half {
   float: left;

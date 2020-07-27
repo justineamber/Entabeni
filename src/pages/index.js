@@ -13,6 +13,7 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import ControlledCarousel from "../components/carousal/carousal"
 import { Link } from "gatsby"
+import BookingForm from "../components/booking-form/booking-form"
 
 export const imageQuery = graphql`
   fragment optimizeHomeImages on File {
@@ -116,7 +117,9 @@ const Home = ({ data }) => {
         slideImage5={data.slide5.childImageSharp.fluid}
         slideImage6={data.slide6.childImageSharp.fluid}
       />
-
+      <div className={styles.bookingFormWrapperHomePage}>
+        <BookingForm />
+      </div>
       <div className={styles.paragraphContainer}>
         <GiSeahorse />
         <h1 className={styles.headingStyle}>{data.site.siteMetadata.title}</h1>

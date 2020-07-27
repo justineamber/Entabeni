@@ -6,7 +6,7 @@ import SEO from "../components/seo/seo"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
-import BookingSystem from "../components/booking-system/booking-system"
+import BookingForm from "../components/booking-form/booking-form"
 
 export const imageQuery = graphql`
   fragment localAttractionsImages on File {
@@ -105,8 +105,11 @@ const Activities = ({ data }) => {
           `Attractions`,
         ]}
       />
-      <BookingSystem />
+
       <div className={styles.paragraphContainerNoImage}>
+        <div className={styles.bookingFormWrapperAllPages}>
+          <BookingForm />
+        </div>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>Things to do</h2>
         <p className={styles.paragraphStyles}>
@@ -122,7 +125,6 @@ const Activities = ({ data }) => {
           disappointment.
         </p>
       </div>
-
       <section>
         <div className={styles.container}>
           <div className={styles.grid}>

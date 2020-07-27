@@ -2,39 +2,17 @@ import React from "react"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
 import styles from "./pages-styles/pagestyles-css-modules.module.css"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 import { GiSeahorse } from "react-icons/gi"
+import BookingForm from "../components/booking-form/booking-form"
 
 const History = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "exteriorhome.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800, maxHeight: 300, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
   return (
     <Layout pageInfo={{ pageName: "History" }}>
       <SEO title="History" keywords={[`Plett`, `Beach`, `House`, `History`]} />
-      <div className={styles.imageNavMargin}>
-        <div className={styles.imageHeadingContainer}>
-          <div className={styles.imageOpacityHover}>
-            <Img
-              fluid={data.file.childImageSharp.fluid}
-              alt="Exterior of Entabene Hill"
-            />
-          </div>
-          <div className={styles.centeredTextOverImage}>
-            <h1 className={styles.PlettBeachHouseH1}>History</h1>
-          </div>
+      <div className={styles.paragraphContainerNoImage}>
+        <div className={styles.bookingFormWrapperAllPages}>
+          <BookingForm />
         </div>
-      </div>
-      <div className={styles.paragraphContainer}>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>About us</h2>
         <p className={styles.paragraphStyles}>
@@ -47,7 +25,6 @@ const History = () => {
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
-      <div className={styles.border}></div>
     </Layout>
   )
 }

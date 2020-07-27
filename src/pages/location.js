@@ -5,6 +5,7 @@ import styles from "./pages-styles/pagestyles-css-modules.module.css"
 import { GiSeahorse } from "react-icons/gi"
 import Button from "react-bootstrap/Button"
 import MapComponent from "../components/map-component/map-component"
+import BookingForm from "../components/booking-form/booking-form"
 
 const Location = () => {
   function handleClick(e) {
@@ -19,6 +20,9 @@ const Location = () => {
       />
 
       <div className={styles.paragraphContainerNoImageLocationPage}>
+        <div className={styles.bookingFormWrapperAllPages}>
+          <BookingForm />
+        </div>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>Stay in the heart of Plett</h2>
         <p className={styles.paragraphStyles}>

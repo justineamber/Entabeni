@@ -6,6 +6,7 @@ import { GiSeahorse } from "react-icons/gi"
 import Table from "react-bootstrap/Table"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import BookingForm from "../components/booking-form/booking-form"
 
 const GuestReviews = () => {
   const data = useStaticQuery(graphql`
@@ -27,6 +28,9 @@ const GuestReviews = () => {
       />
 
       <div className={styles.paragraphContainerNoImage}>
+        <div className={styles.bookingFormWrapperAllPages}>
+          <BookingForm />
+        </div>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>More from our Guests...</h2>
         <p className={styles.paragraphStyles}>

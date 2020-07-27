@@ -4,6 +4,7 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
+import BookingForm from "../components/booking-form/booking-form"
 
 export const imageQuery = graphql`
   fragment galleryImages on File {
@@ -118,21 +119,11 @@ const Gallery = ({ data }) => {
         title="Gallery"
         keywords={[`Plett`, `Beach`, `House`, `Gallery`, `Entabene`]}
       />
-
-      <div className={styles.imageNavMargin}>
-        <div className={styles.imageHeadingContainer}>
-          <div className={styles.imageOpacityHover}>
-            <Img
-              fluid={data.image1.childImageSharp.fluid}
-              alt="woman standing in the waves"
-            />
-          </div>
-          <div className={styles.centeredTextOverImage}>
-            <h1 className={styles.PlettBeachHouseH1}>Gallery</h1>
-          </div>
+      <div className={styles.paragraphContainerNoImage}>
+        <div className={styles.bookingFormWrapperAllPages}>
+          <BookingForm />
         </div>
       </div>
-
       <section>
         <div className={styles.container}>
           <div className={styles.grid}>

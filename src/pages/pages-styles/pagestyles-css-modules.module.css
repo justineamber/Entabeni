@@ -67,19 +67,13 @@ body {
 /* Clearfix */
 .contactForm:before,
 .contactForm:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
+  content: " ";
+  display: table;
 }
 
 .contactForm:after {
   clear: both;
 }
-
-/* form {
-  margin: 1.25rem auto;
-  margin-top: 0;
-  max-width: 37.5rem;
-} */
 
 .half {
   float: left;
@@ -282,6 +276,53 @@ textarea {
   }
 }
 
+/*Booking Form on Homepage */
+.bookingFormWrapperHomePage {
+  background-color: #f8f9fa !important;
+  position: absolute;
+  top: 443px;
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
+@media screen and (max-width: 1023px) {
+  .bookingFormWrapperHomePage {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .bookingFormWrapperHomePage {
+    top: 508px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .bookingFormWrapperHomePage {
+    top: 570px;
+  }
+}
+
+/*Booking Form on pages with no image*/
+.bookingFormWrapperAllPages {
+  background-color: #333 !important;
+  position: absolute;
+  top: 115px;
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
+@media screen and (max-width: 1023px) {
+  .bookingFormWrapperAllPages {
+    display: none;
+    visibility: hidden;
+  }
+}
+/*Media Queries*/
+
 @media screen and (min-width: 37.5rem) {
   .grid {
     display: flex;
@@ -322,12 +363,6 @@ textarea {
   }
 }
 
-@media (max-width: 48rem) {
-  .imageNavMargin {
-    margin-top: 3.5rem;
-  }
-}
-
 @supports (display: grid) {
   .gallery .grid {
     grid-gap: 1rem;
@@ -336,11 +371,12 @@ textarea {
 
 @media screen and (min-width: 64rem) {
   .paragraphContainerNoImage {
-    margin-top: 8.25rem;
+    /* margin-top: 8.25rem; */
+    margin-top: 12rem;
   }
 
   .paragraphContainerNoImageLocationPage {
-    margin-top: 8.25rem;
+    margin-top: 12rem;
   }
 }
 /*optimize gallery and local attractions page images for mobile*/

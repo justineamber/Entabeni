@@ -7,7 +7,7 @@ import CardGroup from "react-bootstrap/CardGroup"
 import Card from "react-bootstrap/Card"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import BookingSystem from "../components/booking-system/booking-system"
+import BookingForm from "../components/booking-form/booking-form"
 
 export const imageQuery = graphql`
   fragment amenitiesImages on File {
@@ -51,8 +51,11 @@ const Amenities = ({ data }) => {
         title="Amenities"
         keywords={[`Plett`, `Beach`, `House`, `Amenities`, `Entabene`]}
       />
-      <BookingSystem />
+
       <div className={styles.paragraphContainerNoImage}>
+        <div className={styles.bookingFormWrapperAllPages}>
+          <BookingForm />
+        </div>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>All the perks</h2>
         <p className={styles.paragraphStyles}>

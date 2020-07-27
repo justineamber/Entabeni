@@ -18,7 +18,7 @@ import BookingForm from "../components/booking-form/booking-form"
 export const imageQuery = graphql`
   fragment optimizeHomeImages on File {
     childImageSharp {
-      fluid(maxWidth: 800, maxHeight: 500, quality: 100) {
+      fluid(maxWidth: 800, maxHeight: 350, quality: 100) {
         ...GatsbyImageSharpFluid
       }
     }

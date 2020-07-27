@@ -13,7 +13,7 @@ const NavBar = ({ pageInfo, logoImage }) => {
     <Navbar bg="light" fixed="top" expand="lg">
       <Container>
         <Navbar.Brand bsPrefix={navBarStyles.navBrand}>
-          <Link to="/home" className="active">
+          <Link to="/" className="active">
             <Img
               fixed={logoImage}
               width="100"
@@ -32,7 +32,7 @@ const NavBar = ({ pageInfo, logoImage }) => {
           </a>
         </div>
         <div className={navBarStyles.menuLeftMobile}>
-          <a className={navBarStyles.logoStyleMobile} href="/home">
+          <a className={navBarStyles.logoStyleMobile} href="/">
             Entabene
           </a>
         </div>

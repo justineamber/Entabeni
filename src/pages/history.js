@@ -4,8 +4,21 @@ import SEO from "../components/seo/seo"
 import styles from "./pages-styles/pagestyles-css-modules.module.css"
 import { GiSeahorse } from "react-icons/gi"
 import BookingForm from "../components/booking-form/booking-form"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const History = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "exteriorhome.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 800, maxHeight: 250, quality: 80) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
   return (
     <Layout pageInfo={{ pageName: "History" }}>
       <SEO title="History" keywords={[`Plett`, `Beach`, `House`, `History`]} />
@@ -24,6 +37,12 @@ const History = () => {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
+      </div>
+      <div className={styles.imageOpacityHover}>
+        <Img
+          fluid={data.file.childImageSharp.fluid}
+          alt="Exterior of Plett Beach House"
+        />
       </div>
     </Layout>
   )

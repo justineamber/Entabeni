@@ -14,7 +14,7 @@ const ContactPage = () => {
     query {
       file(relativePath: { eq: "pack4vacay.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 800, maxHeight: 300, quality: 100) {
+          fluid(maxWidth: 800, maxHeight: 250, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }

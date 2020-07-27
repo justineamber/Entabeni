@@ -278,7 +278,7 @@ textarea {
 
 /*Booking Form on Homepage */
 .bookingFormWrapperHomePage {
-  background-color: #f8f9fa !important;
+  background-color: #333 !important;
   position: absolute;
   top: 443px;
   align-items: center;

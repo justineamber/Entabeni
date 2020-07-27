@@ -17,7 +17,7 @@ const BookingForm = () => {
         <Form.Row bsPrefix={bookingFormStyles.formRowStyles}>
           <Col xs="auto">
             <Dropdown>
-              <Dropdown.Toggle variant="dark" id="dropdown-basic">
+              <Dropdown.Toggle variant="light" id="dropdown-basic">
                 Book Accomodation
               </Dropdown.Toggle>
 

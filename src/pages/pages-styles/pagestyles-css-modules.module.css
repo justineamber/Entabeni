@@ -103,7 +103,7 @@ body {
 
 .imageContainer {
   cursor: pointer;
-  height: 20rem;
+  height: 12rem;
   overflow: hidden;
   width: 100%;
   margin: 0;
@@ -377,7 +377,6 @@ textarea {
 
 @media screen and (min-width: 64rem) {
   .paragraphContainerNoImage {
-    /* margin-top: 8.25rem; */
     margin-top: 12rem;
   }
 
@@ -386,26 +385,38 @@ textarea {
   }
 }
 /*optimize gallery and local attractions page images for mobile*/
-@media screen and (max-width: 20rem) {
+@media screen and (min-width: 20rem) {
   .attractionImage {
-    height: 5rem;
+    height: 8rem;
   }
 }
 
-@media screen and (max-width: 23.4375rem) {
+@media screen and (min-width: 23.4375rem) {
   .attractionImage {
-    height: 6rem;
+    height: 8.5rem;
   }
 }
 
-@media screen and (max-width: 26.5625rem) {
+@media screen and (min-width: 26.5625rem) {
   .attractionImage {
-    height: 7rem;
+    height: 9rem;
   }
 }
 
-@media screen and (max-width: 64rem) {
+@media screen and (min-width: 48rem) {
   .attractionImage {
-    height: 10rem;
+    height: 11rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .attractionImage {
+    height: 12rem;
+  }
+}
+
+@media screen and (min-width: 90rem) {
+  .attractionImage {
+    height: 14rem;
   }
 }

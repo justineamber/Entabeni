@@ -14,19 +14,23 @@
   font-size: 2rem;
 }
 
-li {
+.li {
   display: inline-block;
   margin: 1rem;
 }
 
-li svg {
+.li svg {
   display: block;
   margin: auto;
 }
 
-ul {
+.ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 
 .svg {

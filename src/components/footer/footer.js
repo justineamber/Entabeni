@@ -21,14 +21,14 @@ export default function Footer({ logoImage, JustineHillLogo }) {
       <div className={footerStyles.footerContainerSocialMedia}>
         <GiSeahorse />
         <h3 className={footerStyles.headingStyle}>Connect with us</h3>
-        <ul>
-          <li>
+        <ul className={footerStyles.ul}>
+          <li className={footerStyles.li}>
             <FaFacebook />
           </li>
           <li>
             <FaInstagram />
           </li>
-          <li>
+          <li className={footerStyles.li}>
             <FaYoutubeSquare />
           </li>
         </ul>
@@ -37,9 +37,11 @@ export default function Footer({ logoImage, JustineHillLogo }) {
         <Container fluid>
           <Row className="justify-content-md-center">
             <Col lg={true}>
-              <ul>
-                <li>Beacon Isle Dr, Plettenberg Bay, 6600, South Africa</li>
-                <li>
+              <ul lassName={footerStyles.ul}>
+                <li className={footerStyles.li}>
+                  Beacon Isle Dr, Plettenberg Bay, 6600, South Africa
+                </li>
+                <li className={footerStyles.li}>
                   <span itemProp="telephone">
                     <a href="tel:+4796801110">+47 968 01110</a>
                   </span>

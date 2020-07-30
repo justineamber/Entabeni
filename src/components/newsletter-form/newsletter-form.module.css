@@ -30,6 +30,14 @@
   text-decoration: none;
 }
 
+.formRowStyles {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+  padding: 1rem;
+}
+
 .paddingTop {
   margin-top: 1rem;
 }

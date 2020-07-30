@@ -6,9 +6,9 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 
 const NavBar = ({ pageInfo, logoImage }) => {
-  function handleClick(e) {
-    e.preventDefault()
-  }
+  // function handleClick(e) {
+  // e.preventDefault()
+  // }
   return (
     <Navbar bg="light" fixed="top" expand="lg">
       <Container>
@@ -87,21 +87,6 @@ const NavBar = ({ pageInfo, logoImage }) => {
               </Link>
             </div>
           </Nav>
-          {/* <Link to="/contact" className="nav-link">
-            <Button type="button" active onClick={handleClick} variant="dark">
-              Book Accomodation
-            </Button>
-          </Link>
-          <Link to="/interests" className="nav-link">
-            <Button
-              type="button"
-              active
-              onClick={handleClick}
-              variant="primary"
-            >
-              Book Activities
-            </Button>
-          </Link> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>

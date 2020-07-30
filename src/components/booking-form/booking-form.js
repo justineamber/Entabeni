@@ -7,8 +7,8 @@ import {
   Col,
   InputGroup,
 } from "react-bootstrap"
+import DateRangePicker from "../date-range-picker/date-range-picker"
 import bookingFormStyles from "./booking-form.module.css"
-import { FaCalendarAlt } from "react-icons/fa"
 
 const BookingForm = () => {
   return (
@@ -41,30 +41,10 @@ const BookingForm = () => {
                 Calendar
               </Form.Label>
               <InputGroup bsPrefix={bookingFormStyles.inputGroupStyles}>
-                <Form.Control
-                  type="text"
-                  placeholder="23-Jul-2020"
-                  id="inlineFormInput"
-                  className="mb-2"
-                />
-                <div className={bookingFormStyles.calendarIcon}>
-                  <FaCalendarAlt />
+                <div>
+                  <DateRangePicker />
                 </div>
               </InputGroup>
-            </Form.Group>
-          </Col>
-
-          <Col xs="auto">
-            <Form.Group>
-              <Form.Label htmlFor="inlineFormInput" srOnly>
-                Number of Nights
-              </Form.Label>
-              <Form.Control
-                type="number"
-                placeholder="1 Nights"
-                id="inlineFormInput"
-                className="mb-2"
-              />
             </Form.Group>
           </Col>
 

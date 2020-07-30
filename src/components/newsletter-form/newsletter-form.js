@@ -13,7 +13,10 @@ export default function NewsletterForm() {
           Signup for our newsletter
         </h2>
 
-        <Form.Row className="justify-content-md-center">
+        <Form.Row
+          className="justify-content-md-center"
+          bsPrefix={newsletterStyles.formRowStyles}
+        >
           <Col lg={true}>
             <Form.Group controlId="formBasicName">
               <Form.Label srOnly>Name</Form.Label>

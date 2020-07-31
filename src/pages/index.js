@@ -71,10 +71,6 @@ export const query = graphql`
     slide5: file(relativePath: { eq: "dolphins.jpg" }) {
       ...optimizeHomeImages
     }
-
-    slide6: file(relativePath: { eq: "luxuryinterior.jpg" }) {
-      ...optimizeHomeImages
-    }
   }
 `
 
@@ -115,7 +111,6 @@ const Home = ({ data }) => {
         slideImage3={data.slide3.childImageSharp.fluid}
         slideImage4={data.slide4.childImageSharp.fluid}
         slideImage5={data.slide5.childImageSharp.fluid}
-        slideImage6={data.slide6.childImageSharp.fluid}
       />
       <div className={styles.bookingFormWrapperHomePage}>
         <BookingForm />

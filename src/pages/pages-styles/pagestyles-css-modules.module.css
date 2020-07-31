@@ -64,29 +64,6 @@ body {
   padding-right: 0;
 }
 
-/* Clearfix */
-.contactForm:before,
-.contactForm:after {
-  content: " ";
-  display: table;
-}
-
-.contactForm:after {
-  clear: both;
-}
-
-.contactForm {
-  margin: 1.25rem auto;
-  margin-top: 0;
-  max-width: 37.5rem;
-}
-
-.half {
-  float: left;
-  width: 48%;
-  margin-bottom: 1em;
-}
-
 .headingStyle {
   padding: 0;
   letter-spacing: 0;
@@ -166,41 +143,8 @@ body {
   opacity: 1;
 }
 
-.inputSubmit {
-  background: #035aa6;
-  color: #fff;
-  cursor: pointer;
-}
-
-.inputSubmit:hover {
-  box-shadow: (0 0.0625rem 0.0625rem 0.0625rem rgba(#aaa, 0.6));
-}
-
 em {
   font-style: italic;
-}
-
-input,
-textarea {
-  background-color: #e9e8e8;
-  border: 0;
-  border-radius: 0.5rem;
-  box-shadow: (0 0.0625rem 0.0625rem (#07031a, 0.1));
-  display: block;
-  margin-top: 1em;
-  outline: 0;
-  padding: 1em;
-  resize: none;
-  width: 100%;
-}
-
-input,
-textarea:focus {
-  box-shadow: (0 0 0.125rem (#035aa6, 1));
-}
-
-.left {
-  margin-right: 2%;
 }
 
 .mapSectionContainer {
@@ -236,10 +180,6 @@ textarea:focus {
   text-align: center;
 }
 
-.right {
-  width: 50%;
-}
-
 .SvgAddress {
   color: #222;
   text-decoration: none;
@@ -256,10 +196,6 @@ textarea:focus {
 
 .tableAddressContainer {
   margin-bottom: 0;
-}
-
-textarea {
-  height: 7.875rem;
 }
 
 .title {
@@ -358,14 +294,6 @@ textarea {
 @media screen and (min-width: 62.5rem) {
   .cell {
     width: calc(33.3333% - 2rem);
-  }
-}
-
-@media (max-width: 30rem) {
-  .half {
-    float: none;
-    margin-bottom: 0;
-    width: 100%;
   }
 }
 

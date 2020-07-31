@@ -2,25 +2,20 @@ import React from "react"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
 import { GiSeahorse } from "react-icons/gi"
-import SubmitForm from "../components/submit-form/submit-form"
+import { Container, Col, Form, Button } from "react-bootstrap"
 import styles from "./pages-styles/pagestyles-css-modules.module.css"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 import BookingForm from "../components/booking-form/booking-form"
+import { Formik } from "formik"
+import * as yup from "yup"
 
-const ContactPage = () => {
-  const { inputs, handleInputChange, handleSubmit } = SubmitForm()
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "pack4vacay.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 800, maxHeight: 250, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+const schema = yup.object({
+  fullName: yup.string().required(),
+  email: yup.string().required(),
+  message: yup.string().required(),
+  terms: yup.bool().required(),
+})
+
+function ContactForm() {
   return (
     <Layout pageInfo={{ pageName: "Contact" }}>
       <SEO
@@ -35,62 +30,94 @@ const ContactPage = () => {
         <GiSeahorse />
         <h2 className={styles.headingStyle}>Get in touch</h2>
       </div>
-      <form
-        className={styles.contactForm}
-        onSubmit={handleSubmit}
-        method="post"
-        action="https://getform.io/{your-unique-getform-endpoint}"
-      >
-        <div className={`${styles.half} ${styles.left}`}>
-          <input
-            type="text"
-            name="firstName"
-            className="input-name"
-            placeholder="First Name"
-            onChange={handleInputChange}
-            value={inputs.firstName}
-            required
-          />
-          <input
-            type="text"
-            name="lastName"
-            className="input-name"
-            placeholder="Last Name"
-            onChange={handleInputChange}
-            value={inputs.lastName}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            className="input-email"
-            placeholder="Email address"
-            onChange={handleInputChange}
-            value={inputs.email}
-            required
-          />
-        </div>
-        <div className={`${styles.half} ${styles.right}`}>
-          <input
-            type="text"
-            name="message"
-            className="input-message"
-            placeholder="Message"
-            onChange={handleInputChange}
-            value={inputs.message}
-          />
-        </div>
-        <input type="submit" value="Submit" className={styles.inputSubmit} />
-      </form>
+      <Container>
+        <Formik
+          validationSchema={schema}
+          initialValues={{
+            fullName: "",
+            email: "",
+            terms: false,
+          }}
+          onSubmit={async values => {
+            await new Promise(resolve => setTimeout(resolve, 500))
+            alert(JSON.stringify(values, null, 2))
+          }}
+        >
+          {({
+            handleSubmit,
+            handleChange,
+            handleBlur,
+            values,
+            touched,
+            isValid,
+            errors,
+          }) => (
+            <Form noValidate onSubmit={handleSubmit}>
+              <Form.Row>
+                <Form.Group as={Col} md="4" controlId="validationFormik01">
+                  <Form.Label>Full name</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="fullName"
+                    value={values.fullName}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    isValid={touched.fullName && !errors.fullName}
+                  />
+                  <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                </Form.Group>
 
-      <div className={styles.imageOpacityHover}>
-        <Img
-          fluid={data.file.childImageSharp.fluid}
-          alt="Passport, hat and bag on bed"
-        />
-      </div>
+                <Form.Group as={Col} md="4" controlId="validationCustom02">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="email"
+                    placeholder="Enter email"
+                    value={values.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    isValid={touched.email && !errors.email}
+                  />
+                  <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                </Form.Group>
+
+                <Form.Group
+                  as={Col}
+                  md="4"
+                  controlId="exampleForm.ControlTextarea1"
+                >
+                  <Form.Label>General enquiry</Form.Label>
+                  <Form.Control
+                    as="textarea"
+                    rows="3"
+                    type="text"
+                    name="General enquiry for Entebene"
+                    value={values.message}
+                    onChange={handleChange}
+                    isValid={touched.message && !errors.message}
+                  />
+                  <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                </Form.Group>
+              </Form.Row>
+
+              <Form.Group>
+                <Form.Check
+                  required
+                  name="terms"
+                  label="Please tick to receive newsletters with exclusive offers, experiences and travel inspiration"
+                  onChange={handleChange}
+                  isInvalid={!!errors.terms}
+                  feedback={errors.terms}
+                  id="validationFormik0"
+                />
+              </Form.Group>
+              <Button type="submit">Submit form</Button>
+            </Form>
+          )}
+        </Formik>
+      </Container>
     </Layout>
   )
 }
 
-export default ContactPage
+export default ContactForm

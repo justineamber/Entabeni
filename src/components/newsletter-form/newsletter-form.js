@@ -1,7 +1,6 @@
 import React from "react"
 import newsletterStyles from "./newsletter-form.module.css"
-import Form from "react-bootstrap/Form"
-import { Col, Container, Button } from "react-bootstrap"
+import { Col, Form, Container, Button } from "react-bootstrap"
 import { GiSeahorse } from "react-icons/gi"
 
 export default function NewsletterForm() {

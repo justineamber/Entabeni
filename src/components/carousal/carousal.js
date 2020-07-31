@@ -9,7 +9,6 @@ const ControlledCarousel = ({
   slideImage3,
   slideImage4,
   slideImage5,
-  slideImage6,
 }) => {
   const [index, setIndex] = useState()
 
@@ -52,13 +51,6 @@ const ControlledCarousel = ({
           fluid={slideImage5}
           className={carousalStyles.carousalImage}
           alt="Fifth slide"
-        />
-      </Carousel.Item>
-      <Carousel.Item>
-        <Img
-          fluid={slideImage6}
-          className={carousalStyles.carousalImage}
-          alt="Sixth slide"
         />
       </Carousel.Item>
     </Carousel>

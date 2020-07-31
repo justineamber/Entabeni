@@ -17,7 +17,6 @@ class DatePicker extends Component {
     return (
       <div>
         <DateRangePicker
-          autoFocus
           startDateId="startDate"
           endDateId="endDate"
           startDate={this.state.startDate}
@@ -51,7 +50,6 @@ class DatePicker extends Component {
           showDefaultInputIcon
           inputIconPosition="after"
           autoFocusEndDate
-        />
         />
       </div>
     )

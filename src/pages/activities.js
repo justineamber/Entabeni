@@ -125,6 +125,7 @@ const Activities = ({ data }) => {
           disappointment.
         </p>
       </div>
+
       <section>
         <div className={styles.container}>
           <div className={styles.grid}>

@@ -4,19 +4,14 @@
   top: 34px;
 }
 
-.inputGroupStyles {
-  margin-top: 0.5rem;
-}
-
-.formStyles {
-  max-width: 0;
+.dateRangePickerWrapper {
+  margin-top: 1rem;
 }
 
 .formRowStyles {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: space-evenly;
 }
 
 .searchButtonStyles {

@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Form, Button, Dropdown, Col } from "react-bootstrap"
 import DateRangePicker from "../date-range-picker/date-range-picker"
 import bookingFormStyles from "./navbar-booking-form.module.css"
-import { navigate } from "gatsby"
+import { navigate } from "@reach/router"
 
 const NavbarBookingForm = () => {
   const [startDate, setStartDate] = useState()

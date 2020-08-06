@@ -64,6 +64,10 @@ body {
   padding-right: 0;
 }
 
+.inputFormsWrappers {
+  margin-top: 1rem;
+}
+
 .headingStyle {
   padding: 0;
   letter-spacing: 0;

@@ -4,7 +4,7 @@ import SEO from "../components/seo/seo"
 import { GiSeahorse } from "react-icons/gi"
 import { Container, Col, Form, Button } from "react-bootstrap"
 import styles from "./pages-styles/pagestyles-css-modules.module.css"
-import BookingForm from "../components/booking-form/booking-form"
+import NavbarBookingForm from "../components/navbar-booking-form/navbar-booking-form"
 import { Formik } from "formik"
 import * as yup from "yup"
 
@@ -25,7 +25,7 @@ function ContactForm() {
 
       <div className={styles.paragraphContainerNoImage}>
         <div className={styles.bookingFormWrapperAllPages}>
-          <BookingForm />
+          <NavbarBookingForm />
         </div>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>Get in touch</h2>

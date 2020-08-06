@@ -6,9 +6,6 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 
 const NavBar = ({ pageInfo, logoImage }) => {
-  // function handleClick(e) {
-  // e.preventDefault()
-  // }
   return (
     <Navbar bg="light" fixed="top" expand="lg">
       <Container>

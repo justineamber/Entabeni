@@ -1,9 +1,24 @@
-import React from "react"
+import React, { useState } from "react"
 import { Form, Button, Dropdown, Col } from "react-bootstrap"
 import DateRangePicker from "../date-range-picker/date-range-picker"
-import bookingFormStyles from "./booking-form.module.css"
+import bookingFormStyles from "./navbar-booking-form.module.css"
+import { navigate } from "gatsby"
 
-const BookingForm = () => {
+const NavbarBookingForm = () => {
+  const [startDate, setStartDate] = useState()
+
+  const [endDate, setEndDate] = useState()
+
+  const handleDatesChange = ({ startDate, endDate }) => {
+    setStartDate(startDate)
+    setEndDate(endDate)
+  }
+
+  const onSubmit = e => {
+    e.preventDefault()
+    navigate("/entabene-booking-page", { state: { startDate, endDate } })
+  }
+
   return (
     <Form>
       <Form.Row bsPrefix={bookingFormStyles.formRowStyles}>
@@ -30,12 +45,16 @@ const BookingForm = () => {
             <Form.Label htmlFor="inlineFormInput" srOnly>
               Calendar
             </Form.Label>
-            <div className={bookingFormStyles.dateRangePickerWrapper}>
-              <DateRangePicker />
+            <div className={bookingFormStyles.inputFormsWrappers}>
+              <DateRangePicker
+                handleDatesChange={handleDatesChange}
+                startDate={startDate}
+                endDate={endDate}
+              />
             </div>
           </Form.Group>
         </Col>
-        <div className={bookingFormStyles.dateRangePickerWrapper}>
+        <div className={bookingFormStyles.inputFormsWrappers}>
           <Col>
             <Form.Group>
               <Form.Label srOnly>Promo Code</Form.Label>
@@ -46,11 +65,11 @@ const BookingForm = () => {
 
         <Col xs="auto">
           <Button
-            type="submit"
+            onClick={onSubmit}
             className="mb-2"
             bsPrefix={bookingFormStyles.searchButtonStyles}
           >
-            Search
+            Book Now
           </Button>
         </Col>
       </Form.Row>
@@ -58,4 +77,4 @@ const BookingForm = () => {
   )
 }
 
-export default BookingForm
+export default NavbarBookingForm

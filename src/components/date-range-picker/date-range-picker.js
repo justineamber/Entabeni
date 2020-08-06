@@ -1,59 +1,29 @@
-import React, { Component } from "react"
+import React, { useState } from "react"
 import "react-dates/initialize"
 import "react-dates/lib/css/_datepicker.css"
 import { DateRangePicker } from "react-dates"
 
-class DatePicker extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      startDate: null,
-      endDate: null,
-      focusedInput: null,
-    }
-  }
+function DatePicker({ handleDatesChange, startDate, endDate }) {
+  const [focusedInput, setFocusedInput] = useState()
 
-  render() {
-    return (
-      <div>
-        <DateRangePicker
-          startDateId="startDate"
-          endDateId="endDate"
-          startDate={this.state.startDate}
-          endDate={this.state.endDate}
-          onDatesChange={({ startDate, endDate }) => {
-            this.setState({ startDate, endDate })
-          }}
-          focusedInput={this.state.focusedInput}
-          onFocusChange={focusedInput => {
-            this.setState({ focusedInput })
-          }}
-          minimumNights={0}
-          initialStartDate={{
-            _isAMomentObject: true,
-            _isUTC: false,
-            _pf: {
-              empty: false,
-              unusedTokens: [],
-              unusedInput: [],
-            },
-          }}
-          initialEndDate={{
-            _isAMomentObject: true,
-            _isUTC: false,
-            _pf: {
-              empty: false,
-              unusedTokens: [],
-              unusedInput: [],
-            },
-          }}
-          showDefaultInputIcon
-          inputIconPosition="after"
-          autoFocusEndDate
-        />
-      </div>
-    )
-  }
+  return (
+    <div>
+      <DateRangePicker
+        startDateId="startDate"
+        endDateId="endDate"
+        startDate={startDate}
+        endDate={endDate}
+        onDatesChange={handleDatesChange}
+        focusedInput={focusedInput}
+        onFocusChange={focusedInput => {
+          setFocusedInput(focusedInput)
+        }}
+        minimumNights={0}
+        showDefaultInputIcon
+        inputIconPosition="after"
+      />
+    </div>
+  )
 }
 
 export default DatePicker

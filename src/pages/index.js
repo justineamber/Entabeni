@@ -13,7 +13,7 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import ControlledCarousel from "../components/carousal/carousal"
 import { Link } from "gatsby"
-import BookingForm from "../components/booking-form/booking-form"
+import NavbarBookingForm from "../components/navbar-booking-form/navbar-booking-form"
 
 export const imageQuery = graphql`
   fragment optimizeHomeImages on File {
@@ -74,7 +74,7 @@ export const query = graphql`
   }
 `
 
-const Home = ({ data }) => {
+const Home = ({ data, startDate, endDate }) => {
   function handleClick(e) {
     e.preventDefault()
   }
@@ -113,7 +113,7 @@ const Home = ({ data }) => {
         slideImage5={data.slide5.childImageSharp.fluid}
       />
       <div className={styles.bookingFormWrapperHomePage}>
-        <BookingForm />
+        <NavbarBookingForm />
       </div>
       <div className={styles.paragraphContainer}>
         <GiSeahorse />

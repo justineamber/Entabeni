@@ -3,7 +3,7 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
 import styles from "./pages-styles/pagestyles-css-modules.module.css"
 import { GiSeahorse } from "react-icons/gi"
-import BookingForm from "../components/booking-form/booking-form"
+import NavbarBookingForm from "../components/navbar-booking-form/navbar-booking-form"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
@@ -24,7 +24,7 @@ const History = () => {
       <SEO title="History" keywords={[`Plett`, `Beach`, `House`, `History`]} />
       <div className={styles.paragraphContainerNoImage}>
         <div className={styles.bookingFormWrapperAllPages}>
-          <BookingForm />
+          <NavbarBookingForm />
         </div>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>About us</h2>

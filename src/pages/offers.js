@@ -9,7 +9,7 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import Button from "react-bootstrap/Button"
 import { Link } from "gatsby"
-import BookingForm from "../components/booking-form/booking-form"
+import NavbarBookingForm from "../components/navbar-booking-form/navbar-booking-form"
 
 export const imageQuery = graphql`
   fragment offersImages on File {
@@ -60,7 +60,7 @@ const Offers = ({ data }) => {
       />
       <div className={styles.paragraphContainerNoImage}>
         <div className={styles.bookingFormWrapperAllPages}>
-          <BookingForm />
+          <NavbarBookingForm />
         </div>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>View our offers</h2>

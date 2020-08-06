@@ -4,7 +4,7 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import BookingForm from "../components/booking-form/booking-form"
+import NavbarBookingForm from "../components/navbar-booking-form/navbar-booking-form"
 
 export const imageQuery = graphql`
   fragment galleryImages on File {
@@ -121,7 +121,7 @@ const Gallery = ({ data }) => {
       />
       <div className={styles.paragraphContainerNoImage}>
         <div className={styles.bookingFormWrapperAllPages}>
-          <BookingForm />
+          <NavbarBookingForm />
         </div>
       </div>
       <section>

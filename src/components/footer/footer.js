@@ -37,7 +37,7 @@ export default function Footer({ logoImage, JustineHillLogo }) {
         <Container fluid>
           <Row className="justify-content-md-center">
             <Col lg={true}>
-              <ul lassName={footerStyles.ul}>
+              <ul className={footerStyles.ul}>
                 <li className={footerStyles.li}>
                   Beacon Isle Dr, Plettenberg Bay, 6600, South Africa
                 </li>

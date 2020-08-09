@@ -1,7 +1,23 @@
+.button {
+  margin-right: 12px;
+  margin-left: 12px;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+  margin-right: 12px;
+}
+
 .calendarIcon {
   position: absolute;
   right: 1.5rem;
   top: 34px;
+}
+
+.countWrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .inputFormsWrappers {
@@ -14,8 +30,18 @@
   align-items: center;
 }
 
+.guestWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.labelStyles {
+  color: #fff;
+  margin-bottom: 0;
+}
+
 .searchButtonStyles {
-  margin-top: 0.4375rem;
+  margin-top: 18px;
   display: inline-block;
   font-weight: 400;
   text-align: center;

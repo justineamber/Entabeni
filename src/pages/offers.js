@@ -49,7 +49,6 @@ export const query = graphql`
 const Offers = ({ data }) => {
   function handleClick(e) {
     e.preventDefault()
-    console.log("The button was clicked.")
   }
 
   return (

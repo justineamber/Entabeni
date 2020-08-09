@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: "/gatsby-react-bootstrap-starter",
   siteMetadata: {
     title: `Entabene`,
     description: `Entabene built by Justine Hill using javascript, gatsby and react.`,
@@ -29,8 +28,5 @@ module.exports = {
         icon: "static/testFavicon.png",
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }

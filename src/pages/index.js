@@ -9,7 +9,7 @@ import { GiSeahorse, GiPhone, GiPositionMarker } from "react-icons/gi"
 import { FaTripadvisor } from "react-icons/fa"
 import CardGroup from "react-bootstrap/CardGroup"
 import Card from "react-bootstrap/Card"
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import Img from "gatsby-image"
 import ControlledCarousel from "../components/carousal/carousal"
 import { Link } from "gatsby"
@@ -74,9 +74,18 @@ export const query = graphql`
   }
 `
 
-const Home = ({ data, startDate, endDate }) => {
+const Home = ({ data, location }) => {
   function handleClick(e) {
     e.preventDefault()
+  }
+
+  const onSubmit = (startDate, endDate) => {
+    navigate("/entabene-booking-page/", {
+      state: {
+        endDate: endDate.format("YYYY-MM-DD"),
+        startDate: startDate.format("YYYY-MM-DD"),
+      },
+    })
   }
 
   return (
@@ -113,7 +122,7 @@ const Home = ({ data, startDate, endDate }) => {
         slideImage5={data.slide5.childImageSharp.fluid}
       />
       <div className={styles.bookingFormWrapperHomePage}>
-        <NavbarBookingForm />
+        <NavbarBookingForm onSubmit={onSubmit} />
       </div>
       <div className={styles.paragraphContainer}>
         <GiSeahorse />

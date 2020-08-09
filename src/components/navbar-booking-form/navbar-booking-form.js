@@ -1,12 +1,10 @@
 import React, { useState } from "react"
-import { Form, Button, Dropdown, Col } from "react-bootstrap"
+import { Form, Button, Col } from "react-bootstrap"
 import DateRangePicker from "../date-range-picker/date-range-picker"
 import bookingFormStyles from "./navbar-booking-form.module.css"
-import { navigate } from "@reach/router"
 
-const NavbarBookingForm = () => {
+const NavbarBookingForm = ({ onSubmit }) => {
   const [startDate, setStartDate] = useState()
-
   const [endDate, setEndDate] = useState()
 
   const handleDatesChange = ({ startDate, endDate }) => {
@@ -14,30 +12,21 @@ const NavbarBookingForm = () => {
     setEndDate(endDate)
   }
 
-  const onSubmit = e => {
-    e.preventDefault()
-    navigate("/entabene-booking-page", { state: { startDate, endDate } })
-  }
-
   return (
     <Form>
       <Form.Row bsPrefix={bookingFormStyles.formRowStyles}>
         <Col xs="auto">
-          <Dropdown>
-            <Dropdown.Toggle variant="light" id="dropdown-basic">
-              Book Accomodation
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">Book Accomodation</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Book Activity</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Request Quote</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">
-                Modify or cancel booking
-              </Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Cancel</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+          <Form.Group as={Col} controlId="formGridState">
+            <Form.Label bsPrefix={bookingFormStyles.labelStyles}>
+              Select
+            </Form.Label>
+            <Form.Control as="select" defaultValue="">
+              <option>Book Accomodation</option>
+              <option>Book Experience</option>
+              <option>Request Quote</option>
+              <option>Modify or cancel booking</option>
+            </Form.Control>
+          </Form.Group>
         </Col>
 
         <Col xs="auto">
@@ -54,18 +43,29 @@ const NavbarBookingForm = () => {
             </div>
           </Form.Group>
         </Col>
-        <div className={bookingFormStyles.inputFormsWrappers}>
-          <Col>
-            <Form.Group>
-              <Form.Label srOnly>Promo Code</Form.Label>
-              <Form.Control type="text" placeholder="Promo Code" />
-            </Form.Group>
-          </Col>
-        </div>
+
+        <Form.Group as={Col} controlId="formGridState">
+          <Form.Label bsPrefix={bookingFormStyles.labelStyles}>
+            Guests
+          </Form.Label>
+          <Form.Control as="select" defaultValue="">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>12</option>
+          </Form.Control>
+        </Form.Group>
 
         <Col xs="auto">
           <Button
-            onClick={onSubmit}
+            onClick={() => onSubmit(startDate, endDate)}
             className="mb-2"
             bsPrefix={bookingFormStyles.searchButtonStyles}
           >

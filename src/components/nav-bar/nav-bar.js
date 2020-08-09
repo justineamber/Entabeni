@@ -44,10 +44,10 @@ const NavBar = ({ pageInfo, logoImage }) => {
               <GiSeahorse />
               <NavDropdown title="History" id="collasible-nav-dropdown">
                 <Link to="/history" className="nav-link">
-                  <NavDropdown.Item href="#history">History</NavDropdown.Item>
+                  <NavDropdown.Item>History</NavDropdown.Item>
                 </Link>
                 <Link to="/location" className="nav-link">
-                  <NavDropdown.Item href="#location">Location</NavDropdown.Item>
+                  <NavDropdown.Item>Location</NavDropdown.Item>
                 </Link>
               </NavDropdown>
             </div>

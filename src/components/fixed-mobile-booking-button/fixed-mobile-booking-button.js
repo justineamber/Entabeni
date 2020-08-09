@@ -1,18 +1,19 @@
 import React from "react"
 import { Button } from "react-bootstrap"
 import fixedMobileBookingButtonStyles from "./fixed-mobile-booking-button.module.css"
+import { navigate } from "@reach/router"
 
 const FixedMobileBookingButton = () => {
-  function handleClick(e) {
+  const onSubmit = e => {
     e.preventDefault()
-    console.log("The button was clicked.")
+    navigate("/entabene-booking-page")
   }
 
   return (
     <Button
       bsPrefix={fixedMobileBookingButtonStyles.mobileButton}
       active
-      onClick={handleClick}
+      onClick={onSubmit}
       type="button"
     >
       Book now

@@ -1,4 +1,5 @@
 import React from "react"
+import { navigate } from "gatsby"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
 import styles from "./pages-styles/pagestyles-css-modules.module.css"
@@ -12,6 +13,15 @@ const Location = () => {
     e.preventDefault()
   }
 
+  const onSubmit = (startDate, endDate) => {
+    navigate("/entabene-booking-page/", {
+      state: {
+        endDate: endDate.format("YYYY-MM-DD"),
+        startDate: startDate.format("YYYY-MM-DD"),
+      },
+    })
+  }
+
   return (
     <Layout pageInfo={{ pageName: "Location" }}>
       <SEO
@@ -21,7 +31,7 @@ const Location = () => {
 
       <div className={styles.paragraphContainerNoImageLocationPage}>
         <div className={styles.bookingFormWrapperAllPages}>
-          <NavbarBookingForm />
+          <NavbarBookingForm onSubmit={onSubmit} />
         </div>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>Stay in the heart of Plett</h2>

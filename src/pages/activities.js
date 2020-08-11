@@ -3,7 +3,7 @@ import styles from "./pages-styles/pagestyles-css-modules.module.css"
 import { GiSeahorse } from "react-icons/gi"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
 import NavbarBookingForm from "../components/navbar-booking-form/navbar-booking-form"
@@ -92,6 +92,15 @@ const Activities = ({ data }) => {
     document.addEventListener(`mousemove`, showimageContent)
   }
 
+  const onSubmit = (startDate, endDate) => {
+    navigate("/entabene-booking-page/", {
+      state: {
+        endDate: endDate.format("YYYY-MM-DD"),
+        startDate: startDate.format("YYYY-MM-DD"),
+      },
+    })
+  }
+
   return (
     <Layout pageInfo={{ pageName: "Local attractions" }}>
       <SEO
@@ -108,7 +117,7 @@ const Activities = ({ data }) => {
 
       <div className={styles.paragraphContainerNoImage}>
         <div className={styles.bookingFormWrapperAllPages}>
-          <NavbarBookingForm />
+          <NavbarBookingForm onSubmit={onSubmit} />
         </div>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>Things to do</h2>

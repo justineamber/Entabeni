@@ -8,7 +8,7 @@ import Card from "react-bootstrap/Card"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import Button from "react-bootstrap/Button"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 import NavbarBookingForm from "../components/navbar-booking-form/navbar-booking-form"
 
 export const imageQuery = graphql`
@@ -51,6 +51,15 @@ const Offers = ({ data }) => {
     e.preventDefault()
   }
 
+  const onSubmit = (startDate, endDate) => {
+    navigate("/entabene-booking-page/", {
+      state: {
+        endDate: endDate.format("YYYY-MM-DD"),
+        startDate: startDate.format("YYYY-MM-DD"),
+      },
+    })
+  }
+
   return (
     <Layout pageInfo={{ pageName: "Offers" }}>
       <SEO
@@ -59,7 +68,7 @@ const Offers = ({ data }) => {
       />
       <div className={styles.paragraphContainerNoImage}>
         <div className={styles.bookingFormWrapperAllPages}>
-          <NavbarBookingForm />
+          <NavbarBookingForm onSubmit={onSubmit} />
         </div>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>View our offers</h2>

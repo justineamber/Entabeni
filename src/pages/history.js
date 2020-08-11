@@ -4,7 +4,7 @@ import SEO from "../components/seo/seo"
 import styles from "./pages-styles/pagestyles-css-modules.module.css"
 import { GiSeahorse } from "react-icons/gi"
 import NavbarBookingForm from "../components/navbar-booking-form/navbar-booking-form"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, navigate } from "gatsby"
 import Img from "gatsby-image"
 
 const History = () => {
@@ -19,12 +19,21 @@ const History = () => {
       }
     }
   `)
+
+  const onSubmit = (startDate, endDate) => {
+    navigate("/entabene-booking-page/", {
+      state: {
+        endDate: endDate.format("YYYY-MM-DD"),
+        startDate: startDate.format("YYYY-MM-DD"),
+      },
+    })
+  }
   return (
     <Layout pageInfo={{ pageName: "History" }}>
       <SEO title="History" keywords={[`Plett`, `Beach`, `House`, `History`]} />
       <div className={styles.paragraphContainerNoImage}>
         <div className={styles.bookingFormWrapperAllPages}>
-          <NavbarBookingForm />
+          <NavbarBookingForm onSubmit={onSubmit} />
         </div>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>About us</h2>

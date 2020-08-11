@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import { Form, Button, Col } from "react-bootstrap"
+import SelectTypeOfBooking from "../select-type-of-booking/select-type-of-booking"
 import DateRangePicker from "../date-range-picker/date-range-picker"
+import GuestNumberSelector from "../guest-number-selector/guest-number-selector"
 import bookingFormStyles from "./navbar-booking-form.module.css"
 
 const NavbarBookingForm = ({ onSubmit }) => {
@@ -11,61 +13,35 @@ const NavbarBookingForm = ({ onSubmit }) => {
     setStartDate(startDate)
     setEndDate(endDate)
   }
+  const [bookingValue, setBookingValue] = useState()
+
+  const handleBookingChange = e => {
+    setBookingValue(e.target.value)
+  }
+
+  console.log(bookingValue)
 
   return (
     <Form>
       <Form.Row bsPrefix={bookingFormStyles.formRowStyles}>
-        <Col xs="auto">
-          <Form.Group as={Col} controlId="formGridState">
-            <Form.Label bsPrefix={bookingFormStyles.labelStyles}>
-              Select
-            </Form.Label>
-            <Form.Control as="select" defaultValue="">
-              <option>Book Accomodation</option>
-              <option>Book Experience</option>
-              <option>Request Quote</option>
-              <option>Modify or cancel booking</option>
-            </Form.Control>
-          </Form.Group>
-        </Col>
+        <SelectTypeOfBooking
+          bookingValue={bookingValue}
+          handleBookingChange={handleBookingChange}
+        />
 
-        <Col xs="auto">
-          <Form.Group>
-            <Form.Label htmlFor="inlineFormInput" srOnly>
-              Calendar
-            </Form.Label>
-            <div className={bookingFormStyles.inputFormsWrappers}>
-              <DateRangePicker
-                handleDatesChange={handleDatesChange}
-                startDate={startDate}
-                endDate={endDate}
-              />
-            </div>
-          </Form.Group>
-        </Col>
+        <div className={bookingFormStyles.inputFormsWrappers}>
+          <DateRangePicker
+            handleDatesChange={handleDatesChange}
+            startDate={startDate}
+            endDate={endDate}
+          />
+        </div>
 
-        <Form.Group as={Col} controlId="formGridState">
-          <Form.Label bsPrefix={bookingFormStyles.labelStyles}>
-            Guests
-          </Form.Label>
-          <Form.Control as="select" defaultValue="">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>12</option>
-          </Form.Control>
-        </Form.Group>
+        <GuestNumberSelector />
 
         <Col xs="auto">
           <Button
-            onClick={() => onSubmit(startDate, endDate)}
+            onClick={() => onSubmit(startDate, endDate, bookingValue)}
             className="mb-2"
             bsPrefix={bookingFormStyles.searchButtonStyles}
           >

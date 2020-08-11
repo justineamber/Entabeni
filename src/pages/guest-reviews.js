@@ -4,7 +4,7 @@ import SEO from "../components/seo/seo"
 import styles from "./pages-styles/pagestyles-css-modules.module.css"
 import { GiSeahorse } from "react-icons/gi"
 import Table from "react-bootstrap/Table"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, navigate } from "gatsby"
 import Img from "gatsby-image"
 import NavbarBookingForm from "../components/navbar-booking-form/navbar-booking-form"
 
@@ -20,6 +20,15 @@ const GuestReviews = () => {
       }
     }
   `)
+
+  const onSubmit = (startDate, endDate) => {
+    navigate("/entabene-booking-page/", {
+      state: {
+        endDate: endDate.format("YYYY-MM-DD"),
+        startDate: startDate.format("YYYY-MM-DD"),
+      },
+    })
+  }
   return (
     <Layout pageInfo={{ pageName: "Guest reviews" }}>
       <SEO
@@ -29,7 +38,7 @@ const GuestReviews = () => {
 
       <div className={styles.paragraphContainerNoImage}>
         <div className={styles.bookingFormWrapperAllPages}>
-          <NavbarBookingForm />
+          <NavbarBookingForm onSubmit={onSubmit} />
         </div>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>More from our Guests...</h2>

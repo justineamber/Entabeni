@@ -2,7 +2,7 @@ import React from "react"
 import styles from "./pages-styles/pagestyles-css-modules.module.css"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import Img from "gatsby-image"
 import NavbarBookingForm from "../components/navbar-booking-form/navbar-booking-form"
 
@@ -113,6 +113,14 @@ export const query = graphql`
   }
 `
 const Gallery = ({ data }) => {
+  const onSubmit = (startDate, endDate) => {
+    navigate("/entabene-booking-page/", {
+      state: {
+        endDate: endDate.format("YYYY-MM-DD"),
+        startDate: startDate.format("YYYY-MM-DD"),
+      },
+    })
+  }
   return (
     <Layout pageInfo={{ pageName: "Gallery" }}>
       <SEO
@@ -121,7 +129,7 @@ const Gallery = ({ data }) => {
       />
       <div className={styles.paragraphContainerNoImage}>
         <div className={styles.bookingFormWrapperAllPages}>
-          <NavbarBookingForm />
+          <NavbarBookingForm onSubmit={onSubmit} />
         </div>
       </div>
       <section>

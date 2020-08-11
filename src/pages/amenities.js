@@ -5,7 +5,7 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
 import CardGroup from "react-bootstrap/CardGroup"
 import Card from "react-bootstrap/Card"
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import Img from "gatsby-image"
 import NavbarBookingForm from "../components/navbar-booking-form/navbar-booking-form"
 
@@ -45,6 +45,14 @@ export const query = graphql`
 `
 
 const Amenities = ({ data }) => {
+  const onSubmit = (startDate, endDate) => {
+    navigate("/entabene-booking-page/", {
+      state: {
+        endDate: endDate.format("YYYY-MM-DD"),
+        startDate: startDate.format("YYYY-MM-DD"),
+      },
+    })
+  }
   return (
     <Layout pageInfo={{ pageName: "Amenities" }}>
       <SEO
@@ -54,7 +62,7 @@ const Amenities = ({ data }) => {
 
       <div className={styles.paragraphContainerNoImage}>
         <div className={styles.bookingFormWrapperAllPages}>
-          <NavbarBookingForm />
+          <NavbarBookingForm onSubmit={onSubmit} />
         </div>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>All the perks</h2>

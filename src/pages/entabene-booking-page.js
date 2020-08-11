@@ -2,7 +2,9 @@ import React from "react"
 import * as moment from "moment"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
+import SelectTypeOfBooking from "../components/select-type-of-booking/select-type-of-booking"
 import DateRangePicker from "../components/date-range-picker/date-range-picker"
+import GuestNumberSelector from "../components/guest-number-selector/guest-number-selector"
 import EntabeneBookingForm from "../components/entabene-booking-form/entabene-booking-form"
 import styles from "./pages-styles/pagestyles-css-modules.module.css"
 
@@ -19,15 +21,18 @@ function EntabeneBookingPage({ location }) {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto" onSelect={handleSelect}>
+            <SelectTypeOfBooking
+              handleBookingChange={() => {}}
+              bookingValue={location.state.bookingValue}
+            />
             <div className={styles.inputFormsWrappers}>
-              {location.state && (
-                <DateRangePicker
-                  handleDatesChange={() => {}}
-                  startDate={startDate}
-                  endDate={endDate}
-                />
-              )}
+              <DateRangePicker
+                handleDatesChange={() => {}}
+                startDate={startDate}
+                endDate={endDate}
+              />
             </div>
+            <GuestNumberSelector />
           </Nav>
         </Navbar.Collapse>
       </Navbar>

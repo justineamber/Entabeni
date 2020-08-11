@@ -1,4 +1,5 @@
 import React from "react"
+import { navigate } from "gatsby"
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
 import { GiSeahorse } from "react-icons/gi"
@@ -16,6 +17,14 @@ const schema = yup.object({
 })
 
 function ContactForm() {
+  const onSubmit = (startDate, endDate) => {
+    navigate("/entabene-booking-page/", {
+      state: {
+        endDate: endDate.format("YYYY-MM-DD"),
+        startDate: startDate.format("YYYY-MM-DD"),
+      },
+    })
+  }
   return (
     <Layout pageInfo={{ pageName: "Contact" }}>
       <SEO
@@ -25,7 +34,7 @@ function ContactForm() {
 
       <div className={styles.paragraphContainerNoImage}>
         <div className={styles.bookingFormWrapperAllPages}>
-          <NavbarBookingForm />
+          <NavbarBookingForm onSubmit={onSubmit} />
         </div>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>Get in touch</h2>

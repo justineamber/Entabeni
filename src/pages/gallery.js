@@ -113,11 +113,13 @@ export const query = graphql`
   }
 `
 const Gallery = ({ data }) => {
-  const onSubmit = (startDate, endDate) => {
+  const onSubmit = (startDate, endDate, bookingValue, guestValue) => {
     navigate("/entabene-booking-page/", {
       state: {
         endDate: endDate.format("YYYY-MM-DD"),
         startDate: startDate.format("YYYY-MM-DD"),
+        bookingValue,
+        guestValue,
       },
     })
   }
@@ -127,11 +129,10 @@ const Gallery = ({ data }) => {
         title="Gallery"
         keywords={[`Plett`, `Beach`, `House`, `Gallery`, `Entabene`]}
       />
-      <div className={styles.paragraphContainerNoImage}>
-        <div className={styles.bookingFormWrapperAllPages}>
-          <NavbarBookingForm onSubmit={onSubmit} />
-        </div>
+      <div className={styles.bookingFormWrapperAllPages}>
+        <NavbarBookingForm onSubmit={onSubmit} />
       </div>
+      <div className={styles.paragraphContainerNoImage}></div>
       <section>
         <div className={styles.container}>
           <div className={styles.grid}>

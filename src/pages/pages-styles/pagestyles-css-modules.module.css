@@ -64,8 +64,17 @@ body {
   padding-right: 0;
 }
 
+.entabeneBookingPageLogoStyles {
+  font-size: 1.5rem;
+  color: #fff;
+  line-height: 1;
+  text-decoration: none !important;
+  font-weight: 900;
+  font-family: "Old Standard TT", serif;
+}
+
 .inputFormsWrappers {
-  margin-top: 1rem;
+  margin-top: 25px;
 }
 
 .headingStyle {
@@ -153,6 +162,7 @@ em {
 
 .mapSectionContainer {
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .paragraphStyles {
@@ -167,11 +177,24 @@ em {
 }
 
 .paragraphContainer {
-  padding: 1rem;
+  padding: 0.25rem;
+  margin-top: 3.5rem;
+}
+
+.paragraphContainerLifeWellLived {
+  padding: 0.25rem;
+  margin-top: 0.5rem;
 }
 
 .paragraphContainerNoImage {
-  margin-top: 4.25rem;
+  margin-top: 4rem;
+  padding: 0.25rem;
+}
+
+@media screen and (max-width: 768px) {
+  .paragraphContainer {
+    margin-top: 0.5rem;
+  }
 }
 
 .paragraphContainerNoImageLocationPage {
@@ -189,13 +212,17 @@ em {
   text-decoration: none;
 }
 
+.positionMarkerSvgStyle {
+  margin-right: 0.5rem;
+}
+
+.phoneSvgStyle {
+  margin-right: 0.5rem;
+}
+
 .SvgAddress:hover {
   color: #222;
   text-decoration: none;
-}
-
-.SvgAddress:before {
-  margin-right: 0.5em;
 }
 
 .tableAddressContainer {
@@ -226,7 +253,7 @@ em {
 .bookingFormWrapperHomePage {
   background-color: #333 !important;
   position: absolute;
-  top: 450px;
+  top: 470px;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -242,13 +269,13 @@ em {
 
 @media screen and (min-width: 1440px) {
   .bookingFormWrapperHomePage {
-    top: 512px;
+    top: 534px;
   }
 }
 
 @media screen and (min-width: 2560px) {
   .bookingFormWrapperHomePage {
-    top: 574px;
+    top: 598px;
   }
 }
 
@@ -310,11 +337,11 @@ em {
 
 @media screen and (min-width: 64rem) {
   .paragraphContainerNoImage {
-    margin-top: 12rem;
+    margin-top: 13.25rem;
   }
 
   .paragraphContainerNoImageLocationPage {
-    margin-top: 12rem;
+    margin-top: 13.25rem;
   }
 }
 /*optimize gallery and local attractions page images for mobile*/
@@ -351,5 +378,12 @@ em {
 @media screen and (min-width: 90rem) {
   .attractionImage {
     height: 14rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .entabeneBookingPageLogoStyles {
+    font-size: 2rem;
+    margin-top: 24px;
   }
 }

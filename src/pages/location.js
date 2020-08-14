@@ -13,11 +13,13 @@ const Location = () => {
     e.preventDefault()
   }
 
-  const onSubmit = (startDate, endDate) => {
+  const onSubmit = (startDate, endDate, bookingValue, guestValue) => {
     navigate("/entabene-booking-page/", {
       state: {
         endDate: endDate.format("YYYY-MM-DD"),
         startDate: startDate.format("YYYY-MM-DD"),
+        bookingValue,
+        guestValue,
       },
     })
   }

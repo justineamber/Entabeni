@@ -51,11 +51,13 @@ const Offers = ({ data }) => {
     e.preventDefault()
   }
 
-  const onSubmit = (startDate, endDate) => {
+  const onSubmit = (startDate, endDate, bookingValue, guestValue) => {
     navigate("/entabene-booking-page/", {
       state: {
         endDate: endDate.format("YYYY-MM-DD"),
         startDate: startDate.format("YYYY-MM-DD"),
+        bookingValue,
+        guestValue,
       },
     })
   }
@@ -66,10 +68,10 @@ const Offers = ({ data }) => {
         title="Offers"
         keywords={[`Plett`, `Beach`, `House`, `Special`, `Offers`]}
       />
+      <div className={styles.bookingFormWrapperAllPages}>
+        <NavbarBookingForm onSubmit={onSubmit} />
+      </div>
       <div className={styles.paragraphContainerNoImage}>
-        <div className={styles.bookingFormWrapperAllPages}>
-          <NavbarBookingForm onSubmit={onSubmit} />
-        </div>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>View our offers</h2>
         <p className={styles.paragraphStyles}>

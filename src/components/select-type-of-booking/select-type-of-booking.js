@@ -1,12 +1,15 @@
 import React from "react"
 import { Form, Col } from "react-bootstrap"
+import selectTypeOfBookingStyles from "./select-type-of-booking.module.css"
 
 function SelectTypeOfBooking({ bookingValue, handleBookingChange, children }) {
   return (
     <>
       <Col xs="auto">
         <Form.Group as={Col} controlId="formGridState">
-          <Form.Label>Select</Form.Label>
+          <Form.Label bsPrefix={selectTypeOfBookingStyles.selectLabelStyles}>
+            Select
+          </Form.Label>
           {children}
           <Form.Control
             as="select"

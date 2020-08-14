@@ -20,21 +20,23 @@ const History = () => {
     }
   `)
 
-  const onSubmit = (startDate, endDate) => {
+  const onSubmit = (startDate, endDate, bookingValue, guestValue) => {
     navigate("/entabene-booking-page/", {
       state: {
         endDate: endDate.format("YYYY-MM-DD"),
         startDate: startDate.format("YYYY-MM-DD"),
+        bookingValue,
+        guestValue,
       },
     })
   }
   return (
     <Layout pageInfo={{ pageName: "History" }}>
       <SEO title="History" keywords={[`Plett`, `Beach`, `House`, `History`]} />
+      <div className={styles.bookingFormWrapperAllPages}>
+        <NavbarBookingForm onSubmit={onSubmit} />
+      </div>
       <div className={styles.paragraphContainerNoImage}>
-        <div className={styles.bookingFormWrapperAllPages}>
-          <NavbarBookingForm onSubmit={onSubmit} />
-        </div>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>About us</h2>
         <p className={styles.paragraphStyles}>

@@ -45,11 +45,13 @@ export const query = graphql`
 `
 
 const Amenities = ({ data }) => {
-  const onSubmit = (startDate, endDate) => {
+  const onSubmit = (startDate, endDate, bookingValue, guestValue) => {
     navigate("/entabene-booking-page/", {
       state: {
         endDate: endDate.format("YYYY-MM-DD"),
         startDate: startDate.format("YYYY-MM-DD"),
+        bookingValue,
+        guestValue,
       },
     })
   }
@@ -59,11 +61,10 @@ const Amenities = ({ data }) => {
         title="Amenities"
         keywords={[`Plett`, `Beach`, `House`, `Amenities`, `Entabene`]}
       />
-
+      <div className={styles.bookingFormWrapperAllPages}>
+        <NavbarBookingForm onSubmit={onSubmit} />
+      </div>
       <div className={styles.paragraphContainerNoImage}>
-        <div className={styles.bookingFormWrapperAllPages}>
-          <NavbarBookingForm onSubmit={onSubmit} />
-        </div>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>All the perks</h2>
         <p className={styles.paragraphStyles}>

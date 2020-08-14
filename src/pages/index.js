@@ -17,7 +17,7 @@ import NavbarBookingForm from "../components/navbar-booking-form/navbar-booking-
 export const imageQuery = graphql`
   fragment optimizeHomeImages on File {
     childImageSharp {
-      fluid(maxWidth: 800, maxHeight: 350, quality: 100) {
+      fluid(maxWidth: 800, maxHeight: 400, quality: 100) {
         ...GatsbyImageSharpFluid
       }
     }
@@ -74,16 +74,13 @@ export const query = graphql`
 `
 
 const Home = ({ data }) => {
-  function handleClick(e) {
-    e.preventDefault()
-  }
-
-  const onSubmit = (startDate, endDate, bookingValue) => {
+  const onSubmit = (startDate, endDate, bookingValue, guestValue) => {
     navigate("/entabene-booking-page/", {
       state: {
         endDate: endDate.format("YYYY-MM-DD"),
         startDate: startDate.format("YYYY-MM-DD"),
         bookingValue,
+        guestValue,
       },
     })
   }
@@ -153,7 +150,7 @@ const Home = ({ data }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <GiPositionMarker />
+                <GiPositionMarker className={styles.positionMarkerSvgStyle} />
                 Plettenberg Bay, South Africa
               </a>
             </td>
@@ -163,7 +160,7 @@ const Home = ({ data }) => {
           <tr>
             <td>
               <a href="tel:+4796801110">
-                <GiPhone />
+                <GiPhone className={styles.phoneSvgStyle} />
                 +47 968 01110
               </a>
             </td>
@@ -180,14 +177,12 @@ const Home = ({ data }) => {
         <div className={styles.centeredTextOverImage}>
           <GiSeahorse />
           <h2>Paradise Found</h2>
-          <Link to="/contact">
-            <Button variant="outline-light" onClick={handleClick}>
-              Book your stay
-            </Button>
+          <Link to="/contact/">
+            <Button variant="outline-light">Book your stay</Button>
           </Link>
         </div>
       </div>
-      <div className={styles.paragraphContainer}>
+      <div className={styles.paragraphContainerLifeWellLived}>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>Life. Well lived.</h2>
         <p className={styles.paragraphStyles}>
@@ -200,10 +195,8 @@ const Home = ({ data }) => {
           over. This is the perfect holiday accomodation for your family
           holiday.
         </p>
-        <Link to="/gallery">
-          <Button variant="outline-dark" onClick={handleClick}>
-            Discover Entabene
-          </Button>
+        <Link to="/gallery/">
+          <Button variant="outline-dark">Discover Entabene</Button>
         </Link>
       </div>
       <CardGroup className={styles.cardGroupStyles}>
@@ -259,7 +252,7 @@ const Home = ({ data }) => {
           </Card.Body>
         </Card>
       </CardGroup>
-      <Card className="text-center">
+      <Card>
         <Card.Body>
           <FaTripadvisor />
           <Card.Title bsPrefix={styles.headingStyle}>Guest Reviews</Card.Title>
@@ -275,10 +268,8 @@ const Home = ({ data }) => {
             much for such an unforgettable experience. <br />
             Mr. &amp; Mrs. J. Finnegan - <em>May 2019</em>
           </Card.Text>
-          <Link to="/guestReviews">
-            <Button variant="dark" onClick={handleClick}>
-              See all reviews
-            </Button>
+          <Link to="/guest-reviews/">
+            <Button variant="dark">See all reviews</Button>
           </Link>
         </Card.Body>
       </Card>
@@ -292,10 +283,8 @@ const Home = ({ data }) => {
         <div className={styles.centeredTextOverImage}>
           <GiSeahorse />
           <h2>Ideal Spot in Plett</h2>
-          <Link to="/location">
-            <Button variant="outline-light" onClick={handleClick}>
-              Explore the area
-            </Button>
+          <Link to="/location/">
+            <Button variant="outline-light">Explore the area</Button>
           </Link>
         </div>
       </div>

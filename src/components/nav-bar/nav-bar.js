@@ -43,12 +43,17 @@ const NavBar = ({ pageInfo, logoImage }) => {
             <div className={navBarStyles.navMenuSVG}>
               <GiSeahorse />
               <NavDropdown title="History" id="collasible-nav-dropdown">
-                <Link to="/history" className="nav-link">
-                  <NavDropdown.Item>History</NavDropdown.Item>
-                </Link>
-                <Link to="/location" className="nav-link">
-                  <NavDropdown.Item>Location</NavDropdown.Item>
-                </Link>
+                <NavDropdown.Item>
+                  <Link to="/history" className="nav-link">
+                    History
+                  </Link>
+                </NavDropdown.Item>
+
+                <NavDropdown.Item>
+                  <Link to="/location" className="nav-link">
+                    Location
+                  </Link>
+                </NavDropdown.Item>
               </NavDropdown>
             </div>
 

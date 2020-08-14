@@ -21,11 +21,13 @@ const GuestReviews = () => {
     }
   `)
 
-  const onSubmit = (startDate, endDate) => {
+  const onSubmit = (startDate, endDate, bookingValue, guestValue) => {
     navigate("/entabene-booking-page/", {
       state: {
         endDate: endDate.format("YYYY-MM-DD"),
         startDate: startDate.format("YYYY-MM-DD"),
+        bookingValue,
+        guestValue,
       },
     })
   }
@@ -35,11 +37,10 @@ const GuestReviews = () => {
         title="Guest reviews"
         keywords={[`Plett`, `Beach`, `House`, `Guest`, `Reviews`, `Entebene`]}
       />
-
+      <div className={styles.bookingFormWrapperAllPages}>
+        <NavbarBookingForm onSubmit={onSubmit} />
+      </div>
       <div className={styles.paragraphContainerNoImage}>
-        <div className={styles.bookingFormWrapperAllPages}>
-          <NavbarBookingForm onSubmit={onSubmit} />
-        </div>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>More from our Guests...</h2>
         <p className={styles.paragraphStyles}>

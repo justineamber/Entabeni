@@ -2,7 +2,7 @@ import React from "react"
 import { Form, Col } from "react-bootstrap"
 import selectTypeOfBookingStyles from "./select-type-of-booking.module.css"
 
-function SelectTypeOfBooking({ bookingValue, handleBookingChange, children }) {
+function SelectTypeOfBooking({ bookingValue, handleBookingChange }) {
   return (
     <>
       <Col xs="auto">
@@ -10,7 +10,7 @@ function SelectTypeOfBooking({ bookingValue, handleBookingChange, children }) {
           <Form.Label bsPrefix={selectTypeOfBookingStyles.selectLabelStyles}>
             Select
           </Form.Label>
-          {children}
+
           <Form.Control
             as="select"
             onChange={handleBookingChange}

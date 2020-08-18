@@ -2,7 +2,7 @@ import React from "react"
 import { Form, Col } from "react-bootstrap"
 import selectNumberOfGuestsStyles from "./select-number-of-guests.module.css"
 
-function SelectNumberOfGuests({ guestValue, handleGuestChange, children }) {
+function SelectNumberOfGuests({ guestValue, handleGuestChange }) {
   return (
     <>
       <Col xs="auto">
@@ -10,7 +10,7 @@ function SelectNumberOfGuests({ guestValue, handleGuestChange, children }) {
           <Form.Label bsPrefix={selectNumberOfGuestsStyles.selectLabelStyles}>
             Guests
           </Form.Label>
-          {children}
+
           <Form.Control
             as="select"
             onChange={handleGuestChange}

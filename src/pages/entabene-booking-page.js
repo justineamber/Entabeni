@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import * as moment from "moment"
 import { Link } from "gatsby"
 import Nav from "react-bootstrap/Nav"
@@ -13,8 +13,30 @@ import styles from "./pages-styles/pagestyles-css-modules.module.css"
 function EntabeneBookingPage({ location }) {
   const handleSelect = eventKey => `selected ${eventKey}`
 
-  const endDate = moment(new Date(location.state.endDate))
-  const startDate = moment(new Date(location.state.startDate))
+  const [endDate, setEndDate] = useState(null)
+  const [startDate, setStartDate] = useState(null)
+  const [bookingValue, setBookingValue] = useState(undefined)
+  const [guestValue, setGuestValue] = useState(undefined)
+
+  useEffect(() => {
+    if (location && location.state) {
+      if (location.state.endDate) {
+        setEndDate(moment(new Date(location.state.endDate)))
+      }
+
+      if (location.state.startDate) {
+        setStartDate(moment(new Date(location.state.startDate)))
+      }
+
+      if (location.state.bookingValue) {
+        setBookingValue(location.state.bookingValue)
+      }
+
+      if (location.state.guestValue) {
+        setGuestValue(location.state.guestValue)
+      }
+    }
+  }, [location])
 
   return (
     <>
@@ -30,7 +52,7 @@ function EntabeneBookingPage({ location }) {
             <Nav className="mr-auto" onSelect={handleSelect}>
               <SelectTypeOfBooking
                 handleBookingChange={() => {}}
-                bookingValue={location.state.bookingValue}
+                bookingValue={bookingValue}
               />
               <div className={styles.inputFormsWrappers}>
                 <DateRangePicker
@@ -41,7 +63,7 @@ function EntabeneBookingPage({ location }) {
               </div>
               <SelectNumberOfGuests
                 handleGuestChange={() => {}}
-                guestValue={location.state.guestValue}
+                guestValue={guestValue}
               />
             </Nav>
           </Navbar.Collapse>

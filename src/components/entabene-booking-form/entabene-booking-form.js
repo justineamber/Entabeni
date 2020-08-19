@@ -25,8 +25,8 @@ function EntabeneBookingForm() {
         validationSchema={schema}
         onSubmit={console.log}
         initialValues={{
-          firstName: "First Name",
-          lastName: "Last Name",
+          firstName: "",
+          lastName: "",
         }}
       >
         {({
@@ -48,6 +48,7 @@ function EntabeneBookingForm() {
                 <Form.Label>First name</Form.Label>
                 <Form.Control
                   type="text"
+                  placeholder="First name"
                   name="firstName"
                   value={values.firstName}
                   onChange={handleChange}
@@ -59,6 +60,7 @@ function EntabeneBookingForm() {
                 <Form.Label>Last name</Form.Label>
                 <Form.Control
                   type="text"
+                  placeholder="Last name"
                   name="lastName"
                   value={values.lastName}
                   onChange={handleChange}

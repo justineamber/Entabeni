@@ -121,6 +121,7 @@ const Home = ({ data }) => {
       <div className={styles.bookingFormWrapperHomePage}>
         <NavbarBookingForm onSubmit={onSubmit} />
       </div>
+
       <div className={styles.paragraphContainer}>
         <GiSeahorse />
         <h1 className={styles.headingStyle}>{data.site.siteMetadata.title}</h1>
@@ -177,7 +178,7 @@ const Home = ({ data }) => {
         <div className={styles.centeredTextOverImage}>
           <GiSeahorse />
           <h2>Paradise Found</h2>
-          <Link to="/contact/">
+          <Link to="/entabene-booking-page/">
             <Button variant="outline-light">Book your stay</Button>
           </Link>
         </div>

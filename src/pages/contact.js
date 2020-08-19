@@ -10,10 +10,9 @@ import { Formik } from "formik"
 import * as yup from "yup"
 
 const schema = yup.object({
-  fullName: yup.string().required(),
+  name: yup.string().required(),
   email: yup.string().required(),
   message: yup.string().required(),
-  terms: yup.bool().required(),
 })
 
 function ContactForm() {
@@ -44,7 +43,7 @@ function ContactForm() {
         <Formik
           validationSchema={schema}
           initialValues={{
-            fullName: "",
+            name: "",
             email: "",
             terms: false,
           }}
@@ -62,17 +61,22 @@ function ContactForm() {
             isValid,
             errors,
           }) => (
-            <Form noValidate onSubmit={handleSubmit}>
-              <Form.Row>
+            <Form
+              noValidate
+              onSubmit={handleSubmit}
+              className={styles.paddingBottom}
+            >
+              <Form.Row className="justify-content-md-center">
                 <Form.Group as={Col} md="4" controlId="validationFormik01">
-                  <Form.Label>Full name</Form.Label>
+                  <Form.Label>Name</Form.Label>
                   <Form.Control
                     type="text"
-                    name="fullName"
-                    value={values.fullName}
+                    name="name"
+                    placeholder="Enter name"
+                    value={values.name}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    isValid={touched.fullName && !errors.fullName}
+                    isValid={touched.name && !errors.name}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
@@ -90,7 +94,8 @@ function ContactForm() {
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
-
+              </Form.Row>
+              <Form.Row className="justify-content-md-center">
                 <Form.Group
                   as={Col}
                   md="4"
@@ -109,18 +114,6 @@ function ContactForm() {
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
               </Form.Row>
-
-              <Form.Group>
-                <Form.Check
-                  required
-                  name="terms"
-                  label="Please tick to receive newsletters with exclusive offers, experiences and travel inspiration"
-                  onChange={handleChange}
-                  isInvalid={!!errors.terms}
-                  feedback={errors.terms}
-                  id="validationFormik0"
-                />
-              </Form.Group>
               <Button type="submit">Submit form</Button>
             </Form>
           )}

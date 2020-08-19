@@ -9,8 +9,8 @@ const NavBar = ({ pageInfo, logoImage }) => {
   return (
     <Navbar bg="light" fixed="top" expand="lg">
       <Container>
-        <Navbar.Brand bsPrefix={navBarStyles.navBrand}>
-          <Link to="/" className="active">
+        <Link to="/">
+          <Navbar.Brand bsPrefix={navBarStyles.navBrand}>
             <Img
               fixed={logoImage}
               width="100"
@@ -18,8 +18,8 @@ const NavBar = ({ pageInfo, logoImage }) => {
               alt="Site logo"
               className="d-inline-block align-top"
             />
-          </Link>
-        </Navbar.Brand>
+          </Navbar.Brand>
+        </Link>
         <div className={navBarStyles.menuCenterMobile}>
           <a href="/offers">
             <GiPresent className={navBarStyles.svgGiftMobileViewWrapper} />
@@ -71,8 +71,8 @@ const NavBar = ({ pageInfo, logoImage }) => {
             </div>
             <div className={navBarStyles.navMenuSVG}>
               <GiSeahorse />
-              <Link to="/activities" className="nav-link">
-                Activities
+              <Link to="/experiences" className="nav-link">
+                Experiences
               </Link>
             </div>
             <div className={navBarStyles.navMenuSVG}>

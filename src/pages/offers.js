@@ -47,10 +47,6 @@ export const query = graphql`
 `
 
 const Offers = ({ data }) => {
-  function handleClick(e) {
-    e.preventDefault()
-  }
-
   const onSubmit = (startDate, endDate, bookingValue, guestValue) => {
     navigate("/entabene-booking-page/", {
       state: {
@@ -92,10 +88,8 @@ const Offers = ({ data }) => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Card.Text>
-            <Link to="/contact">
-              <Button variant="outline-dark" onClick={handleClick}>
-                Book now
-              </Button>
+            <Link to="/entabene-booking-page/">
+              <Button variant="outline-dark">Book now</Button>
             </Link>
           </Card.Body>
           <Card.Footer>
@@ -114,10 +108,8 @@ const Offers = ({ data }) => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Card.Text>
-            <Link to="/contact">
-              <Button variant="outline-dark" onClick={handleClick}>
-                Book now
-              </Button>
+            <Link to="/entabene-booking-page/">
+              <Button variant="outline-dark">Book now</Button>
             </Link>
           </Card.Body>
           <Card.Footer>
@@ -136,10 +128,8 @@ const Offers = ({ data }) => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Card.Text>
-            <Link to="/contact">
-              <Button variant="outline-dark" onClick={handleClick}>
-                Book now
-              </Button>
+            <Link to="/entabene-booking-page/">
+              <Button variant="outline-dark">Book now</Button>
             </Link>
           </Card.Body>
           <Card.Footer>

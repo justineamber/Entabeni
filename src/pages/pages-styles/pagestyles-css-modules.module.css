@@ -46,12 +46,6 @@ body {
   margin-bottom: 0;
 }
 
-.category {
-  color: #222;
-  background: #fff;
-  font-size: 1rem;
-}
-
 .centeredTextOverImage {
   left: 50%;
   position: absolute;
@@ -98,28 +92,8 @@ body {
   width: 100%;
   margin: 0;
 }
-.imageContainer:hover .imageContentHover {
+.imageContainer:hover {
   display: block;
-}
-
-.imageContent {
-  display: none;
-}
-
-.imageContent {
-  display: block;
-  padding: 1rem 0;
-}
-
-.imageContentHover {
-  background: #fff;
-  display: none;
-  font-weight: 400;
-  margin-top: -15rem;
-  padding: 1rem;
-  position: absolute;
-  white-space: normal;
-  z-index: 1;
 }
 
 .imageHeadingContainer {
@@ -163,6 +137,10 @@ em {
 .mapSectionContainer {
   margin-bottom: 1rem;
   margin-top: 1rem;
+}
+
+.paddingBottom {
+  margin-bottom: 1rem;
 }
 
 .paragraphStyles {
@@ -229,13 +207,6 @@ em {
   margin-bottom: 0;
 }
 
-.title {
-  color: #222;
-  background: #fff;
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
 @media screen and (max-width: 64rem) {
   .attractionImage:hover {
     transform: none;
@@ -244,7 +215,7 @@ em {
   .imageContainer {
     height: 100%;
   }
-  .imageContainer:hover .imageContentHover {
+  .imageContainer:hover {
     display: none;
   }
 }
@@ -283,6 +254,7 @@ em {
 .bookingFormWrapperAllPages {
   background-color: #333 !important;
   position: absolute;
+  justify-content: center;
   top: 115px;
   align-items: center;
   display: flex;

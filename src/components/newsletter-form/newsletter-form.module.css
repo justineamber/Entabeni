@@ -1,6 +1,12 @@
 .headingStyle {
   color: #222831;
+  padding: 0;
+  letter-spacing: 0;
+  margin-top: 0;
   font-size: 2rem;
+  margin-bottom: 0.75rem;
+  font-family: "Old Standard TT", serif;
+  font-display: swap;
 }
 
 .Button {
@@ -29,14 +35,11 @@
   text-decoration: none;
 }
 
-.formRowStyles {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -5px;
-  margin-left: -5px;
-  padding: 1rem;
+.paddingTopAndBottom {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-.paddingTop {
-  margin-top: 1rem;
+.newsletterContainer {
+  border-top: 0.0625rem solid #ccc;
 }

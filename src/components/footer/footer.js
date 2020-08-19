@@ -12,10 +12,6 @@ import Img from "gatsby-image"
 import { Button, Col, Container, Row } from "react-bootstrap"
 
 export default function Footer({ logoImage, JustineHillLogo }) {
-  function handleClick(e) {
-    e.preventDefault()
-    console.log("The button was clicked.")
-  }
   return (
     <>
       <div className={footerStyles.footerContainerSocialMedia}>
@@ -47,20 +43,15 @@ export default function Footer({ logoImage, JustineHillLogo }) {
                   </span>
                 </li>
               </ul>
-              <Link to="/contact" className="nav-link">
-                <Button
-                  variant="dark"
-                  active
-                  type="button"
-                  onClick={handleClick}
-                >
+              <Link to="/contact">
+                <Button variant="dark" type="button">
                   Contact us
                 </Button>
               </Link>
             </Col>
 
             <Col xs={6} md={4}>
-              <Link to="/home" className="nav-link">
+              <Link to="/home">
                 <Img
                   className={footerStyles.logo}
                   fixed={logoImage}
@@ -76,7 +67,7 @@ export default function Footer({ logoImage, JustineHillLogo }) {
             </Col>
 
             <Col xs={6} md={4}>
-              <Link to="/home" className="nav-link">
+              <Link to="/home">
                 <Img
                   fixed={JustineHillLogo}
                   width="100"

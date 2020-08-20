@@ -130,7 +130,9 @@ const Experiences = ({ data }) => {
             alt="Lady wearing hat"
           />
           <Card.Body>
-            <Card.Title>Experience title</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Experience title
+            </Card.Title>
             <Card.Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -147,7 +149,9 @@ const Experiences = ({ data }) => {
             alt="Man playing golf at Goose Valley Golf Club"
           />
           <Card.Body>
-            <Card.Title>Experience title</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Experience title
+            </Card.Title>
             <Card.Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -161,7 +165,9 @@ const Experiences = ({ data }) => {
         <Card>
           <Img fluid={data.image8.childImageSharp.fluid} alt="lady at spa" />
           <Card.Body>
-            <Card.Title>Experience title</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Experience title
+            </Card.Title>
             <Card.Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -180,7 +186,9 @@ const Experiences = ({ data }) => {
             alt="monkey in tree at Monkey Land"
           />
           <Card.Body>
-            <Card.Title>Experience title</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Experience title
+            </Card.Title>
             <Card.Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -197,7 +205,9 @@ const Experiences = ({ data }) => {
             alt="fruit annd vegetables in box at farmers market"
           />
           <Card.Body>
-            <Card.Title>Experience title</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Experience title
+            </Card.Title>
             <Card.Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -214,7 +224,9 @@ const Experiences = ({ data }) => {
             alt="two whales in the sea"
           />
           <Card.Body>
-            <Card.Title>Experience title</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Experience title
+            </Card.Title>
             <Card.Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -230,7 +242,9 @@ const Experiences = ({ data }) => {
         <Card>
           <Img fluid={data.image6.childImageSharp.fluid} alt="baby seal" />
           <Card.Body>
-            <Card.Title>Experience title</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Experience title
+            </Card.Title>
             <Card.Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -247,7 +261,9 @@ const Experiences = ({ data }) => {
             alt="Two people kayaking on water"
           />
           <Card.Body>
-            <Card.Title>Experience title</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Experience title
+            </Card.Title>
             <Card.Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -264,7 +280,9 @@ const Experiences = ({ data }) => {
             alt="Safari with elephants"
           />
           <Card.Body>
-            <Card.Title>Experience title</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Experience title
+            </Card.Title>
             <Card.Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -283,7 +301,9 @@ const Experiences = ({ data }) => {
             alt="robberg nature reserve"
           />
           <Card.Body>
-            <Card.Title>Experience title</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Experience title
+            </Card.Title>
             <Card.Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -300,7 +320,9 @@ const Experiences = ({ data }) => {
             alt="Two people playing polo"
           />
           <Card.Body>
-            <Card.Title>Experience title</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Experience title
+            </Card.Title>
             <Card.Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -317,7 +339,9 @@ const Experiences = ({ data }) => {
             alt="water slide theme park"
           />
           <Card.Body>
-            <Card.Title>Experience title</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Experience title
+            </Card.Title>
             <Card.Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua

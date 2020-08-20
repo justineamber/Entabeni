@@ -177,7 +177,7 @@ const Home = ({ data }) => {
         </div>
         <div className={styles.centeredTextOverImage}>
           <GiSeahorse />
-          <h2>Paradise Found</h2>
+          <h2 className={styles.headingStyle}>Paradise Found</h2>
           <Link to="/entabene-booking-page/">
             <Button variant="outline-light">Book your stay</Button>
           </Link>
@@ -196,9 +196,6 @@ const Home = ({ data }) => {
           over. This is the perfect holiday accomodation for your family
           holiday.
         </p>
-        <Link to="/gallery/">
-          <Button variant="outline-dark">Discover Entabene</Button>
-        </Link>
       </div>
       <CardGroup className={styles.cardGroupStyles}>
         <Card className={styles.cardStyles}>
@@ -208,7 +205,9 @@ const Home = ({ data }) => {
             alt="kitchen"
           />
           <Card.Body>
-            <Card.Title>Modern home</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Modern home
+            </Card.Title>
             <Card.Text>
               Modern finishes and clean lines. This holiday home's interior is
               elegant and simple.
@@ -222,7 +221,9 @@ const Home = ({ data }) => {
             alt="onsuite bedroom"
           />
           <Card.Body>
-            <Card.Title>Luxury signiture</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Luxury signiture
+            </Card.Title>
             <Card.Text>
               Our 250 sq. ft. full bed guest rooms are beautifully decorated and
               includes textured wood accents, ocean-hued carpeting,
@@ -242,7 +243,9 @@ const Home = ({ data }) => {
             alt="seaview from Entabene Hill"
           />
           <Card.Body>
-            <Card.Title>Wake up to the best views of Plett</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Wake up to the best views of Plett
+            </Card.Title>
             <Card.Text>
               Located in central Plettenberg Bay and walking distance to the
               beach, shops and restaurants. The stunning Entabene Hill has
@@ -256,7 +259,9 @@ const Home = ({ data }) => {
       <Card>
         <Card.Body>
           <FaTripadvisor />
-          <Card.Title bsPrefix={styles.headingStyle}>Guest Reviews</Card.Title>
+          <Card.Title className={styles.cardTitleStyles}>
+            Guest Reviews
+          </Card.Title>
           <Card.Subtitle>"Experience of a lifetime!"</Card.Subtitle>
           <Card.Text bsPrefix={styles.paragraphStyles}>
             We had the experience of a lifetime and enjoyed every minute of it.
@@ -283,7 +288,7 @@ const Home = ({ data }) => {
         </div>
         <div className={styles.centeredTextOverImage}>
           <GiSeahorse />
-          <h2>Ideal Spot in Plett</h2>
+          <h2 className={styles.headingStyle}>Ideal Spot in Plett</h2>
           <Link to="/location/">
             <Button variant="outline-light">Explore the area</Button>
           </Link>

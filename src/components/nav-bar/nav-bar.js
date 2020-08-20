@@ -3,34 +3,21 @@ import { Container, Navbar, NavDropdown, Nav } from "react-bootstrap"
 import navBarStyles from "./nav-bar.module.css"
 import { GiSeahorse, GiPresent, GiPhone } from "react-icons/gi"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
 
-const NavBar = ({ pageInfo, logoImage }) => {
+const NavBar = ({ pageInfo }) => {
   return (
     <Navbar bg="light" fixed="top" expand="lg">
       <Container>
-        <Link to="/">
-          <Navbar.Brand bsPrefix={navBarStyles.navBrand}>
-            <Img
-              fixed={logoImage}
-              width="100"
-              height="100"
-              alt="Site logo"
-              className="d-inline-block align-top"
-            />
-          </Navbar.Brand>
+        <Link to="/" className={navBarStyles.navbarBrand}>
+          <Navbar.Brand>Entabene</Navbar.Brand>
         </Link>
+
         <div className={navBarStyles.menuCenterMobile}>
           <a href="/offers">
             <GiPresent className={navBarStyles.svgGiftMobileViewWrapper} />
           </a>
           <a href="tel:+4796801110">
             <GiPhone className={navBarStyles.svgPhoneMobileViewWrapper} />
-          </a>
-        </div>
-        <div className={navBarStyles.menuLeftMobile}>
-          <a className={navBarStyles.logoStyleMobile} href="/">
-            Entabene
           </a>
         </div>
 
@@ -42,15 +29,19 @@ const NavBar = ({ pageInfo, logoImage }) => {
           >
             <div className={navBarStyles.navMenuSVG}>
               <GiSeahorse />
-              <NavDropdown title="History" id="collasible-nav-dropdown">
+              <NavDropdown
+                title="History"
+                id="collasible-nav-dropdown"
+                className={navBarStyles.navLinkDropdownItem}
+              >
                 <NavDropdown.Item>
-                  <Link to="/history" className="nav-link">
+                  <Link to="/history" className={navBarStyles.navLink}>
                     History
                   </Link>
                 </NavDropdown.Item>
 
                 <NavDropdown.Item>
-                  <Link to="/location" className="nav-link">
+                  <Link to="/location" className={navBarStyles.navLink}>
                     Location
                   </Link>
                 </NavDropdown.Item>
@@ -59,32 +50,32 @@ const NavBar = ({ pageInfo, logoImage }) => {
 
             <div className={navBarStyles.navMenuSVG}>
               <GiSeahorse />
-              <Link to="/offers" className="nav-link">
+              <Link to="/offers" className={navBarStyles.navLink}>
                 Offers
               </Link>
             </div>
             <div className={navBarStyles.navMenuSVG}>
               <GiSeahorse />
-              <Link to="/amenities" className="nav-link">
+              <Link to="/amenities" className={navBarStyles.navLink}>
                 Amenities
               </Link>
             </div>
             <div className={navBarStyles.navMenuSVG}>
               <GiSeahorse />
-              <Link to="/experiences" className="nav-link">
+              <Link to="/experiences" className={navBarStyles.navLink}>
                 Experiences
               </Link>
             </div>
             <div className={navBarStyles.navMenuSVG}>
               <GiSeahorse />
 
-              <Link to="/gallery" className="nav-link">
+              <Link to="/gallery" className={navBarStyles.navLink}>
                 Gallery
               </Link>
             </div>
             <div className={navBarStyles.navMenuSVG}>
               <GiSeahorse />
-              <Link to="/contact" className="nav-link">
+              <Link to="/contact" className={navBarStyles.navLink}>
                 Contact
               </Link>
             </div>

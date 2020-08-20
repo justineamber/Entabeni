@@ -11,7 +11,7 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { Button, Col, Container, Row } from "react-bootstrap"
 
-export default function Footer({ logoImage, JustineHillLogo }) {
+export default function Footer({ JustineHillLogo }) {
   return (
     <>
       <div className={footerStyles.footerContainerSocialMedia}>
@@ -51,14 +51,8 @@ export default function Footer({ logoImage, JustineHillLogo }) {
             </Col>
 
             <Col xs={6} md={4}>
-              <Link to="/home">
-                <Img
-                  className={footerStyles.logo}
-                  fixed={logoImage}
-                  width="100"
-                  height="100"
-                  alt="Entabene logo"
-                />
+              <Link to="/" className={footerStyles.navbarBrand}>
+                Entabene
               </Link>
               <p className={footerStyles.watermarkStyle}>
                 <FaRegCopyright className={footerStyles.svg} />

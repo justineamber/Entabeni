@@ -43,6 +43,18 @@
   margin-right: 0.25rem;
 }
 
+.navbarBrand {
+  color: #222831;
+  font-weight: 900;
+  font-family: "Old Standard TT", serif;
+}
+
+.navbarBrand:hover {
+  color: #222831;
+  text-decoration: none !important;
+  text-decoration-line: none;
+}
+
 .watermarkStyle {
   font-size: 0.8125rem;
   letter-spacing: 0.06em;

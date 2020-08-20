@@ -83,7 +83,9 @@ const Offers = ({ data }) => {
             alt="ball in pool"
           />
           <Card.Body>
-            <Card.Title>Summer Special</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Summer Special
+            </Card.Title>
             <Card.Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -103,7 +105,9 @@ const Offers = ({ data }) => {
             alt="cocktails"
           />
           <Card.Body>
-            <Card.Title>Gourmet Breaks</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Gourmet Breaks
+            </Card.Title>
             <Card.Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -123,7 +127,9 @@ const Offers = ({ data }) => {
             alt="family playing on beach"
           />
           <Card.Body>
-            <Card.Title>Family/Group Offer</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Family/Group Offer
+            </Card.Title>
             <Card.Text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.

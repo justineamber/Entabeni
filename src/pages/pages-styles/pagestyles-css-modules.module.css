@@ -46,6 +46,10 @@ body {
   margin-bottom: 0;
 }
 
+.cardTitleStyles {
+  font-family: "Old Standard TT", serif;
+}
+
 .centeredTextOverImage {
   left: 50%;
   position: absolute;
@@ -75,8 +79,7 @@ body {
   padding: 0;
   letter-spacing: 0;
   margin-top: 0;
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
   font-family: "Old Standard TT", serif;
   font-display: swap;
 }
@@ -148,25 +151,21 @@ em {
   font-size: 1.125rem;
   letter-spacing: 0.06em;
   line-height: 1.6;
-  margin-bottom: 1.25rem;
+  padding: 0 0.5rem;
   text-rendering: optimizeLegibility;
   text-align: center;
-  margin: 1rem;
 }
 
 .paragraphContainer {
-  padding: 0.25rem;
-  margin-top: 3.5rem;
+  padding: 1.25rem;
 }
 
 .paragraphContainerLifeWellLived {
-  padding: 0.25rem;
-  margin-top: 0.5rem;
+  padding: 1.25rem;
 }
 
 .paragraphContainerNoImage {
-  margin-top: 4rem;
-  padding: 0.25rem;
+  margin-top: 70px;
 }
 
 @media screen and (max-width: 768px) {
@@ -255,7 +254,7 @@ em {
   background-color: #333 !important;
   position: absolute;
   justify-content: center;
-  top: 115px;
+  top: 72px;
   align-items: center;
   display: flex;
   width: 100%;
@@ -309,11 +308,11 @@ em {
 
 @media screen and (min-width: 64rem) {
   .paragraphContainerNoImage {
-    margin-top: 13.25rem;
+    margin-top: 162px;
   }
 
   .paragraphContainerNoImageLocationPage {
-    margin-top: 13.25rem;
+    margin-top: 162px;
   }
 }
 /*optimize gallery and local attractions page images for mobile*/

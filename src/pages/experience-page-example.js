@@ -14,7 +14,7 @@ const ExperienceBookingPage = () => {
     query {
       file(relativePath: { eq: "kayak.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 800, maxHeight: 300, quality: 100) {
+          fluid(maxWidth: 800, maxHeight: 250, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -53,7 +53,7 @@ const ExperienceBookingPage = () => {
       </div>
       <div className={styles.paragraphContainerNoImage}>
         <GiSeahorse />
-        <h2 className={styles.headingStyle}>Experience to book</h2>
+        <h2 className={styles.headingStyle}>Experience booking page</h2>
         <p className={styles.paragraphStyles}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -72,10 +72,12 @@ const ExperienceBookingPage = () => {
       <Card>
         <Img fluid={data.file.childImageSharp.fluid} alt="People kayaking" />
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
+          <Card.Title className={styles.cardTitleStyles}>
+            Experience title
+          </Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Card.Text>
           <Link to="/entabene-booking-page/">
             <Button variant="dark">Book now</Button>

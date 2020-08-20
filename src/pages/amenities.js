@@ -81,7 +81,9 @@ const Amenities = ({ data }) => {
             alt="luxury kitchen"
           />
           <Card.Body>
-            <Card.Title>Beautiful interior</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Beautiful interior
+            </Card.Title>
             <Card.Text>
               The home is modern and clean in design. The kitchen is fully
               kitted out. All bedrooms have linen, blankets, pillows and covers.
@@ -96,7 +98,9 @@ const Amenities = ({ data }) => {
             alt="home with sea view"
           />
           <Card.Body>
-            <Card.Title>Central location and the best sea views</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Central location and the best sea views
+            </Card.Title>
             <Card.Text>
               Entabene Hill is in the ideal spot in Plett. From the house you
               have beauitiful views of all the beaches in Plett &amp; the house
@@ -112,7 +116,9 @@ const Amenities = ({ data }) => {
             alt="luxury bedroom"
           />
           <Card.Body>
-            <Card.Title>Luxury bedrooms</Card.Title>
+            <Card.Title className={styles.cardTitleStyles}>
+              Luxury bedrooms
+            </Card.Title>
             <Card.Text>En suite large, luxury bedrooms</Card.Text>
           </Card.Body>
         </Card>

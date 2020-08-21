@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react"
 import * as moment from "moment"
-import EntabeneBookingForm from "../components/entabene-booking-form/entabene-booking-form"
+import EntabeniBookingForm from "../components/entabeni-booking-form/entabeni-booking-form"
 import styles from "./pages-styles/pagestyles-css-modules.module.css"
 import DateRangePicker from "../components/date-range-picker/date-range-picker"
 import SelectTypeOfBooking from "../components/select-type-of-booking/select-type-of-booking"
 import SelectNumberOfGuests from "../components/select-number-of-guests/select-number-of-guests"
 
-function EntabeneBookingPage({ location }) {
+function EntabeniBookingPage({ location }) {
   const [startDate, setStartDate] = useState(null)
   const [endDate, setEndDate] = useState(null)
   const [bookingValue, setBookingValue] = useState(undefined)
@@ -54,10 +54,9 @@ function EntabeneBookingPage({ location }) {
         handleGuestChange={() => {}}
         guestValue={guestValue}
       />
-
-      <EntabeneBookingForm />
+      <EntabeniBookingForm />
     </>
   )
 }
 
-export default EntabeneBookingPage
+export default EntabeniBookingPage

@@ -26,9 +26,6 @@ export const query = graphql`
         title
       }
     }
-    image1: file(relativePath: { eq: "luxurybedroom.jpg" }) {
-      ...amenitiesImages
-    }
 
     image2: file(relativePath: { eq: "anotherviewofkitchen.jpg" }) {
       ...amenitiesImages
@@ -46,7 +43,7 @@ export const query = graphql`
 
 const Amenities = ({ data }) => {
   const onSubmit = (startDate, endDate, bookingValue, guestValue) => {
-    navigate("/entabene-booking-page/", {
+    navigate("/entabeni-booking-page/", {
       state: {
         endDate: endDate.format("YYYY-MM-DD"),
         startDate: startDate.format("YYYY-MM-DD"),
@@ -59,7 +56,7 @@ const Amenities = ({ data }) => {
     <Layout pageInfo={{ pageName: "Amenities" }}>
       <SEO
         title="Amenities"
-        keywords={[`Plett`, `Beach`, `House`, `Amenities`, `Entabene`]}
+        keywords={[`Plett`, `Beach`, `House`, `Amenities`, `Entabeni`]}
       />
       <div className={styles.bookingFormWrapperAllPages}>
         <NavbarBookingForm onSubmit={onSubmit} />
@@ -68,9 +65,9 @@ const Amenities = ({ data }) => {
         <GiSeahorse />
         <h2 className={styles.headingStyle}>All the perks</h2>
         <p className={styles.paragraphStyles}>
-          Luxury interiors and beatiful views. Staying at the Entabene Hill
-          gives you access to Plett's most sought-after activities and
-          attractions. Here’s what comes with your stay.
+          Luxury interiors and beatiful views. Staying at the Entabeni gives you
+          access to Plett's most sought-after activities and attractions. Here’s
+          what comes with your stay.
         </p>
       </div>
       <CardGroup>
@@ -102,9 +99,9 @@ const Amenities = ({ data }) => {
               Central location and the best sea views
             </Card.Title>
             <Card.Text>
-              Entabene Hill is in the ideal spot in Plett. From the house you
-              have beauitiful views of all the beaches in Plett &amp; the house
-              is one block from the beach and close to restuarants and the town
+              Entabeni is in the ideal spot in Plett. From the house you have
+              beauitiful views of all the beaches in Plett &amp; the house is
+              one block from the beach and close to restuarants and the town
               center.
             </Card.Text>
           </Card.Body>
@@ -123,9 +120,6 @@ const Amenities = ({ data }) => {
           </Card.Body>
         </Card>
       </CardGroup>
-      <div className={styles.imageOpacityHover}>
-        <Img fluid={data.image1.childImageSharp.fluid} alt="luxury bedroom" />
-      </div>
     </Layout>
   )
 }

@@ -56,15 +56,13 @@
 }
 @media screen and (max-width: 320px) {
   .menuCenterMobile {
-    display: inline-block;
-  }
-  .svgMobileViewWrapper {
-    margin-left: 0;
-    margin-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 990px) {
   .svgGiftMobileViewWrapper {
     margin-right: 1.25rem;
     height: 24px;
@@ -79,13 +77,12 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .svgGiftMobileViewWrapper {
+@media screen and (min-width: 991px) {
+  .svgPhoneMobileViewWrapper {
     display: none;
     visibility: hidden;
   }
-
-  .svgPhoneMobileViewWrapper {
+  .svgGiftMobileViewWrapper {
     display: none;
     visibility: hidden;
   }
@@ -105,12 +102,5 @@
     font-size: 1.125rem;
     line-height: 1.5;
     color: #222;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  .svgPhoneMobileViewWrapper {
-    display: none;
-    visibility: hidden;
   }
 }

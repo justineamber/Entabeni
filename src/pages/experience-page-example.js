@@ -14,7 +14,7 @@ const ExperienceBookingPage = () => {
     query {
       file(relativePath: { eq: "kayak.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 800, maxHeight: 250, quality: 100) {
+          fluid(maxWidth: 800, maxHeight: 300, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -23,7 +23,7 @@ const ExperienceBookingPage = () => {
   `)
 
   const onSubmit = (startDate, endDate, bookingValue, guestValue) => {
-    navigate("/entabene-booking-page/", {
+    navigate("/entabeni-booking-page/", {
       state: {
         endDate: endDate.format("YYYY-MM-DD"),
         startDate: startDate.format("YYYY-MM-DD"),
@@ -39,7 +39,7 @@ const ExperienceBookingPage = () => {
         title="Experience Booking Page"
         keywords={[
           `Plett`,
-          `Entabene`,
+          `Entabeni`,
           `Beach`,
           `House`,
           `Local`,
@@ -53,19 +53,10 @@ const ExperienceBookingPage = () => {
       </div>
       <div className={styles.paragraphContainerNoImage}>
         <GiSeahorse />
-        <h2 className={styles.headingStyle}>Experience booking page</h2>
+        <h2 className={styles.headingStyle}>Experience title</h2>
         <p className={styles.paragraphStyles}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <p className={styles.paragraphStyles}>
-          Please note: Advance bookings are highly recommended to avoid
-          disappointment.
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
 
@@ -73,14 +64,14 @@ const ExperienceBookingPage = () => {
         <Img fluid={data.file.childImageSharp.fluid} alt="People kayaking" />
         <Card.Body>
           <Card.Title className={styles.cardTitleStyles}>
-            Experience title
+            Experience itinerary
           </Card.Title>
           <Card.Text>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Card.Text>
-          <Link to="/entabene-booking-page/">
-            <Button variant="dark">Book now</Button>
+          <Link to="/entabeni-booking-page/">
+            <Button variant="dark">Enquire now</Button>
           </Link>
         </Card.Body>
       </Card>

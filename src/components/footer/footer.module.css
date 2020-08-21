@@ -40,7 +40,7 @@
 }
 
 .svg {
-  margin-right: 0.25rem;
+  margin-right: 0.5rem;
 }
 
 .navbarBrand {
@@ -78,4 +78,10 @@
   flex-grow: 1;
   min-width: 0;
   max-width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .contactbButtonFooterWrapper {
+    margin-top: 12px;
+  }
 }

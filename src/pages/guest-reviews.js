@@ -22,7 +22,7 @@ const GuestReviews = () => {
   `)
 
   const onSubmit = (startDate, endDate, bookingValue, guestValue) => {
-    navigate("/entabene-booking-page/", {
+    navigate("/entabeni-booking-page/", {
       state: {
         endDate: endDate.format("YYYY-MM-DD"),
         startDate: startDate.format("YYYY-MM-DD"),
@@ -44,7 +44,7 @@ const GuestReviews = () => {
         <GiSeahorse />
         <h2 className={styles.headingStyle}>More from our Guests...</h2>
         <p className={styles.paragraphStyles}>
-          At Entabene we value guest feedback as it helps us to improve our
+          At Entabeni we value guest feedback as it helps us to improve our
           service. Here are some of our favourite guest testimonials:
         </p>
       </div>

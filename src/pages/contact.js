@@ -17,7 +17,7 @@ const schema = yup.object({
 
 function ContactForm() {
   const onSubmit = (startDate, endDate, bookingValue, guestValue) => {
-    navigate("/entabene-booking-page/", {
+    navigate("/entabeni-booking-page/", {
       state: {
         endDate: endDate.format("YYYY-MM-DD"),
         startDate: startDate.format("YYYY-MM-DD"),
@@ -30,7 +30,7 @@ function ContactForm() {
     <Layout pageInfo={{ pageName: "Contact" }}>
       <SEO
         title="Contact page"
-        keywords={[`Plett`, `Beach`, `House`, `Contact`]}
+        keywords={[`Plett`, `Beach`, `House`, `Contact`, `Entabeni`]}
       />
       <div className={styles.bookingFormWrapperAllPages}>
         <NavbarBookingForm onSubmit={onSubmit} />
@@ -119,6 +119,7 @@ function ContactForm() {
           )}
         </Formik>
       </Container>
+      <div className={styles.contactPageBottomBorder}></div>
     </Layout>
   )
 }

@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 
 const FixedMobileBookingButton = () => {
   return (
-    <Link to="/entabene-booking-page/">
+    <Link to="/entabeni-booking-page/">
       <Button
         bsPrefix={fixedMobileBookingButtonStyles.mobileButton}
         type="button"

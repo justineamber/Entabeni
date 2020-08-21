@@ -9,7 +9,7 @@ const NavBar = ({ pageInfo }) => {
     <Navbar bg="light" fixed="top" expand="lg">
       <Container>
         <Link to="/" className={navBarStyles.navbarBrand}>
-          <Navbar.Brand>Entabene</Navbar.Brand>
+          <Navbar.Brand>Entabeni</Navbar.Brand>
         </Link>
 
         <div className={navBarStyles.menuCenterMobile}>

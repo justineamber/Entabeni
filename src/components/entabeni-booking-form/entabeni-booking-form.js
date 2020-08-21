@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button"
 import { Container, Col, InputGroup } from "react-bootstrap"
 import { Formik } from "formik"
 import * as yup from "yup"
-import entabeneBookingFormStyles from "./entabene-booking-form.module.css"
+import entabeniBookingFormStyles from "./entabeni-booking-form.module.css"
 
 const schema = yup.object({
   firstName: yup.string().required(),
@@ -18,7 +18,7 @@ const schema = yup.object({
   postcode: yup.string().required(),
 })
 
-function EntabeneBookingForm() {
+function EntabeniBookingForm() {
   return (
     <Container>
       <Formik
@@ -41,7 +41,7 @@ function EntabeneBookingForm() {
           <Form
             noValidate
             onSubmit={handleSubmit}
-            className={entabeneBookingFormStyles.form}
+            className={entabeniBookingFormStyles.form}
           >
             <Form.Row>
               <Form.Group as={Col} md="4" controlId="validationFormik01">
@@ -190,4 +190,4 @@ function EntabeneBookingForm() {
   )
 }
 
-export default EntabeneBookingForm
+export default EntabeniBookingForm

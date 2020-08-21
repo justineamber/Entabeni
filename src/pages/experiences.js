@@ -79,7 +79,7 @@ export const query = graphql`
 `
 const Experiences = ({ data }) => {
   const onSubmit = (startDate, endDate, bookingValue, guestValue) => {
-    navigate("/entabene-booking-page/", {
+    navigate("/entabeni-booking-page/", {
       state: {
         endDate: endDate.format("YYYY-MM-DD"),
         startDate: startDate.format("YYYY-MM-DD"),
@@ -95,7 +95,7 @@ const Experiences = ({ data }) => {
         title="Experiences"
         keywords={[
           `Plett`,
-          `Entabene`,
+          `Entabeni`,
           `Beach`,
           `House`,
           `Local`,

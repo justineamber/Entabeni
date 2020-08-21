@@ -14,7 +14,7 @@ const Location = () => {
   }
 
   const onSubmit = (startDate, endDate, bookingValue, guestValue) => {
-    navigate("/entabene-booking-page/", {
+    navigate("/entabeni-booking-page/", {
       state: {
         endDate: endDate.format("YYYY-MM-DD"),
         startDate: startDate.format("YYYY-MM-DD"),
@@ -28,7 +28,7 @@ const Location = () => {
     <Layout pageInfo={{ pageName: "Location" }}>
       <SEO
         title="Location"
-        keywords={[`Plett`, `Entabene`, `Beach`, `House`, `Location`]}
+        keywords={[`Plett`, `Entabeni`, `Beach`, `House`, `Location`]}
       />
 
       <div className={styles.paragraphContainerNoImageLocationPage}>
@@ -38,7 +38,7 @@ const Location = () => {
         <GiSeahorse />
         <h2 className={styles.headingStyle}>Stay in the heart of Plett</h2>
         <p className={styles.paragraphStyles}>
-          A block from the town center and Beacon Isle beach, Entabene Hill puts
+          A block from the town center and Beacon Isle beach, Entabeni puts
           Plettenberg Bay at your feet.
         </p>
         <Button

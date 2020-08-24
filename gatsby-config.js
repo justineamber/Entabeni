@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Entabene`,
-    description: `Entabene built by Justine Hill using javascript, gatsby and react.`,
+    title: `Entabeni`,
+    description: `Entabeni built by Justine Hill using javascript, gatsby and react.`,
     author: `Justine Hill`,
   },
   plugins: [

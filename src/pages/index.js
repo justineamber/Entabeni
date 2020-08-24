@@ -163,9 +163,6 @@ const Home = ({ data }) => {
         <div className={styles.centeredTextOverImage}>
           <GiSeahorse />
           <h2 className={styles.headingStyle}>Paradise found</h2>
-          <Link to="/Entabeni-booking-page/">
-            <Button variant="outline-light">Book your stay</Button>
-          </Link>
         </div>
       </div>
       <div className={styles.paragraphContainerLifeWellLived}>
@@ -274,9 +271,6 @@ const Home = ({ data }) => {
         <div className={styles.centeredTextOverImage}>
           <GiSeahorse />
           <h2 className={styles.headingStyle}>Ideal spot in Plett</h2>
-          <Link to="/location/">
-            <Button variant="outline-light">Explore the area</Button>
-          </Link>
         </div>
       </div>
       <div className={styles.mapSectionContainer}>

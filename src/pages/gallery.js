@@ -15,7 +15,6 @@ export const imageQuery = graphql`
     }
   }
 `
-
 export const query = graphql`
   query GalleryPageQuery {
     site {
@@ -112,6 +111,7 @@ export const query = graphql`
     }
   }
 `
+
 const Gallery = ({ data }) => {
   const onSubmit = (startDate, endDate, bookingValue, guestValue) => {
     navigate("/entabeni-booking-page/", {
@@ -123,11 +123,12 @@ const Gallery = ({ data }) => {
       },
     })
   }
+
   return (
     <Layout pageInfo={{ pageName: "Gallery" }}>
       <SEO
         title="Gallery"
-        keywords={[`Plett`, `Beach`, `House`, `Gallery`, `Entabene`]}
+        keywords={[`Plett`, `Beach`, `House`, `Gallery`, `Entabeni`]}
       />
       <div className={styles.bookingFormWrapperAllPages}>
         <NavbarBookingForm onSubmit={onSubmit} />
@@ -137,213 +138,207 @@ const Gallery = ({ data }) => {
           <div className={styles.container}>
             <div className={styles.grid}>
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image2.childImageSharp.fluid}
-                    alt="cocktails by pool"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                <Img
+                  fluid={data.image2.childImageSharp.fluid}
+                  alt="cocktails by pool"
+                  className={styles.attractionImage}
+                />
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image3.childImageSharp.fluid}
-                    alt=" wooden steps going to beach"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                <Img
+                  fluid={data.image3.childImageSharp.fluid}
+                  alt=" wooden steps going to beach"
+                  className={styles.attractionImage}
+                />
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image4.childImageSharp.fluid}
-                    alt="sunset at the sea cliffs"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                <Img
+                  fluid={data.image4.childImageSharp.fluid}
+                  alt="sunset at the sea cliffs"
+                  className={styles.attractionImage}
+                />
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image5.childImageSharp.fluid}
-                    alt="onsuite bedroom"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                {/* <figure className={styles.imageContainer}> */}
+                <Img
+                  fluid={data.image5.childImageSharp.fluid}
+                  alt="onsuite bedroom"
+                  className={styles.attractionImage}
+                />
+                {/* </figure> */}
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image6.childImageSharp.fluid}
-                    alt="exterior of Entabene Hill"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                {/* <figure className={styles.imageContainer}> */}
+                <Img
+                  fluid={data.image6.childImageSharp.fluid}
+                  alt="exterior of Entabene Hill"
+                  className={styles.attractionImage}
+                />
+                {/* </figure> */}
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image7.childImageSharp.fluid}
-                    alt="toddler on beach"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                {/* <figure className={styles.imageContainer}> */}
+                <Img
+                  fluid={data.image7.childImageSharp.fluid}
+                  alt="toddler on beach"
+                  className={styles.attractionImage}
+                />
+                {/* </figure> */}
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image8.childImageSharp.fluid}
-                    alt="robberg nature reserve"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                {/* <figure className={styles.imageContainer}> */}
+                <Img
+                  fluid={data.image8.childImageSharp.fluid}
+                  alt="robberg nature reserve"
+                  className={styles.attractionImage}
+                />
+                {/* </figure> */}
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image9.childImageSharp.fluid}
-                    alt="footsteps on beach"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                {/* <figure className={styles.imageContainer}> */}
+                <Img
+                  fluid={data.image9.childImageSharp.fluid}
+                  alt="footsteps on beach"
+                  className={styles.attractionImage}
+                />
+                {/* </figure> */}
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image10.childImageSharp.fluid}
-                    alt="2 people playing polo"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                {/* <figure className={styles.imageContainer}> */}
+                <Img
+                  fluid={data.image10.childImageSharp.fluid}
+                  alt="2 people playing polo"
+                  className={styles.attractionImage}
+                />
+                {/* </figure> */}
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image11.childImageSharp.fluid}
-                    alt="man waterskiing"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                {/* <figure className={styles.imageContainer}> */}
+                <Img
+                  fluid={data.image11.childImageSharp.fluid}
+                  alt="man waterskiing"
+                  className={styles.attractionImage}
+                />
+                {/* </figure> */}
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image12.childImageSharp.fluid}
-                    alt="main bedroom"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                {/* <figure className={styles.imageContainer}> */}
+                <Img
+                  fluid={data.image12.childImageSharp.fluid}
+                  alt="main bedroom"
+                  className={styles.attractionImage}
+                />
+                {/* </figure> */}
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image13.childImageSharp.fluid}
-                    alt="lady in summer dress"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                {/* <figure className={styles.imageContainer}> */}
+                <Img
+                  fluid={data.image13.childImageSharp.fluid}
+                  alt="lady in summer dress"
+                  className={styles.attractionImage}
+                />
+                {/* </figure> */}
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image14.childImageSharp.fluid}
-                    alt="fish and chips"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                {/* <figure className={styles.imageContainer}> */}
+                <Img
+                  fluid={data.image14.childImageSharp.fluid}
+                  alt="fish and chips"
+                  className={styles.attractionImage}
+                />
+                {/* </figure> */}
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image15.childImageSharp.fluid}
-                    alt="man playing golf"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                {/* <figure className={styles.imageContainer}> */}
+                <Img
+                  fluid={data.image15.childImageSharp.fluid}
+                  alt="man playing golf"
+                  className={styles.attractionImage}
+                />
+                {/* </figure> */}
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image16.childImageSharp.fluid}
-                    alt="kitchen"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                {/* <figure className={styles.imageContainer}> */}
+                <Img
+                  fluid={data.image16.childImageSharp.fluid}
+                  alt="kitchen"
+                  className={styles.attractionImage}
+                />
+                {/* </figure> */}
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image17.childImageSharp.fluid}
-                    alt="couple reading on the beach"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                {/* <figure className={styles.imageContainer}> */}
+                <Img
+                  fluid={data.image17.childImageSharp.fluid}
+                  alt="couple reading on the beach"
+                  className={styles.attractionImage}
+                />
+                {/* </figure> */}
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image18.childImageSharp.fluid}
-                    alt="livingroom"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                {/* <figure className={styles.imageContainer}> */}
+                <Img
+                  fluid={data.image18.childImageSharp.fluid}
+                  alt="livingroom"
+                  className={styles.attractionImage}
+                />
+                {/* </figure> */}
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image19.childImageSharp.fluid}
-                    alt="people surfing"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                {/* <figure className={styles.imageContainer}> */}
+                <Img
+                  fluid={data.image19.childImageSharp.fluid}
+                  alt="people surfing"
+                  className={styles.attractionImage}
+                />
+                {/* </figure> */}
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image20.childImageSharp.fluid}
-                    alt="view of pool and chairs at Entabene Hill"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                {/* <figure className={styles.imageContainer}> */}
+                <Img
+                  fluid={data.image20.childImageSharp.fluid}
+                  alt="view of pool and chairs at Entabene Hill"
+                  className={styles.attractionImage}
+                />
+                {/* </figure> */}
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image21.childImageSharp.fluid}
-                    alt="luxury bathroom"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                {/* <figure className={styles.imageContainer}> */}
+                <Img
+                  fluid={data.image21.childImageSharp.fluid}
+                  alt="luxury bathroom"
+                  className={styles.attractionImage}
+                />
+                {/* </figure> */}
               </div>
 
               <div className={styles.cell}>
-                <figure className={styles.imageContainer}>
-                  <Img
-                    fluid={data.image22.childImageSharp.fluid}
-                    alt="elephants in safari game drive"
-                    className={styles.attractionImage}
-                  />
-                </figure>
+                {/* <figure className={styles.imageContainer}> */}
+                <Img
+                  fluid={data.image22.childImageSharp.fluid}
+                  alt="elephants in safari game drive"
+                  className={styles.attractionImage}
+                />
+                {/* </figure> */}
               </div>
             </div>
           </div>

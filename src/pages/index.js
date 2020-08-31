@@ -268,10 +268,6 @@ const Home = ({ data }) => {
             alt="Lady on beach looking at sunset"
           />
         </div>
-        <div className={styles.centeredTextOverImage}>
-          <GiSeahorse />
-          <h2 className={styles.headingStyle}>Ideal spot in Plett</h2>
-        </div>
       </div>
       <div className={styles.mapSectionContainer}>
         <MapComponent />

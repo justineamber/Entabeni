@@ -76,7 +76,7 @@ const MapComponent = ({ array, isAdding, getLocation }) => {
     <>
       <LoadScript
         id="script-loader"
-        googleMapsApiKey="AIzaSyB6xHfPLxTArJQQzUVAs2EV6CZG6UT9HCU"
+        googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
       >
         <GoogleMap
           id="example-map"

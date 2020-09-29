@@ -17,7 +17,7 @@ import NavbarBookingForm from "../components/navbar-booking-form/navbar-booking-
 export const imageQuery = graphql`
   fragment optimizeHomeImages on File {
     childImageSharp {
-      fluid(maxWidth: 800, maxHeight: 400, quality: 100) {
+      fluid(maxWidth: 800, maxHeight: 250, quality: 80) {
         ...GatsbyImageSharpFluid
       }
     }
@@ -159,10 +159,6 @@ const Home = ({ data }) => {
             fluid={data.image1.childImageSharp.fluid}
             alt="couple walking on beach"
           />
-        </div>
-        <div className={styles.centeredTextOverImage}>
-          <GiSeahorse />
-          <h2 className={styles.headingStyle}>Paradise found</h2>
         </div>
       </div>
       <div className={styles.paragraphContainerLifeWellLived}>

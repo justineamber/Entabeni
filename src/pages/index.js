@@ -218,7 +218,7 @@ const Home = ({ data }) => {
           <Img
             fluid={data.image5.childImageSharp.fluid}
             variant="top"
-            alt="seaview from Entabeni Hill"
+            alt="seaview from Entabene"
           />
           <Card.Body>
             <Card.Title className={styles.cardTitleStyles}>
@@ -226,10 +226,9 @@ const Home = ({ data }) => {
             </Card.Title>
             <Card.Text>
               Located in central Plettenberg Bay and walking distance to the
-              beach, shops and restaurants. The stunning Entabeni Hill has
-              beautiful views of the Beacon Isle beach, Robberg Heads and the
-              Tsitsikamma mountain range. The perfect holiday beach home to
-              rent.
+              beach, shops and restaurants. The stunning Entabene has beautiful
+              views of the Beacon Isle beach, Robberg Heads and the Tsitsikamma
+              mountain range. The perfect holiday beach home to rent.
             </Card.Text>
           </Card.Body>
         </Card>

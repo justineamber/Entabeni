@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import * as moment from "moment"
+import { GiSeahorse } from "react-icons/gi"
 import EntabeniBookingForm from "../components/entabeni-booking-form/entabeni-booking-form"
 import styles from "./pages-styles/pagestyles-css-modules.module.css"
 import DateRangePicker from "../components/date-range-picker/date-range-picker"
@@ -39,6 +40,11 @@ function EntabeniBookingPage({ location }) {
 
   return (
     <>
+      <div className={styles.paragraphContainerBookingPage}>
+        <GiSeahorse />
+        <h2 className={styles.headingStyle}>Entabene</h2>
+        <p className={styles.paragraphStyles}>Secure booking</p>
+      </div>
       <SelectTypeOfBooking
         handleBookingChange={() => {}}
         bookingValue={bookingValue}

@@ -88,17 +88,6 @@ body {
   font-display: swap;
 }
 
-/* .imageContainer {
-  cursor: pointer;
-  height: 12rem;
-  overflow: hidden;
-  width: 100%;
-  margin: 0;
-}
-.imageContainer:hover {
-  display: block;
-} */
-
 /*opacity img*/
 .imageOpacityHover {
   position: relative;
@@ -183,7 +172,7 @@ em {
 }
 
 .paragraphContainerNoImageLocationPage {
-  padding: 1.25rem;
+  padding: 1.25rem 0;
   margin-top: 4.25rem;
   margin-bottom: 1rem;
 }
@@ -246,13 +235,6 @@ em {
   .attractionImage:hover {
     transform: none;
   }
-  /*
-  .imageContainer {
-    height: 100%;
-  }
-  .imageContainer:hover {
-    display: none;
-  } */
 }
 
 /*Booking Form on Homepage */

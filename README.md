@@ -1,6 +1,6 @@
 # Gatsby React Bootstrap Starter
 
-A GatsbyJS starter that includes
+GatsbyJS that includes
 
 - react-bootstrap
 - react-icons

@@ -1,4 +1,4 @@
-# Gatsby React Bootstrap Starter
+# Gatsby React Bootstrap 
 
 GatsbyJS that includes
 

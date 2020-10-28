@@ -17,7 +17,7 @@ import NavbarBookingForm from "../components/navbar-booking-form/navbar-booking-
 export const imageQuery = graphql`
   fragment optimizeHomeImages on File {
     childImageSharp {
-      fluid(maxWidth: 800, maxHeight: 250, quality: 80) {
+      fluid(maxWidth: 800, maxHeight: 400, quality: 80) {
         ...GatsbyImageSharpFluid
       }
     }
@@ -39,7 +39,7 @@ export const query = graphql`
       ...optimizeHomeImages
     }
 
-    image3: file(relativePath: { eq: "anotherviewofkitchen.jpg" }) {
+    image3: file(relativePath: { eq: "poloplayers.jpg" }) {
       ...optimizeHomeImages
     }
 
@@ -142,7 +142,7 @@ const Home = ({ data }) => {
             <td>
               <a
                 className={styles.SvgAddress}
-                href="https://www.google.com/maps/place/Bay+Lodge/@-34.0590199,23.3744413,17z/data=!3m1!4b1!4m8!3m7!1s0x0:0x43d38d1d6ade11c6!5m2!4m1!1i2!8m2!3d-34.0590199!4d23.37663"
+                href="https://www.google.com/maps/place/5+Harker+St,+Plettenberg+Bay,+6600,+South+Africa/@-34.0583289,23.3734568,17z/data=!3m1!4b1!4m5!3m4!1s0x1e78e20c8f14ba5d:0x312f5c5696e65c04!8m2!3d-34.0583334!4d23.3756455"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -153,6 +153,7 @@ const Home = ({ data }) => {
           </tr>
         </tbody>
       </Table>
+
       <div className={styles.imageHeadingContainer}>
         <div className={styles.imageOpacityHover}>
           <Img
@@ -160,7 +161,15 @@ const Home = ({ data }) => {
             alt="couple walking on beach"
           />
         </div>
+        <div className={styles.centeredTextOverImage}>
+          <GiSeahorse />
+          <h2 className={styles.headingStyle}>Paradise Found</h2>
+          <Button variant="outline-light" href="/entabeni-booking-page/">
+            Book your stay
+          </Button>
+        </div>
       </div>
+
       <div className={styles.paragraphContainerLifeWellLived}>
         <GiSeahorse />
         <h2 className={styles.headingStyle}>Life. Well lived.</h2>
@@ -175,6 +184,7 @@ const Home = ({ data }) => {
           holiday.
         </p>
       </div>
+
       <CardGroup className={styles.cardGroupStyles}>
         <Card className={styles.cardStyles}>
           <Img
@@ -184,12 +194,18 @@ const Home = ({ data }) => {
           />
           <Card.Body>
             <Card.Title className={styles.cardTitleStyles}>
-              Modern home
+              Best activites for the family
             </Card.Title>
             <Card.Text>
-              Modern finishes and clean lines. This holiday home's interior is
-              elegant and simple.
+              Plettenberg Bay is a great location and offers many fun activities
+              for the family. You can play polo in the morning, have lunch on a
+              beautiful wine farm, spend the rest of the afternoon on the beach
+              and have sundowners at Robberg Nature Reserve that overlooks the
+              beautiful coastal town, sea and mountain ranges.
             </Card.Text>
+            <Link to="/experiences/">
+              <Button variant="outline-dark">Book experiences now</Button>
+            </Link>
           </Card.Body>
         </Card>
         <Card>
@@ -212,6 +228,9 @@ const Home = ({ data }) => {
               well as ample outlets for charging any device. Three en suite
               bedrooms.
             </Card.Text>
+            <Link to="/entabeni-booking-page/">
+              <Button variant="outline-dark">Book accomodation now</Button>
+            </Link>
           </Card.Body>
         </Card>
         <Card>
@@ -226,10 +245,14 @@ const Home = ({ data }) => {
             </Card.Title>
             <Card.Text>
               Located in central Plettenberg Bay and walking distance to the
-              beach, shops and restaurants. The stunning Entabene has beautiful
-              views of the Beacon Isle beach, Robberg Heads and the Tsitsikamma
-              mountain range. The perfect holiday beach home to rent.
+              beach, shops and restaurants. The stunning Entabeni House has
+              beautiful views of the Beacon Isle beach, Robberg Heads and the
+              Tsitsikamma mountain range. It is the perfect holiday beach home
+              for you and your family to build beautiful memories and have fun.
             </Card.Text>
+            <Link to="/gallery/">
+              <Button variant="outline-dark">View gallery</Button>
+            </Link>
           </Card.Body>
         </Card>
       </CardGroup>
@@ -262,6 +285,18 @@ const Home = ({ data }) => {
             fluid={data.image2.childImageSharp.fluid}
             alt="Lady on beach looking at sunset"
           />
+        </div>
+        <div className={styles.centeredTextOverImage}>
+          <GiSeahorse />
+          <h2 className={styles.headingStyle}>Ideal spot in Plett</h2>
+          <Button
+            variant="outline-light"
+            href="https://www.google.com/maps/place/5+Harker+St,+Plettenberg+Bay,+6600,+South+Africa/@-34.0583289,23.3734568,17z/data=!3m1!4b1!4m5!3m4!1s0x1e78e20c8f14ba5d:0x312f5c5696e65c04!8m2!3d-34.0583334!4d23.3756455"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Explore the area
+          </Button>
         </div>
       </div>
       <div className={styles.mapSectionContainer}>

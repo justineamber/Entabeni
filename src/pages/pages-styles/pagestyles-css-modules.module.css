@@ -7,15 +7,6 @@
   box-sizing: border-box;
 }
 
-a[href^="tel:"] {
-  color: #222;
-  text-decoration: none;
-}
-
-a[href^="tel:"]:before {
-  margin-right: 0.5em;
-}
-
 .attractionImage {
   height: 20rem;
   object-fit: cover;
@@ -83,11 +74,26 @@ body {
   padding: 0;
   letter-spacing: 0;
   margin-top: 0;
-
   font-family: "Old Standard TT", serif;
-  font-display: swap;
 }
 
+.headingStyleBookingPage {
+  color: #000000;
+  padding: 0;
+  letter-spacing: 0;
+  margin-top: 0;
+  font-family: "Old Standard TT", serif;
+}
+
+.headingStyleBookingPage:focus,
+.headingStyleBookingPage:hover,
+.headingStyleBookingPage:visited,
+.headingStyleBookingPage:link,
+.headingStyleBookingPage:active {
+  color: #000000;
+  text-decoration: none !important;
+  text-decoration-line: none;
+}
 /*opacity img*/
 .imageOpacityHover {
   position: relative;
@@ -113,6 +119,13 @@ body {
 
 .imageOpacityHover:hover:after {
   opacity: 1;
+}
+
+.imageHeadingContainer {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  color: #fff;
 }
 
 em {

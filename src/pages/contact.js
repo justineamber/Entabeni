@@ -45,7 +45,6 @@ function ContactForm() {
           initialValues={{
             name: "",
             email: "",
-            terms: false,
           }}
           onSubmit={async values => {
             await new Promise(resolve => setTimeout(resolve, 500))
@@ -91,8 +90,12 @@ function ContactForm() {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     isValid={touched.email && !errors.email}
+                    isInvalid={!!errors.email}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                  <Form.Control.Feedback type="invalid">
+                    {errors.email}
+                  </Form.Control.Feedback>
                 </Form.Group>
               </Form.Row>
               <Form.Row className="justify-content-md-center">
@@ -106,6 +109,7 @@ function ContactForm() {
                     as="textarea"
                     rows="3"
                     type="text"
+                    placeholder="Enter enquiry"
                     name="General enquiry for Entebene"
                     value={values.message}
                     onChange={handleChange}

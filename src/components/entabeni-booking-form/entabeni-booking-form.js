@@ -23,10 +23,13 @@ function EntabeniBookingForm() {
     <Container>
       <Formik
         validationSchema={schema}
-        onSubmit={console.log}
         initialValues={{
           firstName: "",
           lastName: "",
+        }}
+        onSubmit={async values => {
+          await new Promise(resolve => setTimeout(resolve, 500))
+          alert(JSON.stringify(values, null, 2))
         }}
       >
         {({

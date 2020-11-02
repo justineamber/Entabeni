@@ -13,6 +13,7 @@ function DatePicker({ handleDatesChange, startDate, endDate }) {
         endDateId="endDate"
         startDate={startDate}
         endDate={endDate}
+        required={true}
         onDatesChange={handleDatesChange}
         focusedInput={focusedInput}
         onFocusChange={focusedInput => {

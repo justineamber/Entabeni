@@ -8,11 +8,13 @@ import bookingFormStyles from "./navbar-booking-form.module.css"
 const NavbarBookingForm = ({ onSubmit }) => {
   const [startDate, setStartDate] = useState()
   const [endDate, setEndDate] = useState()
+  const [errorMessage, setErrorMessage] = useState(null)
 
   const handleDatesChange = ({ startDate, endDate }) => {
     setStartDate(startDate)
     setEndDate(endDate)
   }
+
   const [bookingValue, setBookingValue] = useState()
 
   const handleBookingChange = e => {
@@ -39,6 +41,11 @@ const NavbarBookingForm = ({ onSubmit }) => {
             startDate={startDate}
             endDate={endDate}
           />
+          {errorMessage && (
+            <p className={bookingFormStyles.errorMessageStyles}>
+              {errorMessage}
+            </p>
+          )}
         </div>
 
         <SelectNumberOfGuests
@@ -48,11 +55,17 @@ const NavbarBookingForm = ({ onSubmit }) => {
 
         <Col xs="auto">
           <Button
-            onClick={() =>
-              onSubmit(startDate, endDate, bookingValue, guestValue)
-            }
             className="mb-2"
             bsPrefix={bookingFormStyles.searchButtonStyles}
+            onClick={() => {
+              if (!startDate || !endDate) {
+                return setErrorMessage(
+                  "A start and end date is required for booking"
+                )
+              } else {
+                onSubmit(startDate, endDate, bookingValue, guestValue)
+              }
+            }}
           >
             Book Now
           </Button>
@@ -61,5 +74,4 @@ const NavbarBookingForm = ({ onSubmit }) => {
     </Form>
   )
 }
-
 export default NavbarBookingForm

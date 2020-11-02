@@ -71,8 +71,11 @@ export default function NewsletterForm() {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     isValid={touched.email && !errors.email}
+                    isInvalid={!!errors.email}
                   />
-                  <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                  <Form.Control.Feedback type="invalid">
+                    {errors.email}
+                  </Form.Control.Feedback>
                 </Form.Group>
               </Col>
             </Form.Row>

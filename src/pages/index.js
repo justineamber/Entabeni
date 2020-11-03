@@ -17,7 +17,7 @@ import NavbarBookingForm from "../components/navbar-booking-form/navbar-booking-
 export const imageQuery = graphql`
   fragment optimizeHomeImages on File {
     childImageSharp {
-      fluid(maxWidth: 800, maxHeight: 400, quality: 80) {
+      fluid(maxWidth: 800, maxHeight: 400, quality: 100) {
         ...GatsbyImageSharpFluid
       }
     }
@@ -43,7 +43,7 @@ export const query = graphql`
       ...optimizeHomeImages
     }
 
-    image4: file(relativePath: { eq: "bedroomonsuite.jpg" }) {
+    image4: file(relativePath: { eq: "bedroomview.jpg" }) {
       ...optimizeHomeImages
     }
 
@@ -55,15 +55,15 @@ export const query = graphql`
       ...optimizeHomeImages
     }
 
-    slide2: file(relativePath: { eq: "livingroom.jpg" }) {
+    slide2: file(relativePath: { eq: "poolside.jpg" }) {
       ...optimizeHomeImages
     }
 
-    slide3: file(relativePath: { eq: "mainbedroom.jpg" }) {
+    slide3: file(relativePath: { eq: "safari.jpg" }) {
       ...optimizeHomeImages
     }
 
-    slide4: file(relativePath: { eq: "familyonbeachtoddler.jpg" }) {
+    slide4: file(relativePath: { eq: "bedroomview.jpg" }) {
       ...optimizeHomeImages
     }
 

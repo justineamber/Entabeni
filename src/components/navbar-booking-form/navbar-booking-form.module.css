@@ -29,4 +29,6 @@
 
 .errorMessageStyles {
   color: #e84545;
+  display: flex;
+  justify-content: center;
 }

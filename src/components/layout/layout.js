@@ -26,7 +26,7 @@ const Layout = ({ children, pageInfo }) => (
             title
           }
         }
-        SiteLogo: file(relativePath: { eq: "testLogo.png" }) {
+        SiteLogo: file(relativePath: { eq: "SiteLogo.png" }) {
           ...optimizeLogo
         }
 

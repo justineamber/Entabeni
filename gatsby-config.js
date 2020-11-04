@@ -3,6 +3,7 @@ module.exports = {
     title: `Entabeni`,
     description: `Entabeni built by Justine Hill using javascript, gatsby and react.`,
     author: `Justine Hill`,
+    pathPrefix: "/Entabeni",
   },
   plugins: [
     `gatsby-plugin-sharp`,

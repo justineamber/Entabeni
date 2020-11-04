@@ -164,9 +164,11 @@ const Home = ({ data }) => {
         <div className={styles.centeredTextOverImage}>
           <GiSeahorse />
           <h2 className={styles.headingStyle}>Paradise Found</h2>
-          <Button variant="outline-light" href="/entabeni-booking-page/">
-            Book your stay
-          </Button>
+          <Link to="/entabeni-booking-page/">
+            <Button variant="outline-light" href="/entabeni-booking-page/">
+              Book your stay
+            </Button>
+          </Link>
         </div>
       </div>
 
